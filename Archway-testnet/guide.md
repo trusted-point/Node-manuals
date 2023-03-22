@@ -56,35 +56,38 @@ git clone https://github.com/archway-network/archway.git archway && \
 cd archway && \
 git checkout v0.2.0 && \
 make install
+archwayd version --long | grep -e version -e commit
+# version: 0.2.0
+# commit: 532f53724bf477c5c8826fae376906526a09ed2d
 ```
 #
 ```python
 CONFIGURATION
 ```
 ```bash 
-canined init $MONIKER --chain-id jackal-1 && \
-canined config chain-id jackal-1 && \
-canined config keyring-backend os
+archwayd init $MONIKER --chain-id constantine-1 && \
+archwayd config chain-id constantine-1 && \
+archwayd config keyring-backend os
 ```
 #
 ```python
 ADD NEW WALLET OR RESTORE OLD WALLET
 ```
 ```bash
-canined keys add $WALLET
+archwayd keys add $WALLET
 ```
 ```bash
-canined keys add $WALLET --recover
+archwayd keys add $WALLET --recover
 ```
 #
 ```python
 SET VARIABLES 
 ```
 ```bash
-VALOPER=$(canined keys show $WALLET --bech val -a) # ENTER PASSWORD
+VALOPER=$(archwayd keys show $WALLET --bech val -a) # ENTER PASSWORD
 ```
 ```bash
-ADDRESS=$(canined keys show $WALLET --address) # ENTER PASSWORD
+ADDRESS=$(archwayd keys show $WALLET --address) # ENTER PASSWORD
 ```
 ```bash
 echo "export VALOPER=$VALOPER" >> $HOME/.bash_profile && \
@@ -96,14 +99,14 @@ source $HOME/.bash_profile
 ADD PEERS AND SEEDS
 ```
 ```bash
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"26175f13ada3d61c93bca342819fd5dc797bced0@teritori.nodejumper.io:28656,722b63e6c65628b929f22013dcbcde980210cb44@176.9.127.54:26656,8f28518afd31a42ea81bb3232a50ab0cec4dcdf7@51.158.236.131:26656,647bbbc30d26fbbb2f7d19aafe30ed77a92c4748@[2a01:4f9:6b:2e5b::4]:26656,5a98d637a16b16bf425a4a785c9d11a7d1e5b8a0@65.21.131.215:26736,f813a00f52de54a49aea3211b89a65ae6133eac2@88.99.167.148:26686,358f13bd95d91517053a58f4d30205842672837f@104.37.187.214:60656,ce3baba928ae06cd3ff0af20aec888a82ddffef7@54.37.129.171:26656,3bd3a20d7c8a26a20927289a7a6bffecf71de53e@51.81.155.97:10856,48980875839186e08e12ebf0d9a2803b45206833@65.109.92.241:38026,526d8c7c44f59be9a39d7463c576b68c0db23174@65.108.234.23:15956\"/; s/^seeds *=.*/seeds = \"$SEEDS\"/" $HOME/.canine/config/config.toml
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"5c10d3d84adb970474eff3c9b5d8fe50fd2dbbfb@144.76.18.199:26656,802993601906fae95a19e96f2e8bd538b0d209d5@35.222.155.3:26656,1570fd9b344af3bf77ec7eefffe485033f412080@65.109.112.178:26656,a2ad516c5301fb1a9793b0c9bd2195e16721ed73@34.170.18.34:26656\"/; s/^seeds *=.*/seeds = \"$SEEDS\"/" $HOME/.archway/config/config.toml
 ```
 #
 ```python
 DOWNLOAD GENESIS 
 ```
 ```bash
-wget -O $HOME/.canine/config/genesis.json https://cdn.discordapp.com/attachments/1002389406650466405/1034968352591986859/updated_genesis2.json
+wget -O $HOME/.archway/config/genesis.json https://raw.githubusercontent.com/defund-labs/testnet/main/orbit-alpha-1/genesis.json
 ```
 ___
 ## Change PORT
@@ -124,19 +127,19 @@ s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://0.0.0.0:$((NODES_NUM+26))65
 s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:$((NODES_NUM+6))060\"%; \
 s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:$((NODES_NUM+26))656\"%; \
 s%^external_address = \"\"%external_address = \"`echo $(wget -qO- eth0.me):$((NODES_NUM+26))656`\"%; \
-s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":$((NODES_NUM+26))660\"%" $HOME/.canine/config/config.toml
+s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":$((NODES_NUM+26))660\"%" $HOME/.archway/config/config.toml
 ```
 ```bash
 sed -i.bak -e "\
 s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:$((NODES_NUM+1))317\"%; \
 s%^address = \":8080\"%address = \":$((NODES_NUM+8))080\"%; \
 s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:$((NODES_NUM+9))090\"%; \
-s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:$((NODES_NUM+9))091\"%" $HOME/.canine/config/app.toml
+s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:$((NODES_NUM+9))091\"%" $HOME/.archway/config/app.toml
 ```
 ```bash
 echo "export NODE=http://localhost:$((NODES_NUM+26))657" >> $HOME/.bash_profile && \
 source $HOME/.bash_profile && \
-canined config node $NODE
+archwayd config node $NODE
 ```
 ___
 ## Memory optimization
@@ -159,15 +162,15 @@ inter_block_cache="false"
 SET VARIABLES 
 ```
 ```bash
-sed -i.bak -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.canine/config/config.toml && \
-sed -i.bak -e "s/^min-retain-blocks *=.*/min-retain-blocks = \"$min_retain_blocks\"/" $HOME/.canine/config/app.toml && \
-sed -i.bak -e "s/^snapshot-interval *=.*/snapshot-interval = \"$snapshot_interval\"/" $HOME/.canine/config/app.toml && \
-sed -i.bak -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.canine/config/app.toml && \
-sed -i.bak -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.canine/config/app.toml && \
-sed -i.bak -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.canine/config/app.toml && \
-sed -i.bak -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.canine/config/app.toml && \
-sed -i.bak -e "s/^min-retain-blocks *=.*/min-retain-blocks = \"$min_retain_blocks\"/" $HOME/.canine/config/app.toml && \
-sed -i.bak -e "s/^inter-block-cache *=.*/inter-block-cache = \"$inter_block_cache\"/" $HOME/.canine/config/app.toml
+sed -i.bak -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.archway/config/config.toml && \
+sed -i.bak -e "s/^min-retain-blocks *=.*/min-retain-blocks = \"$min_retain_blocks\"/" $HOME/.archway/config/app.toml && \
+sed -i.bak -e "s/^snapshot-interval *=.*/snapshot-interval = \"$snapshot_interval\"/" $HOME/.archway/config/app.toml && \
+sed -i.bak -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.archway/config/app.toml && \
+sed -i.bak -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.archway/config/app.toml && \
+sed -i.bak -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.archway/config/app.toml && \
+sed -i.bak -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.archway/config/app.toml && \
+sed -i.bak -e "s/^min-retain-blocks *=.*/min-retain-blocks = \"$min_retain_blocks\"/" $HOME/.archway/config/app.toml && \
+sed -i.bak -e "s/^inter-block-cache *=.*/inter-block-cache = \"$inter_block_cache\"/" $HOME/.archway/config/app.toml
 ```
 ___
 ## Start node
@@ -175,15 +178,15 @@ ___
 CREATE SERVICE 
 ```
 ```bash
-sudo tee /etc/systemd/system/canined.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/archwayd.service > /dev/null <<EOF
 [Unit]
-Description=Canine Node
+Description=Archway Node
 After=network.target
 
 [Service]
 User=$USER
 Type=simple
-ExecStart=$(which canined) start
+ExecStart=$(which archwayd) start
 Restart=on-failure
 LimitNOFILE=65535
 
@@ -197,9 +200,9 @@ START SERVICE
 ```
 ```bash
 sudo systemctl daemon-reload && \
-sudo systemctl enable canined && \
-sudo systemctl restart canined && \
-sudo journalctl -u canined -f -o cat
+sudo systemctl enable archwayd && \
+sudo systemctl restart archwayd && \
+sudo journalctl -u archwayd -f -o cat
 ```
 ___
 
@@ -215,23 +218,23 @@ curl -s $NODE/status | jq .result.sync_info.catching_up
 CHECK BALANCE # MINIMUM QUANTITY TO CREATE A VALIDATOR 1000000
 ```
 ```bash
-canined q bank balances $ADDRESS
+archwayd q bank balances $ADDRESS
 ```
 #
 ```python
 CREATE A VALIDATOR
 ```
 ```bash 
-canined tx staking create-validator \
-  --amount=1000000ujkl \
-  --pubkey=$(canined tendermint show-validator) \
+archwayd tx staking create-validator \
+  --amount=1000000uconst \
+  --pubkey=$(archwayd tendermint show-validator) \
   --moniker=$MONIKER \
   --chain-id=jackal-1 \
   --commission-rate="0.10" \
   --commission-max-rate="0.20" \
   --commission-max-change-rate="0.01" \
   --min-self-delegation=1000000 \
-  --fees=200ujkl \
+  --fees=200uconst \
   --from=$WALLET \
   --identity=$IDENTITY \
   --website=$WEBSITE \
@@ -253,14 +256,14 @@ TAG_NAME=""
 UPDATE NODE
 ```
 ```bash
-sudo systemctl stop canined && \
-cd canine && \
+sudo systemctl stop archwayd && \
+cd archway && \
 git pull; \
 git checkout tags/$TAG_NAME && \
 make clean; \
 make install && \
-sudo systemctl restart canined && \
-journalctl -u canined -f -o cat
+sudo systemctl restart archwayd && \
+journalctl -u archwayd -f -o cat
 ```
 ___
 ## USEFUL COMMANDS
@@ -271,14 +274,14 @@ ___
 SERVICE LOGS
 ```
 ```bash
-journalctl -u canined -f -o cat
+journalctl -u archwayd -f -o cat
 ```
 #
 ```python
 SERVICE STATUS
 ```
 ```bash
-systemctl status canined
+systemctl status archwayd
 ```
 #
 ```python
@@ -329,21 +332,21 @@ echo $ADDRESS
 JAIL, TOMBSTONED, START_HEIGHT, INDEX_OFFSET
 ```
 ```bash
-canined q slashing signing-info $(canined tendermint show-validator)
+archwayd q slashing signing-info $(archwayd tendermint show-validator)
 ```
 #
 ```python
 GET PEER 
 ```
 ```bash
-echo "$(canined tendermint show-node-id)@$(curl ifconfig.me):$(curl -s $NODE/status | jq -r '.result.node_info.listen_addr' | cut -d':' -f3)"
+echo "$(archwayd tendermint show-node-id)@$(curl ifconfig.me):$(curl -s $NODE/status | jq -r '.result.node_info.listen_addr' | cut -d':' -f3)"
 ```
 ### Wallet
 ```python
 GET BALANCE
 ```
 ```bash
-canined q bank balances $ADDRESS
+archwayd q bank balances $ADDRESS
 ```
 ___
 ### Voting
@@ -351,14 +354,14 @@ ___
 VOTE
 ```
 ```bash
-canined tx gov vote <PROPOSAL_ID> <yes|no> --from $WALLET --fees 200ujkl -y
+archwayd tx gov vote <PROPOSAL_ID> <yes|no> --from $WALLET --fees 200uconst -y
 ```
 #
 ```python
 CHECK ALL VOTED PROPOSALS
 ```
 ```bash
-canined q gov proposals --voter $ADDRESS
+archwayd q gov proposals --voter $ADDRESS
 ```
 ___
 ### Actions
@@ -366,35 +369,35 @@ ___
 EDIT VALIDATOR
 ```
 ```bash
-canined tx staking edit-validator --website="<YOUR_WEBSITE>" --details="<YOUR_DESCRIPTION>" --moniker="<YOUR_NEW_MONIKER>" --from=$WALLET --fees 200ujkl
+archwayd tx staking edit-validator --website="<YOUR_WEBSITE>" --details="<YOUR_DESCRIPTION>" --moniker="<YOUR_NEW_MONIKER>" --from=$WALLET --fees 200uconst
 ```
 #
 ```python
 UNJAIL
 ```
 ```bash
-canined tx slashing unjail --from $WALLET --fees 200ujkl
+archwayd tx slashing unjail --from $WALLET --fees 200uconst
 ```
 #
 ```python
 BOND MORE TOKENS (IF YOU WANT INCREASE YOUR VALIDATOR STAKE YOU SHOULD BOND MORE TO YOUR VALOPER ADDRESS):
 ```
 ```bash
-canined tx staking delegate $VALOPER <TOKENS_COUNT>ujkl--from $WALLET --fees 200ujkl -y
+archwayd tx staking delegate $VALOPER <TOKENS_COUNT>uconst--from $WALLET --fees 200uconst -y
 ```
 #
 ```python
 UNDELEGATE
 ```
 ```bash
-canined tx staking unbond $VALOPER <TOKENS_COUNT>ujkl --from $WALLET --fees 200ujkl -y
+archwayd tx staking unbond $VALOPER <TOKENS_COUNT>uconst --from $WALLET --fees 200uconst -y
 ```
 #
 ```python
 SEND TOKENS. 1 TOKEN = 1000000 (COSMOS)
 ```
 ```bash
-canined tx bank send $WALLET <WALLET_TO> <TOKENS_COUNT>ujkl --fees 200ujkl --gas auto
+archwayd tx bank send $WALLET <WALLET_TO> <TOKENS_COUNT>uconst --fees 200uconst --gas auto
 ```
 #
 ```python
@@ -403,14 +406,14 @@ CHANGE PEERS AND SEEDS
 ```bash
 peers="<PEERS>"
 seeds="<SEEDS>"
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/; s/^seeds *=.*/seeds = \"$seeds\"/" $HOME/.canine/config/config.toml
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/; s/^seeds *=.*/seeds = \"$seeds\"/" $HOME/.archway/config/config.toml
 ```
 #
 ```python
 RESET PRIVATE VALIDATOR FILE TO GENESIS STATE AND DELETE ADDRBOOK.JSON
 ```
 ```bash
-canined tendermint unsafe-reset-all --home $HOME/.canine
+archwayd tendermint unsafe-reset-all --home $HOME/.archway
 ```
 ___
 ### All validators info
@@ -418,7 +421,7 @@ ___
 LIST OF ALL ACTIVE VALIDATORS 
 ```
 ```bash
-canined q staking validators -o json --limit=1000 \
+archwayd q staking validators -o json --limit=1000 \
 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' \
 | jq -r '.tokens + " - " + .description.moniker' \
 | sort -gr | nl
@@ -428,7 +431,7 @@ canined q staking validators -o json --limit=1000 \
 LIST OF ALL INACTIVE VALIDATORS 
 ```
 ```bash
-canined q staking validators -o json --limit=1000 \
+archwayd q staking validators -o json --limit=1000 \
 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' \
 | jq -r '.tokens + " - " + .description.moniker' \
 | sort -gr | nl
@@ -468,11 +471,11 @@ ___
 USE COMMAND
 ```
 ```bash
-sudo systemctl stop canined && \
-sudo systemctl disable canined; \
-sudo rm /etc/systemd/system/canined.service; \
+sudo systemctl stop archwayd && \
+sudo systemctl disable archwayd; \
+sudo rm /etc/systemd/system/archwayd.service; \
 sudo systemctl daemon-reload && \
 cd $HOME && \
-rm -rf .canine canine; \
-sudo rm $(which canined)
+rm -rf .archway archway; \
+sudo rm $(which archwayd)
 ```
