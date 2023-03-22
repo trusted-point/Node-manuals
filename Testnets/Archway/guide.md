@@ -1,10 +1,31 @@
 [<img src='https://user-images.githubusercontent.com/80550154/227063367-5fc150d9-ada5-47ef-99a9-78ddffd397cd.png' alt='banner' width= '99.9%'>]()
 ___
 
+## About Archway
+
+* Archway is an incentivized smart contract chain for Cosmos ecosystem which gives developers a simple way to build scalable cross-chain dapps. The developers automatically receive rewards for their contributions to the network. Simply deploy your contracts to an established Proof-of-Stake network. Fast and low cost.
+
+* Easily build and deploy. The protocol is designed for flexible smart contract development and easy deployment to Cosmos.The contract libaries, Archway CLI and GO CosmWasm SDK are ready to go.
+
+* Archway gives developers a simple way to build scalable cross-chain dapps. The developers automatically receive rewards for their contributions to the network. Simply deploy your contracts to an established Proof-of-Stake network.
+___
+
+### Social Media
+
+* [Website](https://archway.io/)
+* [GitHub](https://github.com/archway-network)
+* [Twitter](https://twitter.com/archwayhq)
+* [Discord](https://discord.gg/5FVvx3WGfa)
+* [Docs](https://docs.archway.io/)
+
+___
+
 ## Available Explorers
 
 [<img src='https://user-images.githubusercontent.com/80550154/227062135-32a189c0-47d7-4263-8034-9f7726808601.png' alt='mintscan'  width='33%'>](https://testnet.mintscan.io/archway-testnet) [<img src='https://user-images.githubusercontent.com/80550154/227062129-4094b345-9cf4-4493-981c-939cdb748777.png' alt='archway.tech'  width='33%'>](https://explorer.constantine-1.archway.tech) [<img src='https://user-images.githubusercontent.com/80550154/227062134-d4717597-59c8-47fb-96ed-416d4276a7bc.png' alt='exploreme'  width='33%'>](https://archway.exploreme.pro)
+
 ___
+
 ## Open Endpoints
 ```http
 API:      http://api-archway.testnet-pride.com:15317
