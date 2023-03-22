@@ -1,4 +1,22 @@
 ___
+* [Prepare](https://github.com/testnet-pride/Node-Manuals/edit/main/Archway-testnet/guide.md#prepare-1)
+* [Variables](https://github.com/testnet-pride/Node-Manuals/edit/main/Archway-testnet/guide.md#variables-1)
+* [Build and configuration](https://github.com/testnet-pride/Node-Manuals/edit/main/Archway-testnet/guide.md#build-and-configuration-1)
+* [Change ports](https://github.com/testnet-pride/Node-Manuals/edit/main/Archway-testnet/guide.md#change-port-1)
+* [Memory optimization](https://github.com/testnet-pride/Node-Manuals/edit/main/Archway-testnet/guide.md#memory-optimization-1)
+* [Start node](https://github.com/testnet-pride/Node-Manuals/edit/main/Archway-testnet/guide.md#start-node-1)
+* [Create a validator](https://github.com/testnet-pride/Node-Manuals/edit/main/Archway-testnet/guide.md#create-a-validator-1)
+* [Update node](https://github.com/testnet-pride/Node-Manuals/edit/main/Archway-testnet/guide.md#update-node-1)
+* [Useful commands](https://github.com/testnet-pride/Node-Manuals/edit/main/Archway-testnet/guide.md#useful-commands-1)
+  * [Node status](https://github.com/testnet-pride/Node-Manuals/edit/main/Archway-testnet/guide.md#node-status)
+  * [Validator info](https://github.com/testnet-pride/Node-Manuals/edit/main/Archway-testnet/guide.md#validator-info)
+  * [Wallet](https://github.com/testnet-pride/Node-Manuals/edit/main/Archway-testnet/guide.md#wallet)
+  * [Voting](https://github.com/testnet-pride/Node-Manuals/edit/main/Archway-testnet/guide.md#voting)
+  * [Actions](https://github.com/testnet-pride/Node-Manuals/edit/main/Archway-testnet/guide.md#actions)
+  * [All validators info](https://github.com/testnet-pride/Node-Manuals/edit/main/Archway-testnet/guide.md#all-validators-info)
+  * [Another useful commands](https://github.com/testnet-pride/Node-Manuals/edit/main/Archway-testnet/guide.md#another-useful-commands)
+* [Delete node](https://github.com/testnet-pride/Node-Manuals/edit/main/Archway-testnet/guide.md#delete-node)
+___
 ## Prepare
 ```python
 UPDATE AND INSTALL PACKAGES
