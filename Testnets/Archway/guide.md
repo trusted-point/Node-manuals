@@ -1,14 +1,11 @@
 [<img src='https://user-images.githubusercontent.com/80550154/227061243-e93fb3d6-7335-42f7-8ff0-07e693c0e0ab.png' alt='banner' width= '99.9%'>]()
 ___
-```python
-EXPLORERS
-```
 
-[<img src='https://user-images.githubusercontent.com/80550154/227059946-a5ad0d3e-fa82-42ae-a44e-9f9e960b52b2.png' alt='mintscan'  width='33%'>](https://testnet.mintscan.io/archway-testnet) [<img src='https://user-images.githubusercontent.com/80550154/227059881-49458dae-8ef3-4b34-8dfa-7b477a62c3d2.png' alt='archway.tech'  width='33%'>](https://explorer.constantine-1.archway.tech) [<img src='https://user-images.githubusercontent.com/80550154/227059892-a625e6ee-236c-4ebb-b4be-a29ce27aa01c.png' alt='exploreme'  width='33%'>](https://archway.exploreme.pro)
+## Available Explorers
+
+[<img src='https://user-images.githubusercontent.com/80550154/227062135-32a189c0-47d7-4263-8034-9f7726808601.png' alt='mintscan'  width='33%'>](https://testnet.mintscan.io/archway-testnet) [<img src='https://user-images.githubusercontent.com/80550154/227062129-4094b345-9cf4-4493-981c-939cdb748777.png' alt='archway.tech'  width='33%'>](https://explorer.constantine-1.archway.tech) [<img src='https://user-images.githubusercontent.com/80550154/227062134-d4717597-59c8-47fb-96ed-416d4276a7bc.png' alt='exploreme'  width='33%'>](https://archway.exploreme.pro)
 ___
-```python
-OPEN ENDPOINTS
-```
+## Open Endpoints
 ```http
 API:      http://api-archway.testnet-pride.com:15317
 gRPC:     http://grpc-archway.testnet-pride.com:23090
