@@ -4,6 +4,7 @@ ___
 * [Build and configuration](https://github.com/testnet-pride/Node-Manuals/edit/main/Archway-testnet/guide.md#build-and-configuration-1)
 * [Change ports](https://github.com/testnet-pride/Node-Manuals/edit/main/Archway-testnet/guide.md#change-port-1)
 * [Memory optimization](https://github.com/testnet-pride/Node-Manuals/edit/main/Archway-testnet/guide.md#memory-optimization-1)
+* [State-sync synchronization](https://github.com/testnet-pride/Node-Manuals/edit/main/Archway-testnet/guide.md#state-sync-synchronization)
 * [Start node](https://github.com/testnet-pride/Node-Manuals/edit/main/Archway-testnet/guide.md#start-node-1)
 * [Create a validator](https://github.com/testnet-pride/Node-Manuals/edit/main/Archway-testnet/guide.md#create-a-validator-1)
 * [Update node](https://github.com/testnet-pride/Node-Manuals/edit/main/Archway-testnet/guide.md#update-node-1)
@@ -189,6 +190,30 @@ sed -i.bak -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_e
 sed -i.bak -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.archway/config/app.toml && \
 sed -i.bak -e "s/^min-retain-blocks *=.*/min-retain-blocks = \"$min_retain_blocks\"/" $HOME/.archway/config/app.toml && \
 sed -i.bak -e "s/^inter-block-cache *=.*/inter-block-cache = \"$inter_block_cache\"/" $HOME/.archway/config/app.toml
+```
+___
+## State-sync synchronization
+```python
+CHANGE VARIABLES 
+```
+```bash
+RPC=http://rpc-archway.testnet-pride.com:40657
+```
+```python
+SET VARIABLES 
+```
+```bash
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
+
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/$CONFIG/config/config.toml
 ```
 ___
 ## Start node
