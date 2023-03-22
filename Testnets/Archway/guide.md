@@ -8,6 +8,9 @@ RPC:      http://rpc-archway.testnet-pride.com:40657
 peer:     c8171d5b90ea72992408f8cfcd3893256d22aabc@peer-archway-constantine-1.testnet-pride.com:40656
 ```
 ___
+```python
+NAVIGATION
+```
 * [Prepare](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare)
 * [Variables](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#variables)
 * [Build and configuration](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#build-and-configuration)
