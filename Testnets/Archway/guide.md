@@ -35,8 +35,7 @@ ___
 * Archway gives developers a simple way to build scalable cross-chain dapps. The developers automatically receive rewards for their contributions to the network. Simply deploy your contracts to an established Proof-of-Stake network.
 ___
 ## Social Media
-**[Website](https://archway.io/) | [GitHub](https://github.com/archway-network) | [Twitter](https://twitter.com/archwayhq) | [Discord](https://discord.gg/5FVvx3WGfa) | [Docs](https://docs.archway.io/) | [Lightpaper](https://archway.io/lightpaper)**
-
+<font size = 6>**[Website](https://archway.io/) | [GitHub](https://github.com/archway-network) | [Twitter](https://twitter.com/archwayhq) | [Discord](https://discord.gg/5FVvx3WGfa) | [Docs](https://docs.archway.io/) | [Lightpaper](https://archway.io/lightpaper)**</font>
 ___
 ## Available Explorers
 
