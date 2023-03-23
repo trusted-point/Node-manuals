@@ -16,7 +16,7 @@ ___
   * [About Archway](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare#about-archway)
   * [Social media](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare#social-media)
   * [Available explorers](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare#available-explorers)
-* [Validator installation guide](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare)
+* [Validator installation guide](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare-a-server)
   * [Install required packages and Go](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare)
   * [Variables](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#variables)
   * [Build and configuration](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#build-and-configuration)
@@ -49,7 +49,7 @@ RPC:      http://rpc-archway.testnet-pride.com:40657
 peer:     c8171d5b90ea72992408f8cfcd3893256d22aabc@peer-archway-constantine-1.testnet-pride.com:40656
 ```
 ___
-## Prepare
+## Prepare a server
 ```python
 UPDATE AND INSTALL PACKAGES
 ```
