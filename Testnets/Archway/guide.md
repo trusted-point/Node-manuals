@@ -3,6 +3,7 @@ ___
 ## **Navigation**
 
 * [Project details](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare#about-archway)
+  * [About Archway](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare#about-archway)
   * [Social media](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare#social-media)
   * [Available explorers](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare#available-explorers)
 * [Validator installation guide](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare)
