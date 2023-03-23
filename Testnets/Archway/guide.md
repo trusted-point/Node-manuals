@@ -12,10 +12,6 @@ ___
 ___
 ## **Navigation**
 
-* [Project details](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare#about-archway)
-  * [About Archway](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare#about-archway)
-  * [Social media](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare#social-media)
-  * [Available explorers](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare#available-explorers)
 * [Validator installation guide](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare-a-server)
   * [Install required packages and Go](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare)
   * [Variables](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#variables)
@@ -33,8 +29,8 @@ ___
   * [Voting](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#voting)
   * [Actions](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#actions)
   * [All validators info](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#all-validators-info)
-  * [Another useful commands](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#another-useful-commands)
-* [Delete node](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#delete-node)
+  * [Useful commands](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#useful-commands)
+* [Delete a node](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#delete-a-node)
 ___
 ## Available Explorers
 
@@ -511,7 +507,7 @@ archwayd q staking validators -o json --limit=1000 \
 | sort -gr | nl
 ```
 ___
-### Another useful commands
+### Useful commands
 ```python
 ROOT → YOUR NODE
 ```
@@ -540,7 +536,7 @@ FILE STRUCTURE
 ncdu
 ```
 ___
-## Delete node
+## Delete a node
 ```python
 USE COMMAND
 ```
