@@ -1,52 +1,20 @@
 [<img src='https://user-images.githubusercontent.com/80550154/227063367-5fc150d9-ada5-47ef-99a9-78ddffd397cd.png' alt='banner' width= '99.9%'>]()
 ___
+## **Navigation**
 
-## About Archway
-
-* Archway is an incentivized smart contract chain for Cosmos ecosystem which gives developers a simple way to build scalable cross-chain dapps. The developers automatically receive rewards for their contributions to the network. Simply deploy your contracts to an established Proof-of-Stake network. Fast and low cost.
-
-* Easily build and deploy. The protocol is designed for flexible smart contract development and easy deployment to Cosmos.The contract libaries, Archway CLI and GO CosmWasm SDK are ready to go.
-
-* Archway gives developers a simple way to build scalable cross-chain dapps. The developers automatically receive rewards for their contributions to the network. Simply deploy your contracts to an established Proof-of-Stake network.
-___
-
-### Social Media
-
-* [Website](https://archway.io/)
-* [GitHub](https://github.com/archway-network)
-* [Twitter](https://twitter.com/archwayhq)
-* [Discord](https://discord.gg/5FVvx3WGfa)
-* [Docs](https://docs.archway.io/)
-
-___
-
-## Available Explorers
-
-[<img src='https://user-images.githubusercontent.com/80550154/227062135-32a189c0-47d7-4263-8034-9f7726808601.png' alt='mintscan'  width='33%'>](https://testnet.mintscan.io/archway-testnet) [<img src='https://user-images.githubusercontent.com/80550154/227062129-4094b345-9cf4-4493-981c-939cdb748777.png' alt='archway.tech'  width='33%'>](https://explorer.constantine-1.archway.tech) [<img src='https://user-images.githubusercontent.com/80550154/227062134-d4717597-59c8-47fb-96ed-416d4276a7bc.png' alt='exploreme'  width='33%'>](https://archway.exploreme.pro)
-
-___
-
-## Open Endpoints
-```http
-API:      http://api-archway.testnet-pride.com:15317
-gRPC:     http://grpc-archway.testnet-pride.com:23090
-gRPC-web: http://grpc-web-archway.testnet-pride.com:23091
-RPC:      http://rpc-archway.testnet-pride.com:40657
-peer:     c8171d5b90ea72992408f8cfcd3893256d22aabc@peer-archway-constantine-1.testnet-pride.com:40656
-```
-___
-
-## Navigation
-
-* [Prepare](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare)
-* [Variables](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#variables)
-* [Build and configuration](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#build-and-configuration)
-* [Change ports](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#change-port)
-* [Memory optimization](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#memory-optimization)
-* [State-sync synchronization](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#state-sync-synchronization)
-* [Start node](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#start-node)
-* [Create a validator](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#create-a-validator)
-* [Update node](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#update-node)
+* [Project details](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare#about-archway)
+  * [Social media](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare#social-media)
+  * [Available explorers](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare#available-explorers)
+* [Validator installation guide](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare)
+  * [Install required packages and Go](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare)
+  * [Variables](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#variables)
+  * [Build and configuration](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#build-and-configuration)
+  * [Change ports](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#change-port)
+  * [Memory optimization](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#memory-optimization)
+  * [State-sync synchronization](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#state-sync-synchronization)
+  * [Start a node](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#start-node)
+  * [Create a validator](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#create-a-validator)
+  * [Update a validator](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#update-node)
 * [Useful commands](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#useful-commands)
   * [Node status](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#node-status)
   * [Validator info](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#validator-info)
@@ -56,6 +24,31 @@ ___
   * [All validators info](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#all-validators-info)
   * [Another useful commands](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#another-useful-commands)
 * [Delete node](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#delete-node)
+___
+## About **Archway**
+
+* **Archway** is an incentivized smart contract chain for Cosmos ecosystem which gives developers a simple way to build scalable cross-chain dapps. The developers automatically receive rewards for their contributions to the network. Simply deploy your contracts to an established Proof-of-Stake network. Fast and low cost.
+
+* Easily build and deploy. The protocol is designed for flexible smart contract development and easy deployment to Cosmos.The contract libaries, Archway CLI and GO CosmWasm SDK are ready to go.
+
+* Archway gives developers a simple way to build scalable cross-chain dapps. The developers automatically receive rewards for their contributions to the network. Simply deploy your contracts to an established Proof-of-Stake network.
+___
+## Social Media
+**[Website](https://archway.io/) | [GitHub](https://github.com/archway-network) | [Twitter](https://twitter.com/archwayhq) | [Discord](https://discord.gg/5FVvx3WGfa) | [Docs](https://docs.archway.io/) | [Lightpaper](https://archway.io/lightpaper)**
+
+___
+## Available Explorers
+
+[<img src='https://user-images.githubusercontent.com/80550154/227062135-32a189c0-47d7-4263-8034-9f7726808601.png' alt='mintscan'  width='33%'>](https://testnet.mintscan.io/archway-testnet) [<img src='https://user-images.githubusercontent.com/80550154/227062129-4094b345-9cf4-4493-981c-939cdb748777.png' alt='archway.tech'  width='33%'>](https://explorer.constantine-1.archway.tech) [<img src='https://user-images.githubusercontent.com/80550154/227062134-d4717597-59c8-47fb-96ed-416d4276a7bc.png' alt='exploreme'  width='33%'>](https://archway.exploreme.pro)
+___
+## Open Endpoints
+```http
+API:      http://api-archway.testnet-pride.com:15317
+gRPC:     http://grpc-archway.testnet-pride.com:23090
+gRPC-web: http://grpc-web-archway.testnet-pride.com:23091
+RPC:      http://rpc-archway.testnet-pride.com:40657
+peer:     c8171d5b90ea72992408f8cfcd3893256d22aabc@peer-archway-constantine-1.testnet-pride.com:40656
+```
 ___
 ## Prepare
 ```python
