@@ -7,6 +7,8 @@ ___
 * Easily build and deploy. The protocol is designed for flexible smart contract development and easy deployment to Cosmos.The contract libaries, Archway CLI and GO CosmWasm SDK are ready to go.
 
 * Archway gives developers a simple way to build scalable cross-chain dapps. The developers automatically receive rewards for their contributions to the network. Simply deploy your contracts to an established Proof-of-Stake network.
+
+<font size = 4>**[Website](https://archway.io/) | [GitHub](https://github.com/archway-network) | [Twitter](https://twitter.com/archwayhq) | [Discord](https://discord.gg/5FVvx3WGfa) | [Docs](https://docs.archway.io/) | [Lightpaper](https://archway.io/lightpaper)**</font>
 ___
 ## **Navigation**
 
@@ -33,9 +35,6 @@ ___
   * [All validators info](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#all-validators-info)
   * [Another useful commands](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#another-useful-commands)
 * [Delete node](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#delete-node)
-___
-## Social Media
-<font size = 6>**[Website](https://archway.io/) | [GitHub](https://github.com/archway-network) | [Twitter](https://twitter.com/archwayhq) | [Discord](https://discord.gg/5FVvx3WGfa) | [Docs](https://docs.archway.io/) | [Lightpaper](https://archway.io/lightpaper)**</font>
 ___
 ## Available Explorers
 
