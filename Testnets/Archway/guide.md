@@ -1,5 +1,13 @@
 [<img src='https://user-images.githubusercontent.com/80550154/227063367-5fc150d9-ada5-47ef-99a9-78ddffd397cd.png' alt='banner' width= '99.9%'>]()
 ___
+## About **Archway**
+
+* **[Archway](https://archway.io/)** is an incentivized smart contract chain for Cosmos ecosystem which gives developers a simple way to build scalable cross-chain dapps. The developers automatically receive rewards for their contributions to the network. Simply deploy your contracts to an established Proof-of-Stake network. Fast and low cost.
+
+* Easily build and deploy. The protocol is designed for flexible smart contract development and easy deployment to Cosmos.The contract libaries, Archway CLI and GO CosmWasm SDK are ready to go.
+
+* Archway gives developers a simple way to build scalable cross-chain dapps. The developers automatically receive rewards for their contributions to the network. Simply deploy your contracts to an established Proof-of-Stake network.
+___
 ## **Navigation**
 
 * [Project details](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare#about-archway)
@@ -25,14 +33,6 @@ ___
   * [All validators info](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#all-validators-info)
   * [Another useful commands](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#another-useful-commands)
 * [Delete node](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#delete-node)
-___
-## About **Archway**
-
-* **Archway** is an incentivized smart contract chain for Cosmos ecosystem which gives developers a simple way to build scalable cross-chain dapps. The developers automatically receive rewards for their contributions to the network. Simply deploy your contracts to an established Proof-of-Stake network. Fast and low cost.
-
-* Easily build and deploy. The protocol is designed for flexible smart contract development and easy deployment to Cosmos.The contract libaries, Archway CLI and GO CosmWasm SDK are ready to go.
-
-* Archway gives developers a simple way to build scalable cross-chain dapps. The developers automatically receive rewards for their contributions to the network. Simply deploy your contracts to an established Proof-of-Stake network.
 ___
 ## Social Media
 <font size = 6>**[Website](https://archway.io/) | [GitHub](https://github.com/archway-network) | [Twitter](https://twitter.com/archwayhq) | [Discord](https://discord.gg/5FVvx3WGfa) | [Docs](https://docs.archway.io/) | [Lightpaper](https://archway.io/lightpaper)**</font>
