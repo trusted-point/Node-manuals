@@ -51,6 +51,7 @@ echo "Private Key: $PK" && \
 echo "View Key: $VK" && \
 echo "Address: $ADDRESS" 
 ```
+сохранить вывод
 
 ```python
 RECOVER
