@@ -12,6 +12,12 @@ CREATING A NEW WALLET
 
 ___
 ```python
+ADD TMUX SESSION
+```
+```bash
+tmux new -s deploy
+```
+```python
 RECOVER
 ```
 ```
