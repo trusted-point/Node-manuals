@@ -97,6 +97,8 @@ cd leo
 cargo install --path .
 ```
 
+НАПИСАТЬ КАК ПОЛУЧИТЬ ССЫЛКУ ОТ БОТА
+
 ## DEPLOY
 ```
 NAME=<ANY_NAME>
