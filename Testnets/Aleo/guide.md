@@ -17,6 +17,11 @@ PK=<YOUR_PRIVATE_KEY>
 VK=<YOUR_VIEW_KEY>
 ADDRESS=<YOUR_ADDRESS>
 ```
+```
+echo $PK && \
+echo $VK && \
+echo $ADDRESS
+```
 
 ```python
 TWITT GENERATE
