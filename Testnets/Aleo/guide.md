@@ -19,7 +19,7 @@ cd $HOME
 git clone https://github.com/AleoHQ/leo.git
 cd leo
 cargo install --path .
-
+```
 
 ## DEPLOY
 ```
