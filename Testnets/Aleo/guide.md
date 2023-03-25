@@ -35,9 +35,9 @@ ___
 ``` bash
 echo "https://twitter.com/intent/tweet?text=@AleoFaucet%20send%2010%20credits%20to%20$ADDRESS"
 ```
-#### *P.S. You need to past the output of the command above into your browser and publish a tweet and wait for the response form a bot. It will take about 30-40 minutes. The bot will send you a link which you will need to use in the step 7.*
+##### *P.S. You need to past the output of the command above into your browser and publish a tweet and wait for the response form a bot. It will take about 30-40 minutes. The bot will send you a link which you will need to use in the step 7.*
 
-**Do not wait for the response. Feel free to do the next step (6) in the meantime**
+#### **Do not wait for the response. Feel free to do the next step (6) in the meantime**
 
 <img width="340" alt="image" src=https://user-images.githubusercontent.com/80550154/227745405-c2f0b6ab-c2de-48e0-8fe4-97acc4f0948f.png>
 
@@ -50,24 +50,23 @@ git clone https://github.com/AleoHQ/leo.git
 cd leo
 cargo install --path .
 ```
-### 7. Create a directory
+### 7. Deploy a contract
 ```bash
-NAME=<ANY_NAME>
+echo Enter the Name of your contract "(any)": && read NAME
 ```
 ```bash
 cd $HOME && mkdir leo_deploy && cd leo_deploy
 leo new $NAME
 ```
+##### p.s. In the command below past the link which you got from a bot on twitter at [the previous step](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Aleo/guide.md#5-generate-a-tweet-with-your-wallet-to-get-tokens).
 ```bash
 echo Paste the link: && read QUOTE_LINK && \
 CIPHERTEXT=$(curl -s $QUOTE_LINK | jq -r '.execution.transitions[0].outputs[0].value')
 ```
-#### p.s. past the link which you got from a bot on twitter at [the previous step](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Aleo/guide.md#5-generate-a-tweet-with-your-wallet-to-get-tokens).
+
 ```bash
 RECORD=$(snarkos developer decrypt --ciphertext $CIPHERTEXT --view-key $VK)
 ```
-### 8. Deploy a contract
-
 ```bash
 snarkos developer deploy "$NAME.aleo" \
 --private-key "$PK" \
