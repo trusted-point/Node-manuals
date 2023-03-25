@@ -97,5 +97,6 @@ echo Paste the Record:  && read REKORD && snarkos developer deploy "$NAME.aleo" 
 --path "$HOME/leo_deploy/$NAME/build/" \
 --broadcast "https://vm.aleo.org/api/testnet3/transaction/broadcast" \
 --fee 600000 \
---record "$RECORD"```
+--record "$RECORD"
+```
 
