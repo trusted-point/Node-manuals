@@ -3,7 +3,6 @@
 * If you already have a wallet, you can use its details and skip the wallet creation step ✅
 * To create a new wallet, go to the [website](https://aleo.tools/) and click the "Generate" button. Save the data in a safe place 🔒 
 ##### After saving the data, use it to add variables to your server using the commands below
-
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=5000&color=F73515&center=true&width=1000&lines=%E2%9B%94%EF%B8%8F+DO+NOT+GIVE+THIS+DATA+TO+ANYONE+%E2%9B%94%EF%B8%8F)](https://git.io/typing-svg)
 <img width="1781" alt="image" src="https://user-images.githubusercontent.com/83868103/227736022-1adcf1fd-4cca-4419-a823-8f859518d41e.png">
 ___
@@ -38,8 +37,8 @@ echo "https://twitter.com/intent/tweet?text=@AleoFaucet%20send%2010%20credits%20
 ##### *P.S. You need to past the output of the command above into your browser and publish a tweet and wait for the response form a bot. It will take about 30-40 minutes. The bot will send you a link which you will need to use in the step 7.*
 
 #### **Do not wait for the response. Feel free to do the next step (6) in the meantime**
-
-<img width="340" alt="image" src=https://user-images.githubusercontent.com/80550154/227745405-c2f0b6ab-c2de-48e0-8fe4-97acc4f0948f.png>
+<img width= 39% alt=image src=https://user-images.githubusercontent.com/80550154/227747524-86043c36-2676-45ff-bf21-753b4a76d2ff.png>
+<img width="51%" alt="image" src=https://user-images.githubusercontent.com/80550154/227745405-c2f0b6ab-c2de-48e0-8fe4-97acc4f0948f.png>
 
 ___
 #### 6. Install required software
