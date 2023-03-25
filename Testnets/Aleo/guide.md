@@ -72,6 +72,13 @@ leo new $NAME
 ```
 сохранить вывод
 
+```python
+TWITT GENERATE
+```
+```
+echo "https://twitter.com/intent/tweet?text=@AleoFaucet%20send%2010%20credits%20to%20$ADDRESS"
+# Paste the resulting link into your browser and send a tweet
+```
 
 <img width="554" alt="image" src="https://user-images.githubusercontent.com/83868103/227732721-b1132f6e-85de-4cf4-9d96-a388add3f423.png">
 <img width="811" alt="image" src="https://user-images.githubusercontent.com/83868103/227732737-e03fbbc5-4296-4980-9d3d-14b2229b0f19.png">
