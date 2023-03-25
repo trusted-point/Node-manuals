@@ -1,11 +1,16 @@
 
 ## SERVER PREPARATION
+```python
+UPDATE AND INSTALL PACKAGES
+```
 ```bash
 apt update
 apt install make clang pkg-config libssl-dev build-essential gcc xz-utils git curl vim tmux ntp jq llvm ufw -y
 ```
 
-
+```python
+SNARKOS INSTALL
+```
 ```
 cd $HOME
 git clone https://github.com/AleoHQ/snarkOS.git --depth 1
@@ -13,6 +18,9 @@ cd snarkOS
 bash ./build_ubuntu.sh
 source $HOME/.bashrc
 source $HOME/.cargo/env
+```
+```python
+LEO INSTALL
 ```
 ```
 cd $HOME
