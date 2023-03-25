@@ -37,7 +37,6 @@ echo "https://twitter.com/intent/tweet?text=@AleoFaucet%20send%2010%20credits%20
 SEARCH
 ```
 ```
-QUOTE_LINK=<LINK>
-curl -s $QUOTE_LINK | jq -r '.execution.transitions[0].outputs[0].value'
+echo Paste the link:  && read QUOTE_LINK && curl -s $QUOTE_LINK | jq -r '.execution.transitions[0].outputs[0].value'
 ```
 
