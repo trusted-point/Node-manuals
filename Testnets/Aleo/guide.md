@@ -31,7 +31,7 @@ echo View Key: $VK && \
 echo Address: $ADDRESS
 ```
 ___
-### 5. Generate a tweet with your wallet to get tokens
+#### 5. Generate a tweet with your wallet to get tokens
 ``` bash
 echo "https://twitter.com/intent/tweet?text=@AleoFaucet%20send%2010%20credits%20to%20$ADDRESS"
 ```
