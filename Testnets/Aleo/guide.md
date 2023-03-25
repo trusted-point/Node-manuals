@@ -1,7 +1,7 @@
 
 если не хочется тратить время, сгенереровать кошелек https://aleo.tools/ и перейти к пункту восстановления кошелька + отправить твитт, а после заняться установкой (переписать порядок выполнения)
 <img width="1781" alt="image" src="https://user-images.githubusercontent.com/83868103/227736022-1adcf1fd-4cca-4419-a823-8f859518d41e.png">
-
+⛔️ **DO NOT GIVE THIS DATA TO ANYONE** ⛔️
 
 
 
