@@ -93,7 +93,7 @@ DEPLOY
 ```
 
 ```
-echo Paste the Record:  && read REKORD && snarkos developer deploy "$NAME.aleo" \
+snarkos developer deploy "$NAME.aleo" \
 --private-key "$PK" \
 --query "https://vm.aleo.org/api" \
 --path "$HOME/leo_deploy/$NAME/build/" \
