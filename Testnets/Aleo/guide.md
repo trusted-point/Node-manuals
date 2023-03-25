@@ -14,7 +14,7 @@ apt update && \
 apt install make clang pkg-config libssl-dev build-essential gcc xz-utils git curl vim tmux ntp jq llvm ufw -y && \
 tmux new -s deploy
 ```
-#### *P.S. Creating a tmux session is required to build a binary, which takes some time. So you won't need to add variables and build a binary again. Just reconnect to the session.*
+#### *P.S. Creating a tmux session is required to build a binary, which takes some time. So you won't need to add variables and build a binary again if the you lost ssh connection to your server. Just reconnect to the tmux session.*
 ___
 
 ### 4. Add your wallet and private key as a variable. 
@@ -24,17 +24,20 @@ echo Enter your Private Key: && read PK && \
 echo Enter your View Key: && read VK && \
 echo Enter your Address: && read ADDRESS
 ```
+#### 4.1. Make sure the data is correct. If not, you can do step 4 again.
 ```bash
 echo Private Key: $PK && \
 echo View Key: $VK && \
 echo Address: $ADDRESS
 ```
-
+___
 ### 5. Generate a tweet with your wallet to get tokens
 ``` bash
 echo "https://twitter.com/intent/tweet?text=@AleoFaucet%20send%2010%20credits%20to%20$ADDRESS"
 ```
-#### **p.s. You need to past the output of the command above into your browser and publish a tweet and wait for the response form a bot. It will take about 30-40 minutes. The bot will send you a link which you will need to use in the xent steps.**
+#### *P.S. You need to past the output of the command above into your browser and publish a tweet and wait for the response form a bot. It will take about 30-40 minutes. The bot will send you a link which you will need to use in the step 7.*
+
+**Do not wait for the response. Feel free to do the next step (6) in the meantime**
 
 <img width="1781" alt="image" src=https://user-images.githubusercontent.com/80550154/227745405-c2f0b6ab-c2de-48e0-8fe4-97acc4f0948f.png>
 
@@ -59,8 +62,7 @@ leo new $NAME
 echo Paste the link: && read QUOTE_LINK && \
 CIPHERTEXT=$(curl -s $QUOTE_LINK | jq -r '.execution.transitions[0].outputs[0].value')
 ```
-#### p.s. past the link which you got from a bot on twitter at the previous step.
-___
+#### p.s. past the link which you got from a bot on twitter at [the previous step](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Aleo/guide.md#5-generate-a-tweet-with-your-wallet-to-get-tokens).
 ```bash
 RECORD=$(snarkos developer decrypt --ciphertext $CIPHERTEXT --view-key $VK)
 ```
