@@ -16,7 +16,7 @@ source $HOME/.cargo/env
 ```
 ## DEPLOY
 ```
-NAME=<TWITTER_HANDLE>
+NAME=<ANY_NAME>
 ```
 
 ```python
