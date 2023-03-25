@@ -9,7 +9,7 @@
 RECOVER
 ```
 ```
-echo Enter your Private Key:: && read PK && \
+echo Enter your Private Key: && read PK && \
 echo Enter your View Key: && read VK && \
 echo Enter your Address: && read ADDRESS
 
@@ -18,9 +18,9 @@ VK=<YOUR_VIEW_KEY>
 ADDRESS=<YOUR_ADDRESS>
 ```
 ```
-echo $PK && \
-echo $VK && \
-echo $ADDRESS
+echo Private Key: $PK && \
+echo View Key: $VK && \
+echo Address: $ADDRESS
 ```
 
 ```python
