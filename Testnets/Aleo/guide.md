@@ -1,3 +1,5 @@
+
+## SERVER PREPARATION
 ```bash
 apt update
 apt install make clang pkg-config libssl-dev build-essential gcc xz-utils git curl vim tmux ntp jq llvm ufw -y
@@ -12,7 +14,7 @@ bash ./build_ubuntu.sh
 source $HOME/.bashrc
 source $HOME/.cargo/env
 ```
-
+## DEPLOY
 ```
 NAME=<TWITTER_HANDLE>
 ```
