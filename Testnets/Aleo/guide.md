@@ -17,6 +17,33 @@ ADD TMUX SESSION
 ```bash
 tmux new -s deploy
 ```
+#
+```python
+BASIC TMUX COMMANDS
+```
+```
+# Add new tmux session
+ctrl+b c
+```
+```
+# Show all sessions
+ctrl+b w
+```
+```
+# Detached from tmux
+ctrl+b d
+```
+#
+```python
+RETURN TO TMUX SESSION
+```
+```
+tmux attach -t deploy
+```
+If you want to participate from multiple wallets, add a tmux session and bind the new wallet variables in the new session.
+___
+
+
 ```python
 RECOVER
 ```
