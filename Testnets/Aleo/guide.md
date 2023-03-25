@@ -1,4 +1,4 @@
-[<img src='https://user-images.githubusercontent.com/80550154/227745795-145da7b0-b340-4d58-8b67-10ea0d1d6ec5.png' alt='banner' width= '99.9%'>]()
+[<img src='https://user-images.githubusercontent.com/80550154/227746770-2d6fa944-cfee-45c4-ab54-9b8853581251.png' alt='banner' width= '99.9%'>]()
 ### 1. Create a new Aleo wallet
 * If you already have a wallet, you can use its details and skip the wallet creation step ✅
 * To create a new wallet, go to the [website](https://aleo.tools/) and click the "Generate" button. Save the data in a safe place 🔒 
