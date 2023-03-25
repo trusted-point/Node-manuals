@@ -14,19 +14,30 @@ bash ./build_ubuntu.sh
 source $HOME/.bashrc
 source $HOME/.cargo/env
 ```
+```
+cd $HOME
+git clone https://github.com/AleoHQ/leo.git
+cd leo
+cargo install --path .
+
+
 ## DEPLOY
 ```
 NAME=<ANY_NAME>
+```
+```
+cd $HOME && mkdir leo_deploy && cd leo_deploy
+leo new $NAME
 ```
 
 ```python
 CREATE NEW WALLET
 ```
 ```
-snarkos account new > $NAME.txt && \
-PK=$(grep "Private Key" $NAME.txt | awk '{print $3}') && \
-VK=$(grep "View Key" $NAME.txt | awk '{print $3}') && \
-ADDRESS=$(grep "Address" $NAME.txt | awk '{print $2}') && \
+snarkos account new > wallet.txt && \
+PK=$(grep "Private Key" wallet.txt | awk '{print $3}') && \
+VK=$(grep "View Key" wallet.txt | awk '{print $3}') && \
+ADDRESS=$(grep "Address" wallet.txt | awk '{print $2}') && \
 echo "Private Key: $PK" && \
 echo "View Key: $VK" && \
 echo "Address: $ADDRESS"
@@ -71,7 +82,7 @@ DEPLOY
 echo Paste the Record:  && read REKORD && snarkos developer deploy "$NAME.aleo" \
 --private-key "$PK" \
 --query "https://vm.aleo.org/api" \
---path "./$NAME/build/" \
+--path "$HOME/leo_deploy/$NAME/build/" \
 --broadcast "https://vm.aleo.org/api/testnet3/transaction/broadcast" \
 --fee 600000 \
 --record "$RECORD"```
