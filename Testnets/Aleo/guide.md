@@ -1,4 +1,5 @@
 
+если не хочется тратить время, сгенереровать кошелек https://aleo.tools/ и перейти к пункту восстановления кошелька + отправить твитт
 ## SERVER PREPARATION
 ```python
 UPDATE AND INSTALL PACKAGES
