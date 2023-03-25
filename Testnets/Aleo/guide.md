@@ -15,6 +15,8 @@ ___
 ADD TMUX SESSION
 ```
 ```bash
+apt update && \
+apt install make clang pkg-config libssl-dev build-essential gcc xz-utils git curl vim tmux ntp jq llvm ufw -y && \
 tmux new -s deploy
 ```
 #
