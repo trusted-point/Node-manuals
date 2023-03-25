@@ -44,7 +44,7 @@ ___
 
 
 ```python
-BINDING VARIABLES
+ADD VARIABLES
 ```
 ```
 echo Enter your Private Key: && read PK && \
@@ -64,6 +64,8 @@ TWITT GENERATE
 echo "https://twitter.com/intent/tweet?text=@AleoFaucet%20send%2010%20credits%20to%20$ADDRESS"
 # Paste the resulting link into your browser and send a tweet
 ```
+
+#### If you want to use multiple wallets, add a new tmux session using the commands above
 ___
 ## SERVER PREPARATION
 ```python
