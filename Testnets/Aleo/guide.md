@@ -14,7 +14,7 @@ apt update && \
 apt install make clang pkg-config libssl-dev build-essential gcc xz-utils git curl vim tmux ntp jq llvm ufw -y && \
 tmux new -s deploy
 ```
-#### *P.S. Creating a tmux session is required to build a binary, which takes some time. So you won't need to add variables and build a binary again if the you lost ssh connection to your server. Just reconnect to the tmux session.*
+##### *P.S. Creating a tmux session is required to build a binary, which takes some time. So you won't need to add variables and build a binary again if the you lost ssh connection to your server. Just reconnect to the tmux session.*
 ___
 
 ### 3. Add your wallet and private key as a variable. 
@@ -24,7 +24,7 @@ echo Enter your Private Key: && read PK && \
 echo Enter your View Key: && read VK && \
 echo Enter your Address: && read ADDRESS
 ```
-#### 4. Make sure the data is correct. If not, you can do step 3 again.
+### 4. Make sure the data is correct. If not, you can do step 3 again.
 ```bash
 echo Private Key: $PK && \
 echo View Key: $VK && \
@@ -58,7 +58,7 @@ echo Enter the Name of your contract "(any)": && read NAME
 cd $HOME && mkdir leo_deploy && cd leo_deploy
 leo new $NAME
 ```
-##### p.s. In the command below past the link which you got from a bot on twitter at [the previous step](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Aleo/guide.md#5-generate-a-tweet-with-your-wallet-to-get-tokens).
+##### *P.S In the command below past the link which you got from a bot on twitter at [the previous step](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Aleo/guide.md#5-generate-a-tweet-with-your-wallet-to-get-tokens).*
 ```bash
 echo Paste the link: && read QUOTE_LINK && \
 CIPHERTEXT=$(curl -s $QUOTE_LINK | jq -r '.execution.transitions[0].outputs[0].value')
