@@ -37,6 +37,19 @@ echo "https://twitter.com/intent/tweet?text=@AleoFaucet%20send%2010%20credits%20
 SEARCH
 ```
 ```
-echo Paste the link:  && read QUOTE_LINK && curl -s $QUOTE_LINK | jq -r '.execution.transitions[0].outputs[0].value'
+echo Paste the link:  && read QUOTE_LINK && CIPHERTEXT=$(curl -s $QUOTE_LINK | jq -r '.execution.transitions[0].outputs[0].value')
 ```
+
+
+```
+snarkos developer decrypt --ciphertext $CIPHERTEXT --view-key $VK
+```
+
+
+```python
+DEPLOY
+```
+
+```
+echo Paste the Record:  && read REKORD && snarkos developer deploy "$NAME.aleo" --private-key "$PK" --query "https://vm.aleo.org/api" --path "./$NAME/build/" --broadcast "https://vm.aleo.org/api/testnet3/transaction/broadcast" --fee 600000 --record "$RECORD"```
 
