@@ -39,7 +39,7 @@ echo "https://twitter.com/intent/tweet?text=@AleoFaucet%20send%2010%20credits%20
 
 **Do not wait for the response. Feel free to do the next step (6) in the meantime**
 
-<img width="1781" alt="image" src=https://user-images.githubusercontent.com/80550154/227745405-c2f0b6ab-c2de-48e0-8fe4-97acc4f0948f.png>
+<img width="340" alt="image" src=https://user-images.githubusercontent.com/80550154/227745405-c2f0b6ab-c2de-48e0-8fe4-97acc4f0948f.png>
 
 ___
 ### 6. Install required software
