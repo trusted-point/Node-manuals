@@ -46,9 +46,10 @@ snarkos account new > wallet.txt && \
 PK=$(grep "Private Key" wallet.txt | awk '{print $3}') && \
 VK=$(grep "View Key" wallet.txt | awk '{print $3}') && \
 ADDRESS=$(grep "Address" wallet.txt | awk '{print $2}') && \
+cd $HOME && \
 echo "Private Key: $PK" && \
 echo "View Key: $VK" && \
-echo "Address: $ADDRESS"
+echo "Address: $ADDRESS" 
 ```
 
 ```python
