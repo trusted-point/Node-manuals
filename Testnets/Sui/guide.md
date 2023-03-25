@@ -11,13 +11,13 @@ ___
 ## Fullnode installation guide (devnet)
 
 ### Navigation
-* Server requirements
-* Insatll a fullnode on a clean server
-* Monitore a fullnode performance
-* Update a fullnode
-* Fully delete a fullnode from your server
-
-
+* [Server requirements](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Sui/guide.md#server-requirements)
+* [Insatll a fullnode on a clean server](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Sui/guide.md#1-update-required-packages)
+* [Monitore a fullnode performance](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Sui/guide.md#monitor-your-fullnodes-performance)
+* [Update a fullnode](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Sui/guide.md#update-a-fullnode)
+* [Useful commands](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Sui/guide.md#useful-commands)
+* [Fully remove a fullnode from the server](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Sui/guide.md#5-delete-sui-node-from-your-server)
+___
  ### _Sui Full nodes validate blockchain activities, including transactions, checkpoints, and epoch changes. Each Full node stores and services the queries for the blockchain state and history._
  ___
 
@@ -103,7 +103,7 @@ sudo systemctl start suid
 ```bash
 journalctl -u suid -f
 ```
-
+___
 ## Monitor your fullnode's performance 
 ### 1. Compare the number of checkpoints on your node and on chain
 ```bash
@@ -126,6 +126,7 @@ To get your ip use:
 ```bash
 wget -qO- eth0.me
 ```
+___
 ## Update a fullnode
 ### 1. Stop the node 
 ```bash
@@ -164,13 +165,14 @@ wget -qO /var/sui/genesis.blob https://github.com/MystenLabs/sui-genesis/raw/mai
 ```bash 
 sui-node --version
 ```
-### 7. Restart the node and check logs
+### 8. Restart a node and check logs
 ```bash
 sudo systemctl restart suid
 ```
 ```bash
 journalctl -u suid -f
 ```
+___
 ## Useful commands 
 ### 1. Check the version 
 ```bash
@@ -188,6 +190,7 @@ sudo systemctl restart suid
 ```bash
 journalctl -u suid -f
 ```
+___
 ### 5. Delete Sui node from your server 
 ```bash
 sudo systemctl stop suid
