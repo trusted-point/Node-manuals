@@ -17,14 +17,14 @@ tmux new -s deploy
 #### *P.S. Creating a tmux session is required to build a binary, which takes some time. So you won't need to add variables and build a binary again if the you lost ssh connection to your server. Just reconnect to the tmux session.*
 ___
 
-### 4. Add your wallet and private key as a variable. 
+### 3. Add your wallet and private key as a variable. 
 
 ```bash
 echo Enter your Private Key: && read PK && \
 echo Enter your View Key: && read VK && \
 echo Enter your Address: && read ADDRESS
 ```
-#### 4.1. Make sure the data is correct. If not, you can do step 4 again.
+#### 4. Make sure the data is correct. If not, you can do step 3 again.
 ```bash
 echo Private Key: $PK && \
 echo View Key: $VK && \
