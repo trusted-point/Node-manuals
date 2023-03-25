@@ -1,5 +1,23 @@
 
 если не хочется тратить время, сгенереровать кошелек https://aleo.tools/ и перейти к пункту восстановления кошелька + отправить твитт, а после заняться установкой (переписать порядок выполнения)
+
+```python
+RECOVER
+```
+```
+PK=<YOUR_PRIVATE_KEY>
+VK=<YOUR_VIEW_KEY>
+ADDRESS=<YOUR_ADDRESS>
+```
+
+```python
+TWITT GENERATE
+```
+```
+echo "https://twitter.com/intent/tweet?text=@AleoFaucet%20send%2010%20credits%20to%20$ADDRESS"
+# Paste the resulting link into your browser and send a tweet
+```
+
 ## SERVER PREPARATION
 ```python
 UPDATE AND INSTALL PACKAGES
@@ -54,22 +72,7 @@ leo new $NAME
 ```
 сохранить вывод
 
-```python
-RECOVER
-```
-```
-PK=<YOUR_PRIVATE_KEY>
-VK=<YOUR_VIEW_KEY>
-ADDRESS=<YOUR_ADDRESS>
-```
 
-```python
-TWITT GENERATE
-```
-```
-echo "https://twitter.com/intent/tweet?text=@AleoFaucet%20send%2010%20credits%20to%20$ADDRESS"
-# Paste the resulting link into your browser and send a tweet
-```
 <img width="554" alt="image" src="https://user-images.githubusercontent.com/83868103/227732721-b1132f6e-85de-4cf4-9d96-a388add3f423.png">
 <img width="811" alt="image" src="https://user-images.githubusercontent.com/83868103/227732737-e03fbbc5-4296-4980-9d3d-14b2229b0f19.png">
 
