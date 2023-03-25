@@ -1,134 +1,72 @@
-
-```python
-CREATING A NEW WALLET
-```
-#### If you already have a wallet, you can use its details and skip the wallet creation step ✅
-#### To create a new wallet, go to the [website](https://aleo.tools/) and click the "Generate" button. Save the data in a safe place 🔒 
+[<img src='https://user-images.githubusercontent.com/80550154/227745795-145da7b0-b340-4d58-8b67-10ea0d1d6ec5.png' alt='banner' width= '99.9%'>]()
+### 1. Create a new Aleo wallet
+* If you already have a wallet, you can use its details and skip the wallet creation step ✅
+* To create a new wallet, go to the [website](https://aleo.tools/) and click the "Generate" button. Save the data in a safe place 🔒 
 #### After saving the data, use it to add variables to your server using the commands below
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=5000&color=F73515&center=true&width=1000&lines=%E2%9B%94%EF%B8%8F+DO+NOT+GIVE+THIS+DATA+TO+ANYONE+%E2%9B%94%EF%B8%8F)](https://git.io/typing-svg)
 <img width="1781" alt="image" src="https://user-images.githubusercontent.com/83868103/227736022-1adcf1fd-4cca-4419-a823-8f859518d41e.png">
-
-
 ___
-```python
-ADD TMUX SESSION
-```
+
+### 2. Download required packages and create a tmux session
 ```bash
 apt update && \
 apt install make clang pkg-config libssl-dev build-essential gcc xz-utils git curl vim tmux ntp jq llvm ufw -y && \
 tmux new -s deploy
 ```
-#
-```python
-BASIC TMUX COMMANDS
-```
-```
-# Add new tmux session
-ctrl+b c
-```
-```
-# Show all sessions
-ctrl+b w
-```
-```
-# Detached from tmux
-ctrl+b d
-```
-#
-```python
-RETURN TO TMUX SESSION
-```
-```
-tmux attach -t deploy
-```
+#### *P.S. Creating a tmux session is required to build a binary, which takes some time. So you won't need to add variables and build a binary again. Just reconnect to the session.*
 ___
 
+### 4. Add your wallet and private key as a variable. 
 
-```python
-ADD VARIABLES
-```
-```
+```bash
 echo Enter your Private Key: && read PK && \
 echo Enter your View Key: && read VK && \
 echo Enter your Address: && read ADDRESS
 ```
-```
+```bash
 echo Private Key: $PK && \
 echo View Key: $VK && \
 echo Address: $ADDRESS
 ```
 
-```python
-TWITT GENERATE
-```
-```
+### 5. Generate a tweet with your wallet to get tokens
+``` bash
 echo "https://twitter.com/intent/tweet?text=@AleoFaucet%20send%2010%20credits%20to%20$ADDRESS"
-# Paste the resulting link into your browser and send a tweet
 ```
+#### **p.s. You need to past the output of the command above into your browser and publish a tweet and wait for the response form a bot. It will take about 30-40 minutes. The bot will send you a link which you will need to use in the xent steps.**
 
-#### If you want to use multiple wallets, add a new tmux session using the commands above
+<img width="1781" alt="image" src=https://user-images.githubusercontent.com/80550154/227745405-c2f0b6ab-c2de-48e0-8fe4-97acc4f0948f.png>
+
 ___
-## SERVER PREPARATION
-```python
-UPDATE AND INSTALL PACKAGES
-```
-```bash
-apt update
-apt install make clang pkg-config libssl-dev build-essential gcc xz-utils git curl vim tmux ntp jq llvm ufw -y
-```
+### 6. Install required software
 
-```python
-SNARKOS INSTALL
-```
-```
-cd $HOME
-git clone https://github.com/AleoHQ/snarkOS.git --depth 1
-cd snarkOS
-bash ./build_ubuntu.sh
-source $HOME/.bashrc
-source $HOME/.cargo/env
-```
-```python
-LEO INSTALL
-```
-```
+```bash
 cd $HOME
 git clone https://github.com/AleoHQ/leo.git
 cd leo
 cargo install --path .
 ```
-
-НАПИСАТЬ КАК ПОЛУЧИТЬ ССЫЛКУ ОТ БОТА
-
-## DEPLOY
-```
+### 7. Create a directory
+```bash
 NAME=<ANY_NAME>
 ```
-```
+```bash
 cd $HOME && mkdir leo_deploy && cd leo_deploy
 leo new $NAME
 ```
-
-```python
-SEARCH
-```
-```
+```bash
 echo Paste the link: && read QUOTE_LINK && \
 CIPHERTEXT=$(curl -s $QUOTE_LINK | jq -r '.execution.transitions[0].outputs[0].value')
 ```
-
-
-```
+#### p.s. past the link which you got from a bot on twitter at the previous step.
+___
+```bash
 RECORD=$(snarkos developer decrypt --ciphertext $CIPHERTEXT --view-key $VK)
 ```
+### 8. Deploy a contract
 
-
-```python
-DEPLOY
-```
-
-```
+```bash
 snarkos developer deploy "$NAME.aleo" \
 --private-key "$PK" \
 --query "https://vm.aleo.org/api" \
@@ -137,4 +75,28 @@ snarkos developer deploy "$NAME.aleo" \
 --fee 600000 \
 --record "$RECORD"
 ```
+#### That is it!
+___
+### 9. Useful commands
 
+* #### Add a new tmux session
+```
+ctrl+b c
+```
+* #### Show all sessions
+```
+ctrl+b w
+```
+* #### Detach from tmux session
+```
+ctrl+b d
+```
+* #### Return to a tmux session
+
+```bash
+tmux attach -t deploy
+```
+___
+### Follow as on social media:
+
+<font size = 4> **[Twitter](https://twitter.com/TestnetPride)  |  [Telegram](https://t.me/TestnetPride)**</font>
