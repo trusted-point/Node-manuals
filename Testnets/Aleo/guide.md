@@ -3,9 +3,9 @@ ___
 [<img src='https://user-images.githubusercontent.com/83868103/227769602-9a61b516-5586-4294-8ef5-aafe52ee5831.svg' alt='twitter'  width='4.5%'>](https://twitter.com/TestnetPride) [![Typing SVG](https://readme-typing-svg.demolab.com?font=Ubuntu&pause=10000&vCenter=true&repeat=false&width=155&height=30&lines=%E2%8E%9CTwitter)](https://twitter.com/TestnetPride) [<img src='https://user-images.githubusercontent.com/83868103/227769829-5761979b-3e99-442e-b1ea-54b869f77595.svg' alt='Telegram'  width='4%'>](https://t.me/TestnetPride) [![Typing SVG](https://readme-typing-svg.demolab.com?font=Ubuntu&pause=10000&vCenter=true&repeat=false&width=155&height=30&lines=%E2%8E%9CTelegram)](https://t.me/TestnetPride) [<img src='https://user-images.githubusercontent.com/83868103/227774752-c01fbe7a-3df9-4f44-8204-9770458a9f9e.png' alt='Website'  width='5%'>](http://testnet-pride.com/) [![Typing SVG](https://readme-typing-svg.demolab.com?font=Ubuntu&pause=10000&color=DAAB26&vCenter=true&repeat=false&width=185&height=30&lines=%E2%8E%9COfficial-web)](http://testnet-pride.com/) [<img src='https://user-images.githubusercontent.com/83868103/227773008-2446770f-c328-4b99-b50f-f2d2998ce917.png' alt='Mail'  width='5%'>](mailto:official@testnet-pride.com) [![Typing SVG](https://readme-typing-svg.demolab.com?font=Ubuntu&pause=10000&vCenter=true&repeat=false&width=280&height=35&lines=%E2%8E%9Cofficial@testnet-pride.com)](mailto:official@testnet-pride.com)
 ___
 #### 1. Create a new Aleo wallet
-* If you already have a wallet, you can use its details and skip the wallet creation step ✅
-* To create a new wallet, go to the [website](https://aleo.tools/) and click the "Generate" button. Save the data in a safe place 🔒 
-##### After saving the data, use it to add variables to your server using the commands below
+* If you already have a wallet, you can use it and skip the wallet creation step ✅
+* To create a new wallet, go to the [website](https://aleo.tools/) and click the "Generate" button. Save the output in a safe place 🔒 
+##### After saving the keys, use them to add variables to your server using the commands below
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=5000&color=F73515&center=true&width=1000&lines=%E2%9B%94%EF%B8%8F+DO+NOT+GIVE+THIS+DATA+TO+ANYONE+%E2%9B%94%EF%B8%8F)](https://github.com/testnet-pride)
 <img width="1781" alt="image" src="https://user-images.githubusercontent.com/83868103/227736022-1adcf1fd-4cca-4419-a823-8f859518d41e.png">
 ___
@@ -15,7 +15,7 @@ apt update && \
 apt install make clang pkg-config libssl-dev build-essential gcc xz-utils git curl vim tmux ntp jq llvm ufw -y && \
 tmux new -s deploy
 ```
-##### *P.S. Creating a tmux session is required to build a binary, which takes some time. So you won't need to add variables and build a binary again if the you lost ssh connection to your server. Just reconnect to the tmux session.*
+##### *P.S. Creating a tmux session is required to build a binary, which takes some time. So you won't need to add variables and build a binary again if thex ssh connection to your server lost. Just reconnect to the tmux session.*
 ___
 #### 3. Add your wallet and private key as a variable. 
 
