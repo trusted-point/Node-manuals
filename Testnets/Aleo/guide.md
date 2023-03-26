@@ -1,4 +1,5 @@
 [<img src='https://user-images.githubusercontent.com/80550154/227746770-2d6fa944-cfee-45c4-ab54-9b8853581251.png' alt='banner' width= '99.9%'>]()
+___
 #### 1. Create a new Aleo wallet
 * If you already have a wallet, you can use its details and skip the wallet creation step ✅
 * To create a new wallet, go to the [website](https://aleo.tools/) and click the "Generate" button. Save the data in a safe place 🔒 
@@ -6,7 +7,6 @@
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=5000&color=F73515&center=true&width=1000&lines=%E2%9B%94%EF%B8%8F+DO+NOT+GIVE+THIS+DATA+TO+ANYONE+%E2%9B%94%EF%B8%8F)](https://git.io/typing-svg)
 <img width="1781" alt="image" src="https://user-images.githubusercontent.com/83868103/227736022-1adcf1fd-4cca-4419-a823-8f859518d41e.png">
 ___
-
 #### 2. Download required packages and create a tmux session
 ```bash
 apt update && \
@@ -15,7 +15,6 @@ tmux new -s deploy
 ```
 ##### *P.S. Creating a tmux session is required to build a binary, which takes some time. So you won't need to add variables and build a binary again if the you lost ssh connection to your server. Just reconnect to the tmux session.*
 ___
-
 #### 3. Add your wallet and private key as a variable. 
 
 ```bash
@@ -56,6 +55,7 @@ git clone https://github.com/AleoHQ/leo.git
 cd leo
 cargo install --path .
 ```
+___
 #### 7. Deploy a contract
 ```bash
 echo Enter the Name of your contract "(any)": && read NAME
