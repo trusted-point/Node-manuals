@@ -41,6 +41,14 @@ echo "https://twitter.com/intent/tweet?text=@AleoFaucet%20send%2010%20credits%20
 
 ___
 #### 6. Install required software
+```bash
+cd $HOME
+git clone https://github.com/AleoHQ/snarkOS.git --depth 1
+cd snarkOS
+bash ./build_ubuntu.sh
+source $HOME/.bashrc
+source $HOME/.cargo/env
+```
 
 ```bash
 cd $HOME
