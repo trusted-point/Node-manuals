@@ -37,8 +37,7 @@ echo "https://twitter.com/intent/tweet?text=@AleoFaucet%20send%2010%20credits%20
 ##### *P.S. You need to past the output of the command above into your browser and publish a tweet and wait for the response form a bot. It will take about 30-40 minutes. The bot will send you a link which you will need to use in the step 7.*
 
 #### **Do not wait for the response. Feel free to do the next step (6) in the meantime**
-<img width= 43% alt=image src=https://user-images.githubusercontent.com/80550154/227748074-45a0004b-e131-4f58-9469-0591797c025d.png>
-<img width="43%" alt="image" src=https://user-images.githubusercontent.com/80550154/227748072-161f0fe6-21db-412e-be3b-e8d5707ad64f.png>
+<img width= 43% alt=image src=https://user-images.githubusercontent.com/80550154/227748074-45a0004b-e131-4f58-9469-0591797c025d.png> <img width="43%" alt="image" src=https://user-images.githubusercontent.com/80550154/227748072-161f0fe6-21db-412e-be3b-e8d5707ad64f.png>
 
 ___
 #### 6. Install required software
