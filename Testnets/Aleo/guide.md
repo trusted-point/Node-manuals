@@ -84,21 +84,21 @@ snarkos developer deploy "$NAME.aleo" \
 ```
 #### That is it!
 ___
-#### 9. Useful commands
+#### 8. Useful commands
 
-* ##### Add a new tmux session
+##### Add a new tmux session
 ```
 ctrl+b c
 ```
-* ##### Show all sessions
+##### Show all sessions
 ```
 ctrl+b w
 ```
-* ##### Detach from tmux session
+##### Detach from tmux session
 ```
 ctrl+b d
 ```
-* ##### Return to a tmux session
+##### Return to a tmux session
 
 ```bash
 tmux attach -t deploy
