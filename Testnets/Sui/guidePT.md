@@ -222,9 +222,13 @@ ___
 sudo tee -a /root/.sui/fullnode.yaml << END
 
 p2p-config:
-  seed-peers:
+  seed peers:
    - address: "/dns/sui-rpc-pt.testnet-pride.com/udp/8084"
    - address: "/dns/sui-rpc-testnet.bartestnet.com/udp/8084"
+   - address: "/ip4/38.242.197.20/udp/8080"
+   - address: "/ip4/178.18.250.62/udp/8080"
+   - address: "/ip4/162.55.84.47/udp/8084"
+   - address: "/dns/wave-3.testnet.n1stake.com/udp/8084"
 END
 ```
 ```bash
