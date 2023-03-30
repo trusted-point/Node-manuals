@@ -158,3 +158,21 @@ sudo systemctl restart subspaced
 sudo journalctl -fu subspaced -o cat
 ```
 ___
+### `Delete node:`
+```bash
+# Stop service
+sudo systemctl stop subspaced && \
+sudo systemctl disable subspaced
+```
+```bash
+# Delete node files
+rm -Rvf $HOME/.local/share/subspace* \
+$HOME/.config/subspace* \
+/usr/local/bin/subspace
+````
+```bash
+# Disabling and deleting a service
+sudo rm -v /etc/systemd/system/subspaced.service && \
+sudo systemctl daemon-reload
+```
+___
