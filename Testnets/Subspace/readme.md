@@ -84,7 +84,7 @@ ___
 # Farmer initialization
 subspace init
 ```
-- Enter your farmer/reward address: enter the wallet from the previous [step](https://github.com/testnet-pride/Node-manuals/edit/main/Testnets/Subspace/readme.md#wallet-preparation)
+- Enter your farmer/reward address: enter the wallet from the previous [step](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Subspace/readme.md#wallet-preparation)
 - Enter your node name: unique name for telemetry search
 - Plot location: leave by default (press enter)
 - Plot size: 50GB
