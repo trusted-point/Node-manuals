@@ -100,10 +100,13 @@ WantedBy=multi-user.target
 EOF
 ```
 ```bash
+# Service start
 sudo systemctl daemon-reload && \
 sudo systemctl enable subspaced && \
-sudo systemctl restart subspaced
+sudo systemctl start subspaced
 ```
 ```bash
+# View logs
 sudo journalctl -fu subspaced --no-hostname -o cat
 ```
+     
