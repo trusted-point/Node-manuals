@@ -69,3 +69,8 @@ ___
 
 - **`Create a new wallet:`**  
 
+<p align="center">
+  <img src='https://user-images.githubusercontent.com/83868103/228931296-9ac84fbe-82e7-4670-9bf6-6fb301298f2b.png' alt='PRE-RELISE'  width=80% > 
+</p> 
+
+
