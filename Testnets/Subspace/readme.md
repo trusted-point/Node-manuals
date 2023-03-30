@@ -120,3 +120,27 @@ sudo systemctl start subspaced
 sudo journalctl -fu subspaced -o cat
 ```
 #  
+    Example of normal logs:
+
+<p align="center">
+  <img src='https://user-images.githubusercontent.com/83868103/228957696-08706ed1-6118-48a8-b1a0-5b8d1997cf4b.png' alt='PRE-RELISE'  width=100% > 
+</p> 
+
+#
+- Make sure your farmer is visible in telemetry:
+  - Go to [telemetry](https://telemetry.subspace.network/#list/0xab946a15b37f59c5f4f27c5de93acde9fe67a28e0b724a43a30e4fe0e87246b7)
+  - Start typing your node name. You can see the node synchronization status and the actual height of the blocks ⬇︎ 
+
+
+<p align="center">
+  <img src='https://user-images.githubusercontent.com/83868103/228959234-457de9a1-cf93-43ae-be5f-89515305b18f.png' alt='PRE-RELISE'  width=80% > 
+</p> 
+
+
+<p align="center">
+  <img src='https://user-images.githubusercontent.com/83868103/228958933-56366a44-177e-47ad-9318-4a8ddadf88e3.png' alt='PRE-RELISE'  width=30% > 
+</p> 
+
+- Once fully synced, your wallet balance should receive farming rewards
+___
+
