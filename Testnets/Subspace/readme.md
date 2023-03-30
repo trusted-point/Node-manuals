@@ -117,6 +117,6 @@ sudo systemctl start subspaced
 ```
 ```bash
 # View logs
-sudo journalctl -fu subspaced --no-hostname -o cat
+sudo journalctl -fu subspaced -o cat
 ```
 #  
