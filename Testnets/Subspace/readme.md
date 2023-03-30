@@ -99,3 +99,11 @@ LimitNOFILE=1024000
 WantedBy=multi-user.target
 EOF
 ```
+```bash
+sudo systemctl daemon-reload && \
+sudo systemctl enable subspaced && \
+sudo systemctl restart subspaced
+```
+```bash
+sudo journalctl -fu subspaced --no-hostname -o cat
+```
