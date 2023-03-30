@@ -153,7 +153,7 @@ mv $HOME/sui/target/release/sui /usr/local/bin/
 ```
 ### 5. Update genesis.blob
 ```bash
-wget -qO /var/sui/genesis.blob https://github.com/MystenLabs/sui-genesis/raw/main/devnet/genesis.blob
+wget -P $HOME/.sui https://github.com/MystenLabs/sui-genesis/raw/main/testnet/genesis.blob
 ```
 ### 6. Wipe database
 ```bash
