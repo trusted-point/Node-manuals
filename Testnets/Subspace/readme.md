@@ -116,7 +116,7 @@ sudo systemctl enable subspaced && \
 sudo systemctl start subspaced
 ```
 ```bash
-# View logs
+# Check logs
 sudo journalctl -fu subspaced -o cat
 ```
 #  
@@ -144,3 +144,17 @@ sudo journalctl -fu subspaced -o cat
 - Once fully synced, your wallet balance should receive farming rewards
 ___
 
+
+### `Node update:`
+
+#### Repeat the steps from the node installation step
+
+```bash
+# Service restart
+sudo systemctl restart subspaced
+```
+```bash
+# Check logs
+sudo journalctl -fu subspaced -o cat
+```
+___
