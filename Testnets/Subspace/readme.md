@@ -41,5 +41,6 @@ TAG=$(wget -qO- https://api.github.com/repos/subspace/subspace-cli/releases | jq
 wget https://github.com/subspace/subspace-cli/releases/download/$TAG/subspace-cli-ubuntu-x86_64-v3-$TAG -qO subspace && \
 sudo chmod 777 subspace && \
 sudo mv subspace /usr/local/bin/ && \
-subspace -V
+echo "Cli version: $(subspace -V)"
+
 ```
