@@ -4,7 +4,7 @@
 
 + **Инвесторы:** Pantera Capital. Coinbase Ventures, Crypto.com, Alameda Research, ConsenSys Mesh.
 #
-⎜[**Discord**](https://discord.com/invite/K56A6xrdw9) ⎜ [**Twitter**](https://twitter.com/NetworkSubspace) ⎜ [**Website**](https://subspace.network) ⎜ [**Explorer**](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Feu-0.gemini-3c.subspace.network%2Fws#/explorer) ⎜ [**Telemetry**](https://telemetry.subspace.network/) ⎜
+⎜[**Discord**](https://discord.gg/subspace-network) ⎜ [**Twitter**](https://twitter.com/NetworkSubspace) ⎜ [**Website**](https://subspace.network) ⎜ [**Explorer**](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Feu-0.gemini-3c.subspace.network%2Fws#/explorer) ⎜ [**Telemetry**](https://telemetry.subspace.network/) ⎜
 ___
 
 ### `Server requirements:`
@@ -26,15 +26,20 @@ libopencl-clang-dev libgomp1 ocl-icd-libopencl1 -y
 ```
 ___
 ### `Node install:`
+
 ```bash
-TAG=$(wget -qO- https://api.github.com/repos/subspace/subspace-cli/releases | jq '.[] | select(.prerelease==false) | select(.draft==false) | .html_url' | grep -Eo "v[0-9]*.[0-9]*.[0-9]*" | head -n 1) && \
+# Determine latest release
+TAG=$(wget -qO- https://api.github.com/repos/subspace/subspace-cli/releases | jq '.[] | select(.prerelease==false) | select(.draft==false) | .html_url' | grep -Eo "v[0-9]*.[0-9]*.[0-9]*" | head -n 1) && echo "Cli version: $TAG"
+```
+#
++ **You can make sure the version is determined successfully, it should match the ⎧<img src='https://user-images.githubusercontent.com/83868103/228858929-859e6479-e1e9-465f-9f92-73a6bc437207.png' alt='latest'  height=25 >⎫ [release](https://github.com/subspace/subspace-cli/releases)** 
+
++ **Don't use a ⎧<img src='https://user-images.githubusercontent.com/83868103/228862961-161b7ca9-fa19-4207-94e3-140cc744bf1c.png' alt='PRE-RELISE'  height=25 >⎫ unless required by the latest [discord](https://discord.gg/subspace-network) announcements** ⚠️
+#
+```bash
+# Download Cli
 wget https://github.com/subspace/subspace-cli/releases/download/$TAG/subspace-cli-ubuntu-x86_64-v3-$TAG -qO subspace && \
 sudo chmod 777 subspace && \
 sudo mv subspace /usr/local/bin/ && \
 subspace -V
 ```
-
-**Make sure the version matches the [release](https://github.com/subspace/subspace-cli/releases)** is ⎧<img src='https://user-images.githubusercontent.com/83868103/228858929-859e6479-e1e9-465f-9f92-73a6bc437207.png' alt='latest'  height=25 >⎫
-
-
-
