@@ -1,8 +1,4 @@
-**Subspace Network** позволяет разработчикам запускать приложения **Web3** в масштабах Интернета. Он предоставляет простой интерфейс для быстрого развертывания децентрализованных приложений с несколькими цепочками, которые автоматически масштабируются по мере необходимости. **Subspace** работает на основе нового экологически чистого **блокчейна 4-го поколения**, который обеспечивает масштабируемое хранение и вычисления в сети без ущерба для безопасности или децентрализации. Он легко интегрируется с существующими **блокчейнами**, протоколами второго уровня и децентрализованными приложениями, что позволяет ему служить базовым уровнем инфраструктуры для всей экосистемы **Web3**. **Subspace** позволит разработчикам открыть следующую волну внедрения криптографии, поддерживая **NFT, GameFi и Metaverse** в масштабах Интернета.
-
-+ Проект предлагает не стандартную систему консенсуса, а именно **Proof-of-Archive-Storage (POAS).**
-
-+ **Инвесторы:** Pantera Capital. Coinbase Ventures, Crypto.com, Alameda Research, ConsenSys Mesh.
+ОПИСАНИЕ
 #
 ⎜[**Discord**](https://discord.gg/subspace-network) ⎜ [**Twitter**](https://twitter.com/NetworkSubspace) ⎜ [**Website**](https://subspace.network) ⎜ [**Explorer**](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Feu-0.gemini-3c.subspace.network%2Fws#/explorer) ⎜ [**Telemetry**](https://telemetry.subspace.network/) ⎜
 ___
@@ -74,5 +70,32 @@ ___
   <img src='https://user-images.githubusercontent.com/83868103/228932878-01a8ae10-ef94-4a39-bcf9-aa28267119b7.png' alt='PRE-RELISE'  width=80% > 
 </p> 
 
+___
 
-
+### `Farmer setup:`
+```bash
+# Farmer initialization
+subspace init
+```
+- Enter your farmer/reward address: enter the wallet from the previous [step](https://github.com/testnet-pride/Node-manuals/edit/main/Testnets/Subspace/readme.md#wallet-preparation)
+- Enter your node name: unique name for telemetry search
+- Plot location: leave by default (press enter)
+- Plot size: 50GB
+- Chain to farm: leave by default (press enter)
+```bash
+# Create service file
+sudo tee <<EOF >/dev/null /etc/systemd/system/subspaced.service
+[Unit]
+Description=Subspace farmer
+After=network.target
+[Service]
+Type=simple
+User=$USER
+ExecStart=$(which subspace) farm -v
+Restart=always
+RestartSec=3
+LimitNOFILE=1024000
+[Install]
+WantedBy=multi-user.target
+EOF
+```
