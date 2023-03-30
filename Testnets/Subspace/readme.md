@@ -143,6 +143,11 @@ sudo journalctl -fu subspaced -o cat
 
 **`Once fully synced, your wallet balance should receive farming rewards:`**
 - Go to your [wallet](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Feu-0.gemini-3c.subspace.network%2Fws#/accounts)
+
+<p align="center">
+  <img src='https://user-images.githubusercontent.com/83868103/228966327-31f62b0f-d499-45ef-a837-1c1045b8a277.png' alt='PRE-RELISE'  width=40% > 
+</p> 
+
 ___
 
 
