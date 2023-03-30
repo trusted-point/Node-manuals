@@ -11,12 +11,12 @@ ___
 ## Fullnode installation guide (permanent testnet)
 
 ### Navigation
-* [Server requirements](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Sui/guide.md#server-requirements)
-* [Insatll a fullnode on a clean server](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Sui/guide.md#1-update-required-packages)
-* [Monitore a fullnode performance](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Sui/guide.md#monitor-your-fullnodes-performance)
-* [Update a fullnode](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Sui/guide.md#update-a-fullnode)
+* [Server requirements](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Sui/guidePT.md#server-requirements)
+* [Insatll a fullnode on a clean machine](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Sui/guidePT.md#1-update-required-packages)
+* [Monitore a fullnode performance](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Sui/guidePT.md#monitor-fullnode-performance)
+* [Update a fullnode](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Sui/guidePT.md#update-a-fullnode)
 * [Useful commands](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Sui/guide.md#useful-commands)
-* [Fully remove a fullnode from the server](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Sui/guide.md#5-delete-sui-node-from-your-server)
+* [Fully remove a fullnode from the server](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Sui/guidePT.md#update-a-fullnode)
 ___
  ### _Sui Full nodes validate blockchain activities, including transactions, checkpoints, and epoch changes. Each Full node stores and services the queries for the blockchain state and history._
  ___
@@ -103,7 +103,7 @@ sudo systemctl start suid
 journalctl -u suid -f
 ```
 ___
-## Monitor your fullnode's performance 
+## Monitor fullnode performance 
 ### 1. Compare the number of checkpoints on your node and on chain
 ```bash
 curl -q localhost:9184/metrics 2>/dev/null |grep '^highest_synced_checkpoint'; echo
