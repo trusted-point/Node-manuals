@@ -151,20 +151,12 @@ cargo build --release -p sui-node -p sui
 mv $HOME/sui/target/release/sui-node /usr/local/bin/
 mv $HOME/sui/target/release/sui /usr/local/bin/
 ```
-### 5. Update genesis.blob
-```bash
-wget -qO $HOME/.sui https://github.com/MystenLabs/sui-genesis/raw/main/testnet/genesis.blob
-```
-### 6. Wipe database
-```bash
- sudo rm -rf $HOME/.sui/db
-```
 
-### 7. Check the version 
+### 5. Check the version 
 ```bash 
 sui-node --version
 ```
-### 8. Restart the node and check logs
+### 6. Restart the node and check logs
 ```bash
 sudo systemctl restart suid
 ```
