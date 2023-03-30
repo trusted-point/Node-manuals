@@ -51,6 +51,8 @@ ___
 <img src='https://user-images.githubusercontent.com/83868103/228912506-fd61edc7-1ed6-4228-994d-0c0e827aa581.png' alt='PRE-RELISE'  width=50% > 
 </p>
 
-
-
+- **`The wallet is already added in the extension:` simply select the new "Subspace Gemini 3c" network for your wallet and proceed to the next step**
+<p align="center">
+  <img src='https://user-images.githubusercontent.com/83868103/228919235-d9090aca-5361-4f42-bebe-0250d365462c.png' alt='PRE-RELISE'  width=80% > 
+</p>
 
