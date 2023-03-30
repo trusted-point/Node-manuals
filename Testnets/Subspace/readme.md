@@ -147,7 +147,7 @@ ___
 
 ### `Node update:`
 
-#### Repeat the steps from the [node installation step](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Subspace/readme.md#node-install)
+- **Repeat the steps from the [node installation step](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Subspace/readme.md#node-install)**
 
 ```bash
 # Service restart
