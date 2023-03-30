@@ -42,5 +42,12 @@ wget https://github.com/subspace/subspace-cli/releases/download/$TAG/subspace-cl
 sudo chmod 777 subspace && \
 sudo mv subspace /usr/local/bin/ && \
 echo "Cli version: $(subspace -V)"
-
 ```
+___
+### `Wallet preparation:`
+- **`Installing wallet:` follow the [link](https://polkadot.js.org/extension/) and install the Polkadot extension for your browser**
+- **`Metadata update:` to add the Subspace Gemini 3c network to your wallet, follow the [link]() and update the metadata**
+<img src='https://user-images.githubusercontent.com/83868103/228912506-fd61edc7-1ed6-4228-994d-0c0e827aa581.png' alt='PRE-RELISE'  width=77% > 
+
+
+
