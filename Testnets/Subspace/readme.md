@@ -53,8 +53,9 @@ ___
 
 - **`The wallet is already added in the extension:` simply select the new "Subspace Gemini 3c" network for your wallet and proceed to the next step**
 <p align="center">
-  <img src='https://user-images.githubusercontent.com/83868103/228919235-d9090aca-5361-4f42-bebe-0250d365462c.png' alt='PRE-RELISE'  width=80% > 
+  <img src='https://user-images.githubusercontent.com/83868103/228937283-053fdf03-d9b2-456c-bc3b-d0b3deb5019e.png' alt='PRE-RELISE'  width=80% > 
 </p> 
+
 
 - **`Restore wallet from past testnets:`**  
   - Press ✚ in your extension
@@ -64,7 +65,7 @@ ___
   - After restoring the wallet, you can proceed to the next step
 
 <p align="center">
-  <img src='https://user-images.githubusercontent.com/83868103/228926599-52ee2190-1fc5-4f01-89a6-395436db09aa.png' alt='PRE-RELISE'  width=80% > 
+  <img src='https://user-images.githubusercontent.com/83868103/228935737-d12cd130-4c96-40c5-ab0b-832d316c3f1f.png' alt='PRE-RELISE'  width=80% > 
 </p> 
 
 - **`Create a new wallet:`**  
