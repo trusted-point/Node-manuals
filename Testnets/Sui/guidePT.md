@@ -92,8 +92,28 @@ WantedBy=multi-user.target" > $HOME/suid.service
 ```bash
 mv $HOME/suid.service /etc/systemd/system/
 ```
+### 10. Add peers to fullnode.yaml
+```bash
+sudo tee -a /root/.sui/fullnode.yaml << END
 
-### 10. Run a fullnode and check logs 
+p2p-config:
+  seed-peers:
+   - address: "/dns/sui-rpc-pt.testnet-pride.com/udp/8084"
+     peer-id: 0b10182585ae4a305721b1823ea5a9c3ce7d6ac4b4a8ce35fe96d9914c8fcb73
+   - address: "/dns/sui-rpc-pt2.testnet-pride.com/udp/8084"
+     peer-id: bf45f2bd2bbc4c2d53d10c05c96085d4ef18688af04649d6e65e1ebad1716804
+   - address: "/dns/sui-rpc-testnet.bartestnet.com/udp/8084"
+   - address: "/ip4/38.242.197.20/udp/8080"
+   - address: "/ip4/178.18.250.62/udp/8080"
+   - address: "/ip4/162.55.84.47/udp/8084"
+   - address: "/dns/wave-3.testnet.n1stake.com/udp/8084"
+END
+```
+```bash
+sudo systemctl restart suid
+```
+
+### 11. Run a fullnode and check logs 
 ```bash
 sudo systemctl daemon-reload
 sudo systemctl enable suid
