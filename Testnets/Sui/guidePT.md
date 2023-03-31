@@ -140,7 +140,7 @@ git remote add upstream https://github.com/MystenLabs/sui
 
 git fetch upstream
 
-git checkout -B devnet --track upstream/testnet
+git checkout -B testnet --track upstream/testnet
 ```
 ### 3. Compile binaries
 ```bash
