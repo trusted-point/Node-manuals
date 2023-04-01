@@ -94,7 +94,7 @@ mv $HOME/suid.service /etc/systemd/system/
 ```
 ### 10. Add peers to fullnode.yaml
 ```bash
-sudo tee -a /root/.sui/fullnode.yaml << END
+sudo tee -a $HOME/.sui/fullnode.yaml << END
 
 p2p-config:
   seed-peers:
