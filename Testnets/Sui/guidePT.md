@@ -69,13 +69,13 @@ cargo build --release -p sui-node -p sui
 ```
 ### 8. `Move both binary files` to the right directory 
 ```bash
-mv $HOME/sui/target/release/sui-node /usr/local/bin/
-mv $HOME/sui/target/release/sui /usr/local/bin/
+sudo mv $HOME/sui/target/release/sui-node /usr/local/bin/
+sudo mv $HOME/sui/target/release/sui /usr/local/bin/
 ```
 
 ### 9. Create a service file
 ```bash
-echo "[Unit]
+sudo echo "[Unit]
 Description=Sui Node
 After=network.target
 
@@ -90,7 +90,7 @@ LimitNOFILE=65535
 WantedBy=multi-user.target" > $HOME/suid.service
 ```
 ```bash
-mv $HOME/suid.service /etc/systemd/system/
+sudo mv $HOME/suid.service /etc/systemd/system/
 ```
 ### 10. Add peers to fullnode.yaml
 ```bash
@@ -120,7 +120,7 @@ sudo systemctl enable suid
 sudo systemctl start suid
 ```
 ```bash
-journalctl -u suid -f
+sudo journalctl -u suid -f
 ```
 ___
 ## Monitor fullnode performance 
