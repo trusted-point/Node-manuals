@@ -56,7 +56,7 @@ ___
 
 #
 
-**`The wallet is already added in the extension:` simply select the new "Subspace Gemini 3c" network for your wallet and proceed to the next step**
+**`The wallet is already added in the extension:` simply select the new "Subspace Gemini 3c" network for your wallet and proceed to the step [Farmer setup](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3c#farmer-setup)**
 <p align="center">
   <img src='https://user-images.githubusercontent.com/83868103/228937864-a7bf4bfe-7138-459e-a4ee-b31daf0a8837.png' alt='PRE-RELISE'  width=80% > 
 </p> 
@@ -68,7 +68,7 @@ ___
   - Press  "🔑 Import account from pre-existing seed" 
   - Enter your mnemonic seed, select "Subspace Gemini 3c" network and click "Next"
   - Enter descriptive name for your account, password and click "Add the account with the supplied seed"
-  - After restoring the wallet, you can proceed to the next step
+  - After restoring the wallet, you can proceed to the step [Farmer setup](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3c#farmer-setup)
 
 <p align="center">
   <img src='https://user-images.githubusercontent.com/83868103/228935737-d12cd130-4c96-40c5-ab0b-832d316c3f1f.png' alt='PRE-RELISE'  width=80% > 
