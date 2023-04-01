@@ -168,8 +168,8 @@ cargo build --release -p sui-node -p sui
 ```
 ### 4. Move them to the right path
 ```bash
-mv $HOME/sui/target/release/sui-node /usr/local/bin/
-mv $HOME/sui/target/release/sui /usr/local/bin/
+sudo mv $HOME/sui/target/release/sui-node /usr/local/bin/
+sudo mv $HOME/sui/target/release/sui /usr/local/bin/
 ```
 
 ### 5. Check the version 
