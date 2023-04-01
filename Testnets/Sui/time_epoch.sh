@@ -6,7 +6,7 @@ else
     apt update > /dev/null && sudo apt install curl bc -y < "/dev/null" > /dev/null
 fi
 echo Enter the difference between your Time Zone and GMT in hours "(e.g. +5 -5 0)": && read TP
-echo -e "\e[32m------------- Calculating time in GMT $TP -------------\e[0m"
+echo -e "\e[32m------------- Calculating time in GMT $TP --------------\e[0m"
 
 # Setting time variable
 while true
@@ -55,5 +55,5 @@ echo -e "Epoch \e[31m\e[1m$CURRENT_EPOCH_NUMBER\e[0m ends at:                  \
 echo "-------------------------------------------------------"
 echo -e "Time remaining:          \e[5m\e[33m$TIME_TILL_END\e[0m"
 echo
-  sleep 4s
+  sleep 10s
 done
