@@ -1,19 +1,21 @@
 [<img src = https://user-images.githubusercontent.com/80550154/228975701-f44748e9-8a2d-471e-ab05-1e17b7e7062f.png alt='banner' width= '99.9%'>]()
-
-- [**`Server requirements`**]()
-- [**`Node install`**]()
-- [**`Wallet preparation`**]()
-- [**`Farmer setup`**]()
-- [**`Node update`**]()
-- [**`Delete node`**]()
-___
+#
 **Subspace Network** allows developers to launch **Web3** applications at Internet scale. It provides a simple interface for quickly deploying decentralized applications with multiple chains that automatically scale as needed. Subspace runs on a new, environmentally friendly **4th-generation blockchain** that provides scalable storage and computing in the network without compromising security or decentralization. It easily integrates with existing **blockchains**, second-layer protocols, and decentralized applications, allowing it to serve as the foundational level of infrastructure for the entire **Web3** ecosystem. **Subspace** will enable developers to unlock the next wave of cryptography adoption, supporting **NFTs, GameFi, and the Metaverse** at Internet scale.
 
 - The project offers a non-standard consensus system, specifically **Proof-of-Archive-Storage (POAS).**
 
 - **Investors:** Pantera Capital, Coinbase Ventures, Crypto.com, Alameda Research, ConsenSys Mesh.
-#
-⎜[**Discord**](https://discord.gg/subspace-network) ⎜ [**Twitter**](https://twitter.com/NetworkSubspace) ⎜ [**Website**](https://subspace.network) ⎜ [**Explorer**](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Feu-0.gemini-3c.subspace.network%2Fws#/explorer) ⎜ [**Telemetry**](https://telemetry.subspace.network/) ⎜
+
+**⎜** [**❪ Discord ❫**](https://discord.gg/subspace-network)  **⎜**  [**❪ Twitter ❫**](https://twitter.com/NetworkSubspace)  **⎜**  [**❪ Website ❫**](https://subspace.network)  **⎜**  [**❪ Explorer ❫**](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Feu-0.gemini-3c.subspace.network%2Fws#/explorer)  **⎜**  [**❪ Telemetry ❫**](https://telemetry.subspace.network/) **⎜**
+___
+## **`Navigation`**
++ [**`Server requirements`**](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3c#server-requirements)
++ [**`Server preparation`**](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3c#server-requirements)
++ [**`Node install`**](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3c#node-install)
++ [**`Wallet preparation`**](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3c#wallet-preparation)
++ [**`Farmer setup`**](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3c#farmer-setup)
++ [**`Node update`**](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3c#node-update)
++ [**`Delete node`**](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3c#delete-node)
 ___
 
 ### `Server requirements:`
