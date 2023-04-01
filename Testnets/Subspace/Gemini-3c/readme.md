@@ -1,6 +1,11 @@
 [<img src = https://user-images.githubusercontent.com/80550154/228975701-f44748e9-8a2d-471e-ab05-1e17b7e7062f.png alt='banner' width= '99.9%'>]()
-___
-[<img src='https://user-images.githubusercontent.com/83868103/227937841-6e05b933-9534-49f1-808a-efe087a4f7cd.png' alt='Twitter'  width='16.5%'>](https://twitter.com/intent/user?screen_name=TestnetPride&intent=follow)[<img src='https://user-images.githubusercontent.com/83868103/227935592-ea64badd-ceb4-4945-8dfc-f25c787fb29d.png' alt='TELEGRAM'  width='16.5%'>](https://t.me/TestnetPride)[<img src='https://user-images.githubusercontent.com/83868103/227936236-325bebfd-b287-4206-a964-dcbe67fe7ca8.png' alt='WEBSITE'  width='16.5%'>](http://testnet-pride.com/)[<img src='https://user-images.githubusercontent.com/83868103/227936479-a48e814b-3ec1-4dcb-bd44-96b02d8f55da.png' alt='MAIL'  width='16.5%'>](mailto:official@testnet-pride.com)[<img src='https://user-images.githubusercontent.com/83868103/227932993-b1e3a588-2b91-4915-854a-fa47da3b2cdb.png' alt='LINKEDIN'  width='16.5%'>](https://www.linkedin.com/company/testnet-pride/)[<img src='https://user-images.githubusercontent.com/83868103/227948915-65731f97-c406-4d2c-996c-e5440ff67584.png' alt='GITHUB'  width='16.5%'>](https://github.com/testnet-pride)
+
+- [**`Server requirements`**]()
+- [**`Node install`**]()
+- [**`Wallet preparation`**]()
+- [**`Farmer setup`**]()
+- [**`Node update`**]()
+- [**`Delete node`**]()
 ___
 **Subspace Network** allows developers to launch **Web3** applications at Internet scale. It provides a simple interface for quickly deploying decentralized applications with multiple chains that automatically scale as needed. Subspace runs on a new, environmentally friendly **4th-generation blockchain** that provides scalable storage and computing in the network without compromising security or decentralization. It easily integrates with existing **blockchains**, second-layer protocols, and decentralized applications, allowing it to serve as the foundational level of infrastructure for the entire **Web3** ecosystem. **Subspace** will enable developers to unlock the next wave of cryptography adoption, supporting **NFTs, GameFi, and the Metaverse** at Internet scale.
 
