@@ -231,7 +231,7 @@ ___
 ### If your node is not syncing try adding peers into p2p config
 
 ```bash
-sudo tee -a /root/.sui/fullnode.yaml << END
+sudo tee -a $HOME/.sui/fullnode.yaml << END
 
 p2p-config:
   seed-peers:
