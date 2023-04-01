@@ -168,7 +168,7 @@ ___
 
 ### `Node update:`
 
-**`Repeat steps:`  [Node install](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Subspace/readme.md#node-install)**
+**`Repeat steps:`  [Node install](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3c#node-install)**
 
 ```bash
 # Service restart
