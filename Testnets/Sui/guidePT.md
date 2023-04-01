@@ -75,7 +75,7 @@ sudo mv $HOME/sui/target/release/sui /usr/local/bin/
 
 ### 9. Create a service file
 ```bash
-sudo echo "[Unit]
+echo "[Unit]
 Description=Sui Node
 After=network.target
 
