@@ -49,7 +49,7 @@ echo "Cli version: $(subspace -V)"
 ___
 ### `Wallet preparation:`
 **`Installing wallet:` follow the [link](https://polkadot.js.org/extension/) and install the Polkadot extension for your browser**  
-**`Metadata update:` to add the Subspace Gemini 3c network to your wallet, follow the [link]() and update the metadata**
+**`Metadata update:` to add the Subspace Gemini 3c network to your wallet, follow the [link](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Feu-0.gemini-3c.subspace.network%2Fws#/accounts) and update the metadata**
 <p align="center">
 <img src='https://user-images.githubusercontent.com/83868103/228912506-fd61edc7-1ed6-4228-994d-0c0e827aa581.png' alt='PRE-RELISE'  width=50% > 
 </p>
