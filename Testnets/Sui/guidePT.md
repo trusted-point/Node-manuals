@@ -240,6 +240,7 @@ p2p-config:
    - address: "/dns/sui-rpc-pt2.testnet-pride.com/udp/8084"
      peer-id: bf45f2bd2bbc4c2d53d10c05c96085d4ef18688af04649d6e65e1ebad1716804
    - address: "/dns/sui-rpc-testnet.bartestnet.com/udp/8084"
+     peer-id:f99db6031fa17876ee7d8f4dd5d3eafbdbe6b6012dc2b6b01bd604b4e45d3b86
    - address: "/ip4/38.242.197.20/udp/8080"
    - address: "/ip4/178.18.250.62/udp/8080"
    - address: "/ip4/162.55.84.47/udp/8084"
