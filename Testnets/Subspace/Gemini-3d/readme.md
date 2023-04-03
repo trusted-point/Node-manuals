@@ -173,6 +173,13 @@ ___
 
 ### `Node update:`
 
+**`To upgrade a node from Gemini 3c to Gemini 3d:`**
+```bash
+# Resets the database
+subspace wipe
+```
+### ⛔️ IMPORTANT! Execute the command only when switching between chains! ⛔️
+#
 **`Repeat steps:`  [Node install](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3c#node-install)**
 
 ```bash
