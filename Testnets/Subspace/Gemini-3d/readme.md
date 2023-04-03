@@ -175,7 +175,7 @@ ___
 
 **`To upgrade a node from Gemini 3c to Gemini 3d:`**
 ```bash
-# Resets the database
+# Reset database
 subspace wipe
 ```
 ### ⛔️ IMPORTANT! Execute the command only when switching between chains! ⛔️
