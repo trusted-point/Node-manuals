@@ -328,7 +328,7 @@ git checkout $VERSION
 make build
 sudo make install
 ```
-### Remove `DB`
+### Remove `Database`
 ```bash
 cd $HOME
 cd .celestia-bridge-blockspacerace-0
@@ -338,7 +338,7 @@ sudo rm -rf blocks index data transients
 ```bash
 celestia light init --p2p.network blockspacerace
 ```
-### `Restart` your bridge node
+### `Restart`
 ```bash
 sudo sudo systemctl enable celestia-bridge && systemctl restart celestia-bridge && journalctl -u celestia-bridge.service -f -o cat
 ```
