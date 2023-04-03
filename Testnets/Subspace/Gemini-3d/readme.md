@@ -39,8 +39,11 @@ ___
 ### `Node install:`
 
 ```bash
+# Manual entry of the pre-release version
+TAG=v0.2.0-alpha
+
 # Determine latest release
-TAG=$(wget -qO- https://api.github.com/repos/subspace/subspace-cli/releases | jq '.[] | select(.prerelease==false) | select(.draft==false) | .html_url' | grep -Eo "v[0-9]*.[0-9]*.[0-9]*" | head -n 1) && echo "Cli version: $TAG"
+# TAG=$(wget -qO- https://api.github.com/repos/subspace/subspace-cli/releases | jq '.[] | select(.prerelease==false) | select(.draft==false) | .html_url' | grep -Eo "v[0-9]*.[0-9]*.[0-9]*" | head -n 1) && echo "Cli version: $TAG"
 ```
 **You can make sure the version is determined successfully, it should match the ⎧<img src='https://user-images.githubusercontent.com/83868103/228858929-859e6479-e1e9-465f-9f92-73a6bc437207.png' alt='latest'  height=25 >⎫ [release](https://github.com/subspace/subspace-cli/releases)** 
 
@@ -56,17 +59,18 @@ echo "Cli version: $(subspace -V)"
 ___
 ### `Wallet preparation:`
 **`Installing wallet:` follow the [link](https://polkadot.js.org/extension/) and install the Polkadot extension for your browser**  
-**`Metadata update:` to add the Subspace Gemini 3c network to your wallet, follow the [link](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Feu-0.gemini-3c.subspace.network%2Fws#/accounts) and update the metadata**
+**`Metadata update:` to add the Subspace Gemini 3d network to your wallet, follow the [link](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Feu-0.gemini-3d.subspace.network%2Fws#/accounts) and update the metadata**
 <p align="center">
 <img src='https://user-images.githubusercontent.com/83868103/228912506-fd61edc7-1ed6-4228-994d-0c0e827aa581.png' alt='PRE-RELISE'  width=50% > 
 </p>
 
 #
 
-**`The wallet is already added in the extension:` simply select the new "Subspace Gemini 3c" network for your wallet and proceed to the step [Farmer setup](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3c#farmer-setup)**
+**`The wallet is already added in the extension:` simply select the new "Subspace Gemini 3d" network for your wallet and proceed to the step [Farmer setup](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3c#farmer-setup)**
 <p align="center">
-  <img src='https://user-images.githubusercontent.com/83868103/228937864-a7bf4bfe-7138-459e-a4ee-b31daf0a8837.png' alt='PRE-RELISE'  width=80% > 
+  <img src='https://user-images.githubusercontent.com/83868103/229554878-c725be76-b04e-4564-8411-dcbfa78d3a5f.png' alt='PRE-RELISE'  width=80% > 
 </p> 
+
 
 #
 
