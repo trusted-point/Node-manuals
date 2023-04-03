@@ -6,16 +6,16 @@
 
 - **Investors:** Pantera Capital, Coinbase Ventures, Crypto.com, Alameda Research, ConsenSys Mesh.
 
-**⎜** [**❪ Discord ❫**](https://discord.gg/subspace-network)  **⎜**  [**❪ Twitter ❫**](https://twitter.com/NetworkSubspace)  **⎜**  [**❪ Website ❫**](https://subspace.network)  **⎜**  [**❪ Explorer ❫**](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Feu-0.gemini-3c.subspace.network%2Fws#/explorer)  **⎜**  [**❪ Telemetry ❫**](https://telemetry.subspace.network/) **⎜**
+**⎜** [**❪ Discord ❫**](https://discord.gg/subspace-network)  **⎜**  [**❪ Twitter ❫**](https://twitter.com/NetworkSubspace)  **⎜**  [**❪ Website ❫**](https://subspace.network)  **⎜**  [**❪ Explorer ❫**](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Feu-0.gemini-3d.subspace.network%2Fws#/explorer)  **⎜**  [**❪ Telemetry ❫**](https://telemetry.subspace.network/) **⎜**
 ___
 ## **`Navigation`**
-+ [**`Server requirements`**](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3c#server-requirements)
-+ [**`Server preparation`**](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3c#server-requirements)
-+ [**`Node install`**](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3c#node-install)
-+ [**`Wallet preparation`**](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3c#wallet-preparation)
-+ [**`Farmer setup`**](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3c#farmer-setup)
-+ [**`Node update`**](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3c#node-update)
-+ [**`Delete node`**](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3c#delete-node)
++ [**`Server requirements`**](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Subspace/Gemini-3d/readme.md#server-requirements)
++ [**`Server preparation`**](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Subspace/Gemini-3d/readme.md#server-preparation)
++ [**`Node install`**](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Subspace/Gemini-3d/readme.md#node-install)
++ [**`Wallet preparation`**](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Subspace/Gemini-3d/readme.md#wallet-preparation)
++ [**`Farmer setup`**](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Subspace/Gemini-3d/readme.md#farmer-setup)
++ [**`Node update`**](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Subspace/Gemini-3d/readme.md#node-update)
++ [**`Delete node`**](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Subspace/Gemini-3d/readme.md#delete-node)
 ___
 
 ### `Server requirements:`
@@ -66,7 +66,7 @@ ___
 
 #
 
-**`The wallet is already added in the extension:` simply select the new "Subspace Gemini 3d" network for your wallet and proceed to the step [Farmer setup](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3c#farmer-setup)**
+**`The wallet is already added in the extension:` simply select the new "Subspace Gemini 3d" network for your wallet and proceed to the step [Farmer setup](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Subspace/Gemini-3d/readme.md#farmer-setup)**
 <p align="center">
   <img src='https://user-images.githubusercontent.com/83868103/229554878-c725be76-b04e-4564-8411-dcbfa78d3a5f.png' alt='PRE-RELISE'  width=80% > 
 </p> 
@@ -79,7 +79,7 @@ ___
   - Press  "🔑 Import account from pre-existing seed" 
   - Enter your mnemonic seed, select "Subspace Gemini 3d" network and click "Next"
   - Enter descriptive name for your account, password and click "Add the account with the supplied seed"
-  - After restoring the wallet, you can proceed to the step [Farmer setup](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3c#farmer-setup)
+  - After restoring the wallet, you can proceed to the step [Farmer setup](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Subspace/Gemini-3d/readme.md#farmer-setup)
 
 <p align="center">
   <img src='https://user-images.githubusercontent.com/83868103/229556156-9ded639d-6c6c-40d3-86d3-d4b94a405998.png' alt='PRE-RELISE'  width=80% > 
@@ -162,7 +162,7 @@ sudo journalctl -fu subspaced -o cat
 </p> 
 
 **`Once fully synced, your wallet balance should receive farming rewards:`**
-- Go to your [wallet](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Feu-0.gemini-3c.subspace.network%2Fws#/accounts)
+- Go to your [wallet](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Feu-0.gemini-3d.subspace.network%2Fws#/accounts)
 
 <p align="center">
   <img src='https://user-images.githubusercontent.com/83868103/228966327-31f62b0f-d499-45ef-a837-1c1045b8a277.png' alt='PRE-RELISE'  width=40% > 
@@ -180,7 +180,7 @@ subspace wipe
 ```
 ### ⛔️ IMPORTANT! Execute the command only when switching between chains! ⛔️
 #
-**`Repeat steps:`  [Node install](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3c#node-install)**
+**`Repeat steps:`  [Node install](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Subspace/Gemini-3d/readme.md#node-install)**
 
 ```bash
 # Service restart
