@@ -77,23 +77,24 @@ ___
 **`Restore wallet from past testnets:`**  
   - Press ✚ in your extension
   - Press  "🔑 Import account from pre-existing seed" 
-  - Enter your mnemonic seed, select "Subspace Gemini 3c" network and click "Next"
+  - Enter your mnemonic seed, select "Subspace Gemini 3d" network and click "Next"
   - Enter descriptive name for your account, password and click "Add the account with the supplied seed"
   - After restoring the wallet, you can proceed to the step [Farmer setup](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3c#farmer-setup)
 
 <p align="center">
-  <img src='https://user-images.githubusercontent.com/83868103/228935737-d12cd130-4c96-40c5-ab0b-832d316c3f1f.png' alt='PRE-RELISE'  width=80% > 
+  <img src='https://user-images.githubusercontent.com/83868103/229556156-9ded639d-6c6c-40d3-86d3-d4b94a405998.png' alt='PRE-RELISE'  width=80% > 
 </p> 
+
 
 #
 
 **`Create a new wallet:`**  
 
 <p align="center">
-  <img src='https://user-images.githubusercontent.com/83868103/228932878-01a8ae10-ef94-4a39-bcf9-aa28267119b7.png' alt='PRE-RELISE'  width=80% > 
+  <img src='https://user-images.githubusercontent.com/83868103/229557047-17189a8a-03c9-45d9-b683-ccb6a0e5e64d.png' alt='PRE-RELISE'  width=80% > 
 </p> 
 
-___
+
 
 ### `Farmer setup:`
 
@@ -147,12 +148,12 @@ sudo journalctl -fu subspaced -o cat
 
 #
 **`Make sure your farmer is visible in telemetry:`**
-  - Go to [telemetry](https://telemetry.subspace.network/#list/0xab946a15b37f59c5f4f27c5de93acde9fe67a28e0b724a43a30e4fe0e87246b7)
+  - Go to [telemetry](https://telemetry.subspace.network/#/0x7f489750cfe91e17fc19b42a5acaba41d1975cedd3440075d4a4b4171ad0ac20)
   - Start typing your node name. You can see the node synchronization status and the actual height of the blocks ⬇︎ 
 
 
 <p align="center">
-  <img src='https://user-images.githubusercontent.com/83868103/228959234-457de9a1-cf93-43ae-be5f-89515305b18f.png' alt='PRE-RELISE'  width=80% > 
+  <img src='https://user-images.githubusercontent.com/83868103/229557540-a15b84c3-8463-4af3-a7ec-6110376a095f.png' alt='PRE-RELISE'  width=80% > 
 </p> 
 
 
