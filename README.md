@@ -8,5 +8,5 @@
 
 [<img src='https://user-images.githubusercontent.com/83868103/229358357-7ac43a1a-8da6-4f25-9905-00e8a9f48c31.png' alt='TESTNETS'  width='100%'>]()
 
-[<img src='https://user-images.githubusercontent.com/83868103/229358027-dce5e897-3bff-4246-824c-9f1b86e9d36b.png' alt='SUBSPACE'  width='24.5%'>](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3c)
-[<img src='https://user-images.githubusercontent.com/83868103/229286934-f00a0bcf-2c42-4966-9990-29c95f3e3294.png' alt='ARCHWAY-CONSTANTINE-2'  width='24.5%'>](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md)
+[<img src='https://user-images.githubusercontent.com/83868103/229583178-840a41ed-1e71-4fd3-b7cc-91b71a8cda78.png' alt='SUBSPACE-3c'  width='24.5%'>](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3c)
+[<img src='https://user-images.githubusercontent.com/83868103/229582383-1fe24c30-efb0-4474-a440-9ad85130370f.png' alt='ARCHWAY-CONSTANTINE-1'  width='24.5%'>](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md)
