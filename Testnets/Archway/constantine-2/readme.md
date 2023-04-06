@@ -32,7 +32,7 @@ ___
 ___
 ## Available Explorers
 
-[<img src='https://user-images.githubusercontent.com/80550154/227062135-32a189c0-47d7-4263-8034-9f7726808601.png' alt='mintscan'  width='33%'>](https://testnet.mintscan.io/archway-testnet) [<img src='https://user-images.githubusercontent.com/80550154/227062129-4094b345-9cf4-4493-981c-939cdb748777.png' alt='archway.tech'  width='33%'>](https://explorer.constantine-1.archway.tech) [<img src='https://user-images.githubusercontent.com/80550154/227062134-d4717597-59c8-47fb-96ed-416d4276a7bc.png' alt='exploreme'  width='33%'>](https://archway.exploreme.pro)
+[<img src='https://user-images.githubusercontent.com/80550154/227062135-32a189c0-47d7-4263-8034-9f7726808601.png' alt='mintscan'  width='33%'>](https://testnet.mintscan.io/archway-testnet) [<img src='https://user-images.githubusercontent.com/80550154/227062129-4094b345-9cf4-4493-981c-939cdb748777.png' alt='archway.tech'  width='33%'>](https://explorer.constantine-2.archway.tech) [<img src='https://user-images.githubusercontent.com/80550154/227062134-d4717597-59c8-47fb-96ed-416d4276a7bc.png' alt='exploreme'  width='33%'>](https://archway.exploreme.pro)
 ___
 ## Open Endpoints
 ```http
@@ -98,19 +98,19 @@ BUILD BINARY
 ```bash
 git clone https://github.com/archway-network/archway.git archway && \
 cd archway && \
-git checkout v0.2.0 && \
+git checkout v0.3.0 && \
 make install
 archwayd version --long | grep -e version -e commit
-# version: 0.2.0
-# commit: 532f53724bf477c5c8826fae376906526a09ed2d
+# version: 0.3.0
+# commit: e34438e49fd6b50f329aa2776ed44533c012f97d
 ```
 #
 ```python
 CONFIGURATION
 ```
 ```bash 
-archwayd init $MONIKER --chain-id constantine-1 && \
-archwayd config chain-id constantine-1 && \
+archwayd init $MONIKER --chain-id constantine-2 && \
+archwayd config chain-id constantine-2 && \
 archwayd config keyring-backend os
 ```
 #
@@ -150,7 +150,7 @@ sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"5c10d3d84adb970474e
 DOWNLOAD GENESIS 
 ```
 ```bash
-wget -O $HOME/.archway/config/genesis.json https://raw.githubusercontent.com/archway-network/networks/main/constantine-1/genesis.json
+wget -O $HOME/.archway/config/genesis.json https://raw.githubusercontent.com/archway-network/networks/main/constantine-2/genesis.json
 ```
 ___
 ## Change PORT
