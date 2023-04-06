@@ -297,7 +297,7 @@ archwayd tx staking create-validator \
   --amount=1000000uconst \
   --pubkey=$(archwayd tendermint show-validator) \
   --moniker=$MONIKER \
-  --chain-id=jackal-1 \
+  --chain-id=constantine-2 \
   --commission-rate="0.10" \
   --commission-max-rate="0.20" \
   --commission-max-change-rate="0.01" \
