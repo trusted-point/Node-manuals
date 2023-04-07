@@ -105,7 +105,7 @@ sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"5c10d3d84adb970474e
 DOWNLOAD GENESIS 
 ```
 ```bash
-wget -O $HOME/.archway/config/genesis.json http://94.250.203.6:90/const2-genesis.json
+wget -O $HOME/.archway/config/genesis.json https://raw.githubusercontent.com/defund-labs/testnet/main/orbit-alpha-1/genesis.json
 ```
 
 ```python
