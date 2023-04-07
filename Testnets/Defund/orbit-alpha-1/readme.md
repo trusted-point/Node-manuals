@@ -51,13 +51,13 @@ ___
 BUILD BINARY
 ```
 ```bash
-git clone https://github.com/archway-network/archway.git archway && \
-cd archway && \
-git checkout v0.3.0 && \
+git clone https://github.com/defund-labs/defund.git defund && \
+cd defund && \
+git checkout v0.2.6 && \
 make install
 archwayd version --long | grep -e version -e commit
-# version: 0.3.0
-# commit: e34438e49fd6b50f329aa2776ed44533c012f97d
+# version: 0.2.6
+# commit: 8f2ebe3d30efe84e013ec5fcdf21a3b99e786c3d
 ```
 #
 ```python
