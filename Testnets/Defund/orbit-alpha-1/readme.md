@@ -168,15 +168,15 @@ inter_block_cache="false"
 SET VARIABLES 
 ```
 ```bash
-sed -i.bak -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.archway/config/config.toml && \
-sed -i.bak -e "s/^min-retain-blocks *=.*/min-retain-blocks = \"$min_retain_blocks\"/" $HOME/.archway/config/app.toml && \
-sed -i.bak -e "s/^snapshot-interval *=.*/snapshot-interval = \"$snapshot_interval\"/" $HOME/.archway/config/app.toml && \
-sed -i.bak -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.archway/config/app.toml && \
-sed -i.bak -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.archway/config/app.toml && \
-sed -i.bak -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.archway/config/app.toml && \
-sed -i.bak -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.archway/config/app.toml && \
-sed -i.bak -e "s/^min-retain-blocks *=.*/min-retain-blocks = \"$min_retain_blocks\"/" $HOME/.archway/config/app.toml && \
-sed -i.bak -e "s/^inter-block-cache *=.*/inter-block-cache = \"$inter_block_cache\"/" $HOME/.archway/config/app.toml
+sed -i.bak -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.defund/config/config.toml && \
+sed -i.bak -e "s/^min-retain-blocks *=.*/min-retain-blocks = \"$min_retain_blocks\"/" $HOME/.defund/config/app.toml && \
+sed -i.bak -e "s/^snapshot-interval *=.*/snapshot-interval = \"$snapshot_interval\"/" $HOME/.defund/config/app.toml && \
+sed -i.bak -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.defund/config/app.toml && \
+sed -i.bak -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.defund/config/app.toml && \
+sed -i.bak -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.defund/config/app.toml && \
+sed -i.bak -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.defund/config/app.toml && \
+sed -i.bak -e "s/^min-retain-blocks *=.*/min-retain-blocks = \"$min_retain_blocks\"/" $HOME/.defund/config/app.toml && \
+sed -i.bak -e "s/^inter-block-cache *=.*/inter-block-cache = \"$inter_block_cache\"/" $HOME/.defund/config/app.toml
 ```
 ___
 ## State-sync synchronization
