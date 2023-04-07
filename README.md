@@ -5,6 +5,7 @@
 [<img src='https://user-images.githubusercontent.com/83868103/229286517-95e775df-b37d-4dc3-8c5c-7a76d4554880.png' alt='SUI-FNP'  width='24.5%'>](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Sui/guidePT.md)
 [<img src='https://user-images.githubusercontent.com/83868103/229570828-3af42be5-f205-4176-93ff-11df9df13e0e.png' alt='CELESTIA-BRIDGE'  width='24.5%'>](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Celestia/blockspacerace-0)
 [<img src='https://user-images.githubusercontent.com/83868103/229583493-98d62976-849b-4e55-812c-efa66294ce7e.png' alt='SUBSPACE-3d'  width='24.5%'>](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3d)
+[<img src='https://user-images.githubusercontent.com/83868103/230628455-5cbf99ab-b9e8-45b6-8b82-1016e9235b97.png' alt='ARCHWAY-CONSTANTINE-2'  width='24.5%'>](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Archway/constantine-2)
 
 
 [<img src='https://user-images.githubusercontent.com/83868103/229358357-7ac43a1a-8da6-4f25-9905-00e8a9f48c31.png' alt='TESTNETS'  width='100%'>]()
