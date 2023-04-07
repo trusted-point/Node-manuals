@@ -7,6 +7,8 @@
 [<img src='https://user-images.githubusercontent.com/83868103/229583493-98d62976-849b-4e55-812c-efa66294ce7e.png' alt='SUBSPACE-3d'  width='24.5%'>](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Subspace/Gemini-3d)
 [<img src='https://user-images.githubusercontent.com/83868103/230631410-288fa7e2-37d0-4fac-a349-86b2411080da.png' alt='ARCHWAY-CONSTANTINE-2'  width='24.5%'>](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Archway/constantine-2) 
 [<img src='https://user-images.githubusercontent.com/83868103/230630367-b1c6002a-19da-41aa-9d1a-4c6e6141a142.png' alt='Defund' width='24.5%'>](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Defund/orbit-alpha-1)
+[<img src='https://user-images.githubusercontent.com/83868103/230655517-bdd8ebc6-d0c9-4837-979c-d62d70022d7e.png' alt='Base' width='24.5%'>](https://github.com/testnet-pride/Node-manuals/tree/main/Testnets/Defund/orbit-alpha-1)
+
 
 
 
