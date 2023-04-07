@@ -55,7 +55,7 @@ git clone https://github.com/defund-labs/defund.git defund && \
 cd defund && \
 git checkout v0.2.6 && \
 make install
-defund version --long | grep -e version -e commit
+defundd version --long | grep -e version -e commit
 # version: 0.2.6
 # commit: 8f2ebe3d30efe84e013ec5fcdf21a3b99e786c3d
 ```
