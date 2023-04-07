@@ -64,9 +64,9 @@ defundd version --long | grep -e version -e commit
 CONFIGURATION
 ```
 ```bash 
-archwayd init $MONIKER --chain-id constantine-2 && \
-archwayd config chain-id constantine-2 && \
-archwayd config keyring-backend os
+defundd init $MONIKER --chain-id orbit-alpha-1 && \
+defundd config chain-id orbit-alpha-1 && \
+defundd config keyring-backend os
 ```
 #
 ```python
