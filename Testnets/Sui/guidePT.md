@@ -32,7 +32,7 @@ Storage: 2 TB
 ### 1. Update `required packages`
 
 ```bash
-sudo apt-get update && sudo apt-get install -y --no-install-recommends tzdata libprotobuf-dev ca-certificates build-essential libssl-dev libclang-dev pkg-config openssl protobuf-compiler git clang cmake -y
+sudo apt-get update && sudo apt-get install -y --no-install-recommends tzdata libprotobuf-dev ca-certificates build-essential libssl-dev libclang-dev pkg-config openssl protobuf-compiler git clang cmake wget -y
 ```
 ### 2. Install `Rust`
 ```bash 
