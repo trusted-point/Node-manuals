@@ -11,8 +11,8 @@ ___
 ___
 #### 2. Download required packages and create a tmux session
 ```bash
-apt update && \
-apt install make clang pkg-config libssl-dev build-essential gcc xz-utils git curl vim tmux ntp jq llvm ufw -y && \
+sudo apt update && \
+sudo apt install make clang pkg-config libssl-dev build-essential gcc xz-utils git curl vim tmux ntp jq llvm ufw -y && \
 tmux new -s deploy
 ```
 ##### *P.S. Creating a tmux session is required to build a binary, which takes some time. So you won't need to add variables and build a binary again if the ssh connection to your server lost. Just reconnect to the tmux session.*
