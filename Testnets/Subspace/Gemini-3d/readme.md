@@ -40,7 +40,7 @@ ___
 
 ```bash
 # Manual entry of the pre-release version
-TAG=v0.2.0-alpha
+TAG=v0.3.1-alpha
 
 # Determine latest release
 # TAG=$(wget -qO- https://api.github.com/repos/subspace/subspace-cli/releases | jq '.[] | select(.prerelease==false) | select(.draft==false) | .html_url' | grep -Eo "v[0-9]*.[0-9]*.[0-9]*" | head -n 1) && echo "Cli version: $TAG"
