@@ -336,7 +336,7 @@ sudo rm -rf blocks index data transients
 ```
 ### `Init` your bridge node:
 ```bash
-celestia light init --p2p.network blockspacerace
+celestia bridge init --p2p.network blockspacerace
 ```
 ### `Restart`
 ```bash
