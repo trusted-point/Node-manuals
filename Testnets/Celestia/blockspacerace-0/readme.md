@@ -172,7 +172,7 @@ cd $HOME/celestia-node/
 > To check your wallet address use 
 ```bash
 cd $HOME/celestia-app
-./cel-key list --node.type light --keyring-backend test --p2p.network blockspacerace
+./cel-key list --node.type bridge --keyring-backend test --p2p.network blockspacerace
 ```
 ---
 
