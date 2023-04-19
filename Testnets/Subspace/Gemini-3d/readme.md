@@ -51,7 +51,7 @@ TAG=v0.3.1-alpha
 #
 ```bash
 # Download Cli
-wget https://github.com/subspace/subspace-cli/releases/download/$TAG-alpha/subspace-cli-ubuntu-x86_64-v3-$TAGalpha -qO subspace && \
+wget https://github.com/subspace/subspace-cli/releases/download/$TAG-alpha/subspace-cli-ubuntu-x86_64-v3-$TAG-alpha -qO subspace && \
 sudo chmod 777 subspace && \
 sudo mv subspace /usr/local/bin/ && \
 echo "Cli version: $(subspace -V)"
