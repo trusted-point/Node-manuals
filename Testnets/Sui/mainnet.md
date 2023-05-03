@@ -99,7 +99,7 @@ sudo tee -a $HOME/.sui/fullnode.yaml << END
 
 p2p-config:
   seed-peers:
-      - address: /dns/icn-00.mainnet.sui.io/udp/8084
+    - address: /dns/icn-00.mainnet.sui.io/udp/8084
       peer-id: 303f1f35afc9a6f82f8d21724f44e1245f4d8eca0806713a07c525dadda95a66
     - address: /dns/icn-01.mainnet.sui.io/udp/8084
       peer-id: cb7ce193cf7a41e9cc2f99e65dd1487b6314a57c74be42cc8c9225b203301812
