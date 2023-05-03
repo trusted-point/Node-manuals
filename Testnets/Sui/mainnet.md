@@ -1,4 +1,4 @@
-[<img src = https://user-images.githubusercontent.com/80550154/228714104-060c73a2-01d9-44c9-8c06-c7b9218d42fd.png alt='banner' width= '99.9%'>]()
+[<img src = https://user-images.githubusercontent.com/80550154/236010407-115d79dc-3c42-46f6-bcda-cbc05a8563de.png alt='banner' width= '99.9%'>]()
 ___
 ## About **Sui**
 * **[Sui](https://sui.io/)** is a boundless platform to build rich and dynamic on-chain assets from gaming to finance.
