@@ -61,7 +61,7 @@ sed -i.bak "s|db-path:.*|db-path: \"$HOME\/.sui\/db\"| ; s|genesis-file-location
 ```
 ### 6. Download genesis.blob for mainnet.
 ```bash
-wget -P $HOME/.sui https://raw.githubusercontent.com/MystenLabs/sui-genesis/main/mainnet/genesis.blob
+wget -P $HOME/.sui https://github.com/MystenLabs/sui-genesis/raw/main/mainnet/genesis.blob
 
 ```
 ### 7. Compile `sui-node` and `sui` binaries
