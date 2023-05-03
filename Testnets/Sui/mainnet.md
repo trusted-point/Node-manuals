@@ -1,0 +1,276 @@
+[<img src = https://user-images.githubusercontent.com/80550154/228714104-060c73a2-01d9-44c9-8c06-c7b9218d42fd.png alt='banner' width= '99.9%'>]()
+___
+## About **Sui**
+* **[Sui](https://sui.io/)** is a boundless platform to build rich and dynamic on-chain assets from gaming to finance.
+* Sui is the first permissionless Layer 1 blockchain designed from the ground up to enable creators and developers to build experiences that cater to the next billion users in web3.
+* The power of the sui element lies in its fluidity—its ability to easily adapt to and transform any environment. Similarly, the Sui platform seeks to provide a flexible network that you can leverage to shape the web3 landscape.
+
+<font size = 4>**[Website](https://sui.io/) | [GitHub](https://github.com/MystenLabs/sui) | [Twitter](https://twitter.com/SuiNetwork) | [Discord](https://discord.gg/sui) | [Docs](https://docs.sui.io/) | [Whitepaper](https://github.com/MystenLabs/sui/blob/main/doc/paper/sui.pdf) | [Blog](https://medium.com/mysten-labs)**</font>
+___
+
+## Fullnode installation guide (mainnet)
+
+### Navigation
+* [Server requirements](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Sui/guidePT.md#server-requirements)
+* [Insatll a fullnode on a clean machine](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Sui/guidePT.md#1-update-required-packages)
+* [Monitore a fullnode performance](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Sui/guidePT.md#monitor-fullnode-performance)
+* [Update a fullnode](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Sui/guidePT.md#update-a-fullnode)
+* [Useful commands](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Sui/guide.md#useful-commands)
+* [Fully remove a fullnode from the server](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Sui/guidePT.md#update-a-fullnode)
+___
+ ### _Sui Full nodes validate blockchain activities, including transactions, checkpoints, and epoch changes. Each Full node stores and services the queries for the blockchain state and history._
+ ___
+
+### `Server requirements`
+```GO
+OS: Ubuntu 20.04
+CPUs: 10 core
+RAM: 32 GB
+Storage: 2 TB
+```
+
+### 1. Update `required packages`
+
+```bash
+sudo apt-get update && sudo apt-get install -y --no-install-recommends tzdata libprotobuf-dev ca-certificates build-essential libssl-dev libclang-dev pkg-config openssl protobuf-compiler git clang cmake wget -y
+```
+### 2. Install `Rust`
+```bash 
+sudo curl https://sh.rustup.rs -sSf | sh -s -- -y
+source $HOME/.cargo/env
+rustc --version
+```
+### 3. Create a directory for database, genesis.blob, fullnode.yaml
+```bash
+mkdir $HOME/.sui
+```
+### 4. Clone a GitHub repository
+```bash 
+cd $HOME
+git clone https://github.com/MystenLabs/sui.git
+cd sui
+git remote add upstream https://github.com/MystenLabs/sui
+git fetch upstream
+git checkout --track upstream/mainnet
+```
+### 5. Copy a `fullnode.yaml` and the update path
+```bash 
+cp $HOME/sui/crates/sui-config/data/fullnode-template.yaml $HOME/.sui/fullnode.yaml
+
+sed -i.bak "s|db-path:.*|db-path: \"$HOME\/.sui\/db\"| ; s|genesis-file-location:.*|genesis-file-location: \"$HOME\/.sui\/genesis.blob\"| ; s|127.0.0.1|0.0.0.0|" $HOME/.sui/fullnode.yaml
+```
+### 6. Download genesis.blob for mainnet.
+```bash
+wget -P $HOME/.sui https://raw.githubusercontent.com/MystenLabs/sui-genesis/main/mainnet/genesis.blob
+
+```
+### 7. Compile `sui-node` and `sui` binaries
+```bash
+cargo build --release -p sui-node -p sui
+```
+### 8. `Move both binary files` to the right directory 
+```bash
+sudo mv $HOME/sui/target/release/sui-node /usr/local/bin/
+sudo mv $HOME/sui/target/release/sui /usr/local/bin/
+```
+
+### 9. Create a service file
+```bash
+echo "[Unit]
+Description=Sui Node
+After=network.target
+
+[Service]
+User=$USER
+Type=simple
+ExecStart=/usr/local/bin/sui-node --config-path $HOME/.sui/fullnode.yaml
+Restart=on-failure
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target" > $HOME/suid.service
+```
+```bash
+sudo mv $HOME/suid.service /etc/systemd/system/
+```
+### 10. Add peers to fullnode.yaml
+```bash
+sudo tee -a $HOME/.sui/fullnode.yaml << END
+
+p2p-config:
+  seed-peers:
+      - address: /dns/icn-00.mainnet.sui.io/udp/8084
+      peer-id: 303f1f35afc9a6f82f8d21724f44e1245f4d8eca0806713a07c525dadda95a66
+    - address: /dns/icn-01.mainnet.sui.io/udp/8084
+      peer-id: cb7ce193cf7a41e9cc2f99e65dd1487b6314a57c74be42cc8c9225b203301812
+    - address: /dns/mel-00.mainnet.sui.io/udp/8084
+      peer-id: d32b55bdf1737ec415df8c88b3bf91e194b59ee3127e3f38ea46fd88ba2e7849
+    - address: /dns/mel-01.mainnet.sui.io/udp/8084
+      peer-id: bbf3be337fc16614a1953da83db729abfdc40596e197f36fe408574f7c9b780e
+    - address: /dns/ewr-00.mainnet.sui.io/udp/8084
+      peer-id: c7bf6cb93ca8fdda655c47ebb85ace28e6931464564332bf63e27e90199c50ee
+    - address: /dns/ewr-01.mainnet.sui.io/udp/8084
+      peer-id: 3227f8a05f0faa1a197c075d31135a366a1c6f3d4872cb8af66c14dea3e0eb66
+    - address: /dns/sjc-00.mainnet.sui.io/udp/8084
+      peer-id: 6f0b25087cd6b2fd2e4329bcf308ac95a37c49277dd7286b72470c124809db5b
+    - address: /dns/sjc-01.mainnet.sui.io/udp/8084
+      peer-id: af1d5d8468b3612ac2b6ff3ca91e99a71390dbe5b83dea9f6ae2da708d689227
+    - address: /dns/lhr-00.mainnet.sui.io/udp/8084
+      peer-id: c619a5e0f8f36eac45118c1f8bda28f0f508e2839042781f1d4a9818043f732c
+    - address: /dns/lhr-01.mainnet.sui.io/udp/8084
+      peer-id: 53dcedf250f73b1ec83250614498947db00d17c0181020fcdb7b6db12afbc175
+END
+```
+```bash
+sudo systemctl restart suid
+```
+
+### 11. Run a fullnode and check logs 
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable suid
+sudo systemctl start suid
+```
+```bash
+sudo journalctl -u suid -f
+```
+___
+## Monitor fullnode performance 
+### 1. Compare the number of checkpoints on your node and on chain
+```bash
+curl -q localhost:9184/metrics 2>/dev/null |grep '^highest_synced_checkpoint'; echo
+```
+```bash
+curl --location --request POST 'https://fullnode.mainnet.sui.io:443/' --header 'Content-Type: application/json' --data-raw '{"jsonrpc":"2.0", "id":1,"method":"sui_getLatestCheckpointSequenceNumber"}'; echo
+```
+### 2. Compare the number of transactions on your node and on chain
+```bash
+curl --location --request POST http://127.0.0.1:9000/ --header 'Content-Type: application/json' --data-raw '{ "jsonrpc":"2.0", "method":"sui_getTotalTransactionBlocks","id":1}'; echo 
+```
+
+```bash
+curl --location --request POST https://fullnode.mainnet.sui.io:443 --header 'Content-Type: application/json' --data-raw '{ "jsonrpc":"2.0", "method":"sui_getTotalTransactionBlocks","id":1}'; echo
+```
+### 3. You can also use [Scale3](https://www.scale3labs.com/check/sui) monitoring platform
+
+To get your ip use:
+```bash
+wget -qO- eth0.me
+```
+___
+## Update a fullnode
+### 1. Stop the node 
+```bash
+ sudo systemctl stop suid
+```
+
+### 2. Update Sui repository to the latest commit
+```bash 
+cd $HOME/sui
+
+git remote add upstream https://github.com/MystenLabs/sui
+
+git fetch upstream
+
+git checkout -B mainnet --track upstream/mainnet
+```
+### 3. Compile binaries
+```bash
+cargo build --release -p sui-node -p sui
+```
+### 4. Move them to the right path
+```bash
+sudo mv $HOME/sui/target/release/sui-node /usr/local/bin/
+sudo mv $HOME/sui/target/release/sui /usr/local/bin/
+```
+
+### 5. Check the version 
+```bash 
+sui-node --version
+```
+### 6. Restart the node and check logs
+```bash
+sudo systemctl restart suid
+```
+```bash
+sudo journalctl -u suid -f
+```
+___
+## Useful commands 
+___
+### Check the version 
+```bash
+sui-node --version
+```
+___
+### Stop the node
+```bash
+sudo systemctl stop suid
+```
+___
+### Restart the node
+```bash
+sudo systemctl restart suid
+```
+___
+### Open logs
+```bash
+sudo journalctl -u suid -f
+```
+___
+### Delete Sui node from the server 
+```bash
+sudo systemctl stop suid
+
+sudo systemctl disable suid
+
+sudo rm /etc/systemd/system/suid.service
+
+sudo rm /usr/local/bin/sui
+
+sudo rm /usr/local/bin/sui-node
+
+sudo rm -rf $HOME/sui $HOME/.sui
+```
+___
+### Check genesis.blob hash
+```bash
+sha256sum $HOME/.sui/genesis.blob
+# The right output is
+8286060d0a65c61b2eec105bf6f6ee6b8cc0626d7e6164cbd577b244c58db979 
+```
+___
+### If your node is not syncing try adding peers into p2p config
+
+```bash
+sudo tee -a $HOME/.sui/fullnode.yaml << END
+
+p2p-config:
+  seed-peers:
+    - address: /dns/icn-00.mainnet.sui.io/udp/8084
+      peer-id: 303f1f35afc9a6f82f8d21724f44e1245f4d8eca0806713a07c525dadda95a66
+    - address: /dns/icn-01.mainnet.sui.io/udp/8084
+      peer-id: cb7ce193cf7a41e9cc2f99e65dd1487b6314a57c74be42cc8c9225b203301812
+    - address: /dns/mel-00.mainnet.sui.io/udp/8084
+      peer-id: d32b55bdf1737ec415df8c88b3bf91e194b59ee3127e3f38ea46fd88ba2e7849
+    - address: /dns/mel-01.mainnet.sui.io/udp/8084
+      peer-id: bbf3be337fc16614a1953da83db729abfdc40596e197f36fe408574f7c9b780e
+    - address: /dns/ewr-00.mainnet.sui.io/udp/8084
+      peer-id: c7bf6cb93ca8fdda655c47ebb85ace28e6931464564332bf63e27e90199c50ee
+    - address: /dns/ewr-01.mainnet.sui.io/udp/8084
+      peer-id: 3227f8a05f0faa1a197c075d31135a366a1c6f3d4872cb8af66c14dea3e0eb66
+    - address: /dns/sjc-00.mainnet.sui.io/udp/8084
+      peer-id: 6f0b25087cd6b2fd2e4329bcf308ac95a37c49277dd7286b72470c124809db5b
+    - address: /dns/sjc-01.mainnet.sui.io/udp/8084
+      peer-id: af1d5d8468b3612ac2b6ff3ca91e99a71390dbe5b83dea9f6ae2da708d689227
+    - address: /dns/lhr-00.mainnet.sui.io/udp/8084
+      peer-id: c619a5e0f8f36eac45118c1f8bda28f0f508e2839042781f1d4a9818043f732c
+    - address: /dns/lhr-01.mainnet.sui.io/udp/8084
+      peer-id: 53dcedf250f73b1ec83250614498947db00d17c0181020fcdb7b6db12afbc175
+END
+```
+```bash
+sudo systemctl restart suid
+```
+___
+[<img src='https://user-images.githubusercontent.com/83868103/227937841-6e05b933-9534-49f1-808a-efe087a4f7cd.png' alt='Twitter'  width='16.5%'>](https://twitter.com/intent/user?screen_name=TestnetPride&intent=follow)[<img src='https://user-images.githubusercontent.com/83868103/227935592-ea64badd-ceb4-4945-8dfc-f25c787fb29d.png' alt='TELEGRAM'  width='16.5%'>](https://t.me/TestnetPride)[<img src='https://user-images.githubusercontent.com/83868103/227936236-325bebfd-b287-4206-a964-dcbe67fe7ca8.png' alt='WEBSITE'  width='16.5%'>](http://testnet-pride.com/)[<img src='https://user-images.githubusercontent.com/83868103/227936479-a48e814b-3ec1-4dcb-bd44-96b02d8f55da.png' alt='MAIL'  width='16.5%'>](mailto:official@testnet-pride.com)[<img src='https://user-images.githubusercontent.com/83868103/227932993-b1e3a588-2b91-4915-854a-fa47da3b2cdb.png' alt='LINKEDIN'  width='16.5%'>](https://www.linkedin.com/company/testnet-pride/)[<img src='https://user-images.githubusercontent.com/83868103/227948915-65731f97-c406-4d2c-996c-e5440ff67584.png' alt='GITHUB'  width='16.5%'>](https://github.com/testnet-pride)
