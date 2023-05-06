@@ -31,14 +31,15 @@ echo View Key: $VK && \
 echo Address: $ADDRESS
 ```
 ___
-#### 5. Generate a tweet with your wallet to get tokens
-``` bash
-echo "https://twitter.com/intent/tweet?text=@AleoFaucet%20send%2010%20credits%20to%20$ADDRESS"
-```
-##### *P.S. You need to past the output of the command above into your browser and publish a tweet and wait for the response form a bot. It will take about 30-40 minutes. The bot will send you a link which you will need to use in the step 7.*
+#### 5. Request tokens for your wallet
+##### To request tokens, you will need to send an SMS to the number +1-867-888-5688 with your wallet address in the following format: **`Send 50 credits to aleo1hcgx79gqerlj4ad2y2w2ysn3pc38nav69vd2r5lc3hjycfy6xcpse0cag0`**
 
-#### **Do not wait for the response. Feel free to do the next step (6) in the meantime**
-<img width= 43% alt=image src=https://user-images.githubusercontent.com/80550154/227748074-45a0004b-e131-4f58-9469-0591797c025d.png> <img width="43%" alt="image" src=https://user-images.githubusercontent.com/80550154/227748072-161f0fe6-21db-412e-be3b-e8d5707ad64f.png>
+[<img align="left" src='https://user-images.githubusercontent.com/83868103/236622866-d2304783-0ad8-40fc-af63-318675a49ef6.png' alt='PHONE'  width='23%'>]() 
+#
+#### After sending the request, you should receive a response from the bot about the successful wallet replenishment. You can check the success of the wallet replenishment on the official Aleo faucet [website](https://faucet.aleo.org) 
+#### You will need to enter your wallet in the search bar and see the transaction hash, which is necessary for deployment
+[<img src='https://user-images.githubusercontent.com/83868103/236622642-25e909ad-5691-41a3-8e69-912183510b74.png' alt='PHONE'  width='70%'>]() 
+#
 
 ___
 #### 6. Install required software
