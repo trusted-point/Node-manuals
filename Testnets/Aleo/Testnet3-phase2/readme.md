@@ -38,7 +38,7 @@ ___
 #
 ##### After sending the request, you should receive a response from the bot about the successful wallet replenishment. You can check the success of the wallet replenishment on the official Aleo faucet [website](https://faucet.aleo.org) 
 ##### You will need to enter your wallet in the search bar and see the transaction hash, which is necessary for deployment
-[<img src='https://user-images.githubusercontent.com/83868103/236622642-25e909ad-5691-41a3-8e69-912183510b74.png' alt='PHONE'  width='69.5%'>]() 
+[<img src='https://user-images.githubusercontent.com/83868103/236622642-25e909ad-5691-41a3-8e69-912183510b74.png' alt='PHONE'  width='69.3%'>]() 
 #
 
 ___
