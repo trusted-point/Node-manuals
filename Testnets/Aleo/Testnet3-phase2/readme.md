@@ -40,7 +40,7 @@ echo View Key: $VK && \
 echo Address: $ADDRESS
 ```
 
-##### After receiving a message from the bot about the successful replenishment of your wallet, you need to go to the website https://faucet.aleo.org/ and make sure that the transaction has been executed.
+##### After receiving a message from the bot about the successful replenishment of your wallet, you need to go to the website https://faucet.aleo.org/ and make sure that the transaction has been executed. The transaction hash will be necessary to proceed.
 ___
 #### 5. Request tokens for your wallet
 ##### To request tokens, you will need to send an SMS to the number +1-867-888-5688 with your wallet address in the following format: **`Send 50 credits to aleo1hcgx79gqerlj4ad2y2w2ysn3pc38nav69vd2r5lc3hjycfy6xcpse0cag0`**
