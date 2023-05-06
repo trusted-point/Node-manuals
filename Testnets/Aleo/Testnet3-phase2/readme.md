@@ -75,7 +75,8 @@ ___
 #### 7. Deploy a contract
 ```bash
 NAME=helloworld_"${ADDRESS:4:6}"
-mkdir $HOME/leo_deploy && cd $HOME/leo_deploy
+mkdir $HOME/leo_deploy
+cd $HOME/leo_deploy
 leo new $NAME
 ```
 ```bash
