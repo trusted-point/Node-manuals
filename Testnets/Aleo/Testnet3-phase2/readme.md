@@ -75,10 +75,8 @@ cargo install --path .
 ___
 #### 7. Deploy a contract
 ```bash
-echo Enter the Name of your contract "(any)": && read NAME
-```
-```bash
-cd $HOME && mkdir leo_deploy && cd leo_deploy
+NAME=helloworld_"${ADDRESS:4:6}"
+cd leo_deploy
 leo new $NAME
 ```
 ##### *P.S In the command below past the link which you got from a bot on twitter at [the previous step](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Aleo/guide.md#5-generate-a-tweet-with-your-wallet-to-get-tokens).*
