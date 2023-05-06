@@ -47,8 +47,7 @@ ___
 ##### Use the Transaction ID as the answer when using the following command.
 
 ```bash
-echo Enter your Transaction ID: && \ 
-read TI
+echo Enter your Transaction ID: && read TI
 ```
 
 ___
