@@ -40,7 +40,7 @@ echo View Key: $VK && \
 echo Address: $ADDRESS
 ```
 #
-[<img align="right" src='https://user-images.githubusercontent.com/83868103/236626441-7b619da5-6d2f-4a01-9fd8-e72fad7655bd.png' alt='PHONE'  width='60%'>]() 
+[<img align="right" src='https://user-images.githubusercontent.com/83868103/236626441-7b619da5-6d2f-4a01-9fd8-e72fad7655bd.png' alt='PHONE'  width='70%'>]() 
 
 
 ##### After receiving a message from the bot about the successful replenishment of your wallet, you need to go to the faucet [website](https://faucet.aleo.org) and make sure that the transaction has been executed. 
