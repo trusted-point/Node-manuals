@@ -95,7 +95,29 @@ snarkos developer deploy "$NAME.aleo" \
 <img width="1403" alt="image" src="https://user-images.githubusercontent.com/83868103/236632069-fee2482e-7e71-41b7-9bbb-42487cdb5ede.png">
 
 ##### Use the received transaction hash to search for your contract on the [explore](https://explorer.hamp.app)
+##### After your contract is displayed in the explorer, you can proceed to the next step.
 
+#### 8. Execute a contract
+##### Use the transaction hash as the answer for the following command.
+```bash
+echo Enter your Deploy hash: && read DH
+```
+```bash
+CIPHERTEXT=$(curl -s https://vm.aleo.org/api/testnet3/transaction/$DH | jq -r '.fee.transition.outputs[].value')
+```bash
+RECORD=$(snarkos developer decrypt --ciphertext $CIPHERTEXT --view-key $VK)
+```
+```bash
+snarkos developer execute "$NAME.aleo" "hello" "1u32" "2u32" \
+--private-key $PK \
+--query "https://vm.aleo.org/api" \
+--broadcast "https://vm.aleo.org/api/testnet3/transaction/broadcast" \
+--fee 1000000 
+--record "$RECORD"
+
+<img width="1408" alt="image" src="https://user-images.githubusercontent.com/83868103/236633923-9c04521d-c5ef-43b8-8f58-d235a1f1f6df.png">
+
+--record "$RECORD"
 #### That is it!
 ___
 #### 8. Useful commands
