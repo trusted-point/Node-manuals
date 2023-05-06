@@ -49,9 +49,7 @@ ___
 
 #
 ```bash
-echo Private Key: $PK && \
-echo View Key: $VK && \
-echo Address: $ADDRESS
+echo Enter your Deposite Hash: && read DH
 ```
 ___
 #### 6. Install required software
