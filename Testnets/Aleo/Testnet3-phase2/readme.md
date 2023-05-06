@@ -51,7 +51,7 @@ echo Address: $ADDRESS
 echo Enter your Transaction ID: && read TI
 ```
 ```bash
-CIPHERTEXT=$(curl -s https://vm.aleo.org/api/testnet3/transaction/$IT | jq -r '.execution.transitions[0].outputs[0].value')
+CIPHERTEXT=$(curl -s https://vm.aleo.org/api/testnet3/transaction/$TI | jq -r '.execution.transitions[0].outputs[0].value')
 ```
 
 ___
@@ -75,7 +75,7 @@ ___
 #### 7. Deploy a contract
 ```bash
 NAME=helloworld_"${ADDRESS:4:6}"
-cd leo_deploy
+mkdir $HOME/leo_deploy && cd $HOME/leo_deploy
 leo new $NAME
 ```
 ```bash
