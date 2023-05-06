@@ -9,6 +9,16 @@ ___
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=5000&color=F73515&center=true&width=1000&lines=%E2%9B%94%EF%B8%8F+DO+NOT+GIVE+THIS+DATA+TO+ANYONE+%E2%9B%94%EF%B8%8F)](https://github.com/testnet-pride)
 <img width="1781" alt="image" src="https://user-images.githubusercontent.com/83868103/227736022-1adcf1fd-4cca-4419-a823-8f859518d41e.png">
 ___
+
+
+#### 1. Request tokens for your wallet
+##### To request tokens, you will need to send an SMS to the number +1-867-888-5688 with your wallet address in the following format: **`Send 50 credits to aleo1hcgx79gqerlj4ad2y2w2ysn3pc38nav69vd2r5lc3hjycfy6xcpse0cag0`**
+
+[<img align="left" src='https://user-images.githubusercontent.com/83868103/236622866-d2304783-0ad8-40fc-af63-318675a49ef6.png' alt='PHONE'  width='28%'>]() 
+
+
+
+
 #### 2. Download required packages and create a tmux session
 ```bash
 sudo apt update && \
@@ -38,7 +48,7 @@ ___
 #
 ##### After sending the request, you should receive a response from the bot about the successful wallet replenishment. You can check the success of the wallet replenishment on the official Aleo faucet [website](https://faucet.aleo.org)
 ##### You will need to enter your wallet in the search bar and see the transaction hash, which is necessary for deployment
-[<img src='https://user-images.githubusercontent.com/83868103/236622642-25e909ad-5691-41a3-8e69-912183510b74.png' alt='PHONE'  width='70%'>]() 
+[<img align="right" src='https://user-images.githubusercontent.com/83868103/236622642-25e909ad-5691-41a3-8e69-912183510b74.png' alt='PHONE'  width='70%'>]() 
 #
 ```bash
 echo Private Key: $PK && \
