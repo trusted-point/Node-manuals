@@ -114,7 +114,7 @@ snarkos developer execute "$NAME.aleo" "hello" "1u32" "2u32" \
 --broadcast "https://vm.aleo.org/api/testnet3/transaction/broadcast" \
 --fee 1000000 
 --record "$RECORD"
-
+```
 <img width="1408" alt="image" src="https://user-images.githubusercontent.com/83868103/236633923-9c04521d-c5ef-43b8-8f58-d235a1f1f6df.png">
 
 --record "$RECORD"
