@@ -104,6 +104,7 @@ echo Enter your Deploy hash: && read DH
 ```
 ```bash
 CIPHERTEXT=$(curl -s https://vm.aleo.org/api/testnet3/transaction/$DH | jq -r '.fee.transition.outputs[].value')
+```
 ```bash
 RECORD=$(snarkos developer decrypt --ciphertext $CIPHERTEXT --view-key $VK)
 ```
