@@ -44,11 +44,11 @@ ___
 [<img align="right" src='https://user-images.githubusercontent.com/83868103/236625237-f063466c-d7b8-440b-a74f-3fabb9eed839.png' alt='PHONE'  width='60%'>]() 
 #
 ##### After receiving a message from the bot about the successful replenishment of your wallet, you need to go to the faucet [website](https://faucet.aleo.org) and make sure that the transaction has been executed. 
-##### Use the transaction hash as the answer when using the following command.
+##### Use the Transaction ID as the answer when using the following command.
 
 ```bash
-echo Enter your Deposite Hash: && \ 
-read DH
+echo Enter your Transaction ID: && \ 
+read TI
 ```
 #
 ___
