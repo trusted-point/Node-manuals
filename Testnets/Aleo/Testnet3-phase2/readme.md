@@ -94,7 +94,7 @@ snarkos developer deploy "$NAME.aleo" \
 ##### After executing the command, you should see a similar result.
 <img width="1403" alt="image" src="https://user-images.githubusercontent.com/83868103/236632069-fee2482e-7e71-41b7-9bbb-42487cdb5ede.png">
 
-Use the received transaction hash to search for your contract on the [explore](https://explorer.hamp.app)
+##### Use the received transaction hash to search for your contract on the [explore](https://explorer.hamp.app)
 
 #### That is it!
 ___
