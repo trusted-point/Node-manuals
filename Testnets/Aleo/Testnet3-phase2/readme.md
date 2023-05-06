@@ -41,8 +41,9 @@ echo Address: $ADDRESS
 ```
 
 ##### After receiving a message from the bot about the successful replenishment of your wallet, you need to go to the faucet [website](https://faucet.aleo.org) and make sure that the transaction has been executed. The transaction hash will be necessary to proceed.
-[<img align="right" src='https://user-images.githubusercontent.com/83868103/236622642-25e909ad-5691-41a3-8e69-912183510b74.png' alt='PHONE'  width='70%'>]() 
 ___
+[<img align="right" src='https://user-images.githubusercontent.com/83868103/236622642-25e909ad-5691-41a3-8e69-912183510b74.png' alt='PHONE'  width='70%'>]() 
+
 
 #
 ```bash
