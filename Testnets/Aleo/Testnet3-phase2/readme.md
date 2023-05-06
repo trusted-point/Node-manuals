@@ -50,12 +50,11 @@ echo Address: $ADDRESS
 ```bash
 echo Enter your Transaction ID: && read TI
 ```
-
 ```bash
 CIPHERTEXT=$(curl -s https://vm.aleo.org/api/testnet3/transaction/$IT | jq -r '.execution.transitions[0].outputs[0].value')
 ```
 
-#
+___
 #### 6. Install required software
 ```bash
 cd $HOME
