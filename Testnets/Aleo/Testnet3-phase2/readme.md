@@ -40,7 +40,7 @@ echo View Key: $VK && \
 echo Address: $ADDRESS
 ```
 #
-[<img align="right" src='https://user-images.githubusercontent.com/83868103/236626924-c6544d20-c426-44c7-af36-152dfbd01ddd.png' alt='PHONE'  width='50%'>]() 
+[<img align="right" src='https://user-images.githubusercontent.com/83868103/236626924-c6544d20-c426-44c7-af36-152dfbd01ddd.png' alt='PHONE'  width='40%'>]() 
 
 
 
