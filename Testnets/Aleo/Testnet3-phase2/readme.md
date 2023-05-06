@@ -33,7 +33,7 @@ echo Enter your Private Key: && read PK && \
 echo Enter your View Key: && read VK && \
 echo Enter your Address: && read ADDRESS
 ```
-#### 5. Make sure the data is correct. If not, you can do step 3 again.
+#### 5. Make sure the data is correct. If not, you can do step 4 again.
 ```bash
 echo Private Key: $PK && \
 echo View Key: $VK && \
