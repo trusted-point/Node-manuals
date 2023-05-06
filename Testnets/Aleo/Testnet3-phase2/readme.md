@@ -40,7 +40,11 @@ ___
 ##### You will need to enter your wallet in the search bar and see the transaction hash, which is necessary for deployment
 [<img src='https://user-images.githubusercontent.com/83868103/236622642-25e909ad-5691-41a3-8e69-912183510b74.png' alt='PHONE'  width='69%'>]() 
 #
-
+```bash
+echo Private Key: $PK && \
+echo View Key: $VK && \
+echo Address: $ADDRESS
+```
 ___
 #### 6. Install required software
 ```bash
