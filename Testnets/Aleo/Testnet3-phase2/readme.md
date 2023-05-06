@@ -39,7 +39,6 @@ echo Private Key: $PK && \
 echo View Key: $VK && \
 echo Address: $ADDRESS
 ```
-___
 
 [<img align="right" src='https://user-images.githubusercontent.com/83868103/236625237-f063466c-d7b8-440b-a74f-3fabb9eed839.png' alt='PHONE'  width='50%'>]() 
 #
