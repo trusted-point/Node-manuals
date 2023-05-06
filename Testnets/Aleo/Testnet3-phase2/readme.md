@@ -12,8 +12,7 @@ ___
 
 
 #### 2. Request tokens for your wallet
-##### To request tokens, you will need to send an SMS to the number +1-867-888-5688 with your wallet address in the following format: 
-`Send 50 credits to aleo1hcgx79gqerlj4ad2y2w2ysn3pc38nav69vd2r5lc3hjycfy6xcpse0cag0`
+##### To request tokens, you will need to send an SMS to the number +1-867-888-5688 with your wallet address in the following format: `Send 50 credits to aleo1hcgx79gqerlj4ad2y2w2ysn3pc38nav69vd2r5lc3hjycfy6xcpse0cag0`
 
 [<img align="left" src='https://user-images.githubusercontent.com/83868103/236622866-d2304783-0ad8-40fc-af63-318675a49ef6.png' alt='PHONE'  width='30%'>]() 
 
