@@ -113,7 +113,7 @@ snarkos developer execute "$NAME.aleo" "hello" "1u32" "2u32" \
 --private-key $PK \
 --query "https://vm.aleo.org/api" \
 --broadcast "https://vm.aleo.org/api/testnet3/transaction/broadcast" \
---fee 1000000 
+--fee 1000000 \
 --record "$RECORD"
 ```
 ##### After execution, you should see the following output 
