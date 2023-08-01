@@ -10,7 +10,7 @@
 ___
 ## **Navigation**
 
-* [TestnetPride services (RPC, API)](https://github.com/Hacker-web-Vi/Hacker-web-Vi/assets/80550154/93b55c6a-0e89-46ce-99ac-14cde1a20421)
+* [TestnetPride services (RPC, API)](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#testnetpride-services)
 * [State Sync](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#state-sync-synchronization)
   * [Install required packages and Go](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#prepare-the-server)
   * [Set variables](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#set-variables)
