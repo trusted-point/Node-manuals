@@ -1,5 +1,5 @@
+[<img src='https://github.com/Hacker-web-Vi/Hacker-web-Vi/assets/80550154/93b55c6a-0e89-46ce-99ac-14cde1a20421' alt='banner' width= '99.9%'>]()
 ## About **ZetaChain**
-
 * **[ZetaChain](https://www.zetachain.com/)** is the foundational, public blockchain that enables omnichain, generic smart contracts and messaging between any blockchain. It solves the problems of “cross-chain” and “multi-chain” and aims to open the crypto and global financial ecosystem to anyone. ZetaChain envisions and supports a truly fluid, multi-chain crypto ecosystem, where users and developers can move between and appreciate the benefits of any blockchain: payments, DeFi, liquidity, games, art, social graphs, performance, security, privacy, and so on.
 
 * ZetaChain is a decentralized and public blockchain network. It is built on Cosmos SDK and Tendermint Consensus. While many cross-chain solutions like bridges have varying, often centralized trust models that have a track record for being susceptible to exploits and hacks, ZetaChain is a Proof-of-Stake blockchain, where all transactions and activity on the platform -- even cross-chain transactions -- are fully transparent, verifiable, and function in a trust-minimized manner.
@@ -10,25 +10,22 @@
 ___
 ## **Navigation**
 
-* [Validator installation guide](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare-a-server)
-  * [Install required packages and Go](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare)
-  * [Variables](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#variables)
-  * [Build and configuration](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#build-and-configuration)
-  * [Change ports](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#change-port)
-  * [Memory optimization](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#memory-optimization)
-  * [State sync](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#state-sync-synchronization)
-  * [Start a node](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#start-node)
-  * [Create a validator](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#create-a-validator)
-  * [Update a validator](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#update-node)
-* [Useful commands](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#useful-commands)
-  * [Node status](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#node-status)
-  * [Validator info](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#validator-info)
-  * [Wallet](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#wallet)
-  * [Voting](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#voting)
-  * [Actions](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#actions)
-  * [All validators info](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#all-validators-info)
-  * [Useful commands](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#useful-commands)
-* [Delete a node](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#delete-a-node)
+* [TestnetPride services (RPC, API)](https://github.com/Hacker-web-Vi/Hacker-web-Vi/assets/80550154/93b55c6a-0e89-46ce-99ac-14cde1a20421)
+* [State Sync](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#state-sync-synchronization)
+  * [Install required packages and Go](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#prepare-the-server)
+  * [Set variables](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#set-variables)
+  * [Download pre-built zeta binary](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#download-the-binary)
+  * [Download config](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#download-configs)
+  * [Disk space optimization](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#disk-space-optimization--following-variables-can-be-customised)
+  * [State sync](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#state-sync-synchronization)
+  * [Start the node](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#start-the-node)
+  * [Create a validator](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#create-a-validator)
+* [Useful commands](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#useful-commands)
+  * [Node status](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#node-status)
+  * [Voting](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#voting-for-the-proposal)
+  * [All validators info](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#all-validators-info)
+* [Useful commands](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#useful-commands)
+* [Delete the node](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#delete-the-node)
 ___
 ## TestnetPride services 
 ```http
@@ -290,7 +287,7 @@ zetacored q staking validators -o json --limit=1000 \
 | jq -r '.tokens + " - " + .description.moniker' \
 | sort -gr | nl
 ```
-### list of all inactive validators 
+### List all inactive validators 
 ```bash
 zetacored q staking validators -o json --limit=1000 \
 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' \
