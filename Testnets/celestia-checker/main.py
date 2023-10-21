@@ -1,4 +1,3 @@
-python
 import json
 import requests
 from tabulate import tabulate
@@ -10,7 +9,6 @@ url = "https://raw.githubusercontent.com/celestiaorg/networks/master/celestia/pr
 response = requests.get(url)
 data = response.json()
 
-# Extract balances for each wallet address
 balances = []
 total_balance = 0
 
@@ -19,8 +17,11 @@ for address in wallet_addresses:
     if found:
         balance = found[0]["coins"][0]
         balance_str = int(balance['amount']) // 1000000
-        total_balance += balance_str
-        balances.append([address, balance_str])
+    else:
+        balance_str = 0
+
+    total_balance += balance_str
+    balances.append([address, balance_str])
 
 summary_line = ["Total $TIA", total_balance]
 balances.append(summary_line)
