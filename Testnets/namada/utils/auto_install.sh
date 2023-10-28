@@ -36,9 +36,9 @@ log_warning() {
 # Function to get version
 get_version() {
   case "$1" in
-    "namada") namada --version ;;
-    "protoc") protoc --version ;;
-    "cometbft") cometbft version ;;
+    "namada") namada --version 2>/dev/null ;;
+    "protoc") protoc --version 2>/dev/null ;;
+    "cometbft") cometbft version 2>/dev/null ;;
     *) echo "Unknown" ;;
   esac
 }
@@ -95,3 +95,4 @@ install_cometbft_fn() {
   install_or_update "cometbft" "$COMETBFT_TAG" "https://github.com/cometbft/cometbft/releases/download/$COMETBFT_TAG/cometbft_${COMETBFT_TAG#v}_linux_amd64.tar.gz" "tar.gz" install_cometbft_fn
 
 echo -e "${GREEN}🎉 Installation completed! For more details, check the log file.${NC}"
+
