@@ -13,18 +13,18 @@ LOG_FILE="./install.log"
 echo "[INFO] [$(date +'%Y-%m-%dT%H:%M:%S')] Starting installation..." > $LOG_FILE
 
 # Function to log error messages
-warn() {
-  echo -e "${RED}✖ $@${NC}" | tee -a $LOG_FILE
+log_error() {
+  echo -e "${RED}✖ [$(date +'%Y-%m-%dT%H:%M:%S')] $@${NC}" | tee -a $LOG_FILE
 }
 
 # Function to log info messages
-info() {
-  echo "[INFO] [$(date +'%Y-%m-%dT%H:%M:%S')] $@" >> $LOG_FILE
+log_info() {
+  echo -e "${YELLOW}ℹ️ [$(date +'%Y-%m-%dT%H:%M:%S')] $@${NC}" | tee -a $LOG_FILE
 }
 
 # Function to log success messages
-success() {
-  echo -e "${GREEN}✔ $@${NC}" | tee -a $LOG_FILE
+log_success() {
+  echo -e "${GREEN}✔ [$(date +'%Y-%m-%dT%H:%M:%S')] $@${NC}" | tee -a $LOG_FILE
 }
 
 # Function to get version
@@ -45,25 +45,29 @@ install_or_update() {
   local install_fn=$4
   local current_version=$(get_version "$name")
 
+  log_info "Checking installed version of $name..."
+  
   if [ "$current_version" == "$tag" ]; then
-    success "$name is already installed and up-to-date."
+    log_success "$name is already up-to-date."
     return
   elif [ "$current_version" != "Unknown" ]; then
-    warn "$name is installed but out-of-date. Attempting to update..."
+    log_info "$name is installed but out-of-date. Attempting to update..."
   fi
 
-  info "Installing or updating $name to version $tag ..."
+  log_info "Downloading $name from $url..."
   if curl -L -o "$name.tar.gz" "$url" &>> $LOG_FILE; then
+    log_info "Unpacking $name..."
     if tar -xvf "$name.tar.gz" &>> $LOG_FILE; then
+      log_info "Installing $name..."
       if $install_fn; then
         rm -rf "$name.tar.gz"
         local new_version=$(get_version "$name")
-        success "$name installed or updated successfully. Version: $new_version"
+        log_success "$name installed or updated successfully. Version: $new_version"
         return
       fi
     fi
   fi
-  warn "Failed to install or update $name."
+  log_error "Failed to install or update $name."
 }
 
 # Installation functions for each component
@@ -87,4 +91,4 @@ install_cometbft_fn() {
 [ -n "$COMETBFT_TAG" ] && \
   install_or_update "cometbft" "$COMETBFT_TAG" "https://github.com/cometbft/cometbft/releases/download/$COMETBFT_TAG/cometbft_${COMETBFT_TAG#v}_linux_amd64.tar.gz" install_cometbft_fn
 
-echo -e "${YELLOW}🎉 Installation or update completed! Check the log file for more details.${NC}" | tee -a $LOG_FILE
+log_info "🎉 Installation or update completed! Check the log file for more details."
