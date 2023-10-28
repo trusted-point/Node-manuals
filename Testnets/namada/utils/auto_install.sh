@@ -1,90 +1,70 @@
 #!/bin/bash
 
-# ANSI color codes
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[0;33m'
-NC='\033[0m' # No Color
-
-# Initialize log file
-LOG_FILE="./install.log"
-echo "[INFO] [$(date +'%Y-%m-%dT%H:%M:%S')] Starting installation..." > $LOG_FILE
-
-# Function to log error messages
-log_error() {
-  echo -e "${RED}❌ $@${NC}"
-  echo "[ERROR] [$(date +'%Y-%m-%dT%H:%M:%S')] $@" >> $LOG_FILE
-}
-
-# Function to log info messages
+# Логирование
 log_info() {
-  echo "[INFO] [$(date +'%Y-%m-%dT%H:%M:%S')] $@" >> $LOG_FILE
+  echo -e "\033[36mℹ️ [$1]\033[0m $2"
 }
 
-# Function to log success messages
 log_success() {
-  echo -e "${GREEN}✔️ $@${NC}"
-  echo "[SUCCESS] [$(date +'%Y-%m-%dT%H:%M:%S')] $@" >> $LOG_FILE
+  echo -e "\033[32m✔ [$1]\033[0m $2"
 }
 
-# Function to log warning messages
-log_warning() {
-  echo -e "${YELLOW}⚠️ $@${NC}"
-  echo "[WARNING] [$(date +'%Y-%m-%dT%H:%M:%S')] $@" >> $LOG_FILE
+log_error() {
+  echo -e "\033[31m✖ [$1]\033[0m $2"
 }
 
-# Function to get version
-get_version() {
-  case "$1" in
-    "namada") namada --version 2>/dev/null ;;
-    "protoc") protoc --version 2>/dev/null ;;
-    "cometbft") cometbft version 2>/dev/null ;;
-    *) echo "Unknown" ;;
-  esac
-}
-
-# Function to install or update a component
 install_or_update() {
   local name=$1
-  local tag=$2
+  local version=$2
   local url=$3
-  local file_extension=$4
+  local filetype=$4
   local install_fn=$5
 
-  local current_version=$(get_version "$name")
-  local action="Installed"
-
-  if [ "$current_version" == "$tag" ]; then
-    log_success "$name is up-to-date."
+  # Проверка на наличие тега
+  if [ -z "$version" ]; then
+    log_error "$(date '+%Y-%m-%dT%H:%M:%S')" "$name tag is not set. Skipping installation."
     return
-  elif [ "$current_version" != "Unknown" ]; then
-    action="Updated"
   fi
 
-  log_info "Downloading $name..."
-  if ! curl -L -o "$name.$file_extension" "$url" >> $LOG_FILE 2>&1 || \
-     ! $install_fn >> $LOG_FILE 2>&1; then
-    log_error "Failed to install $name."
-    return 1
+  # Проверка текущей установленной версии
+  current_version=$($name --version 2>/dev/null)
+
+  if [ "$current_version" == "$version" ]; then
+    log_success "$(date '+%Y-%m-%dT%H:%M:%S')" "$name is up-to-date. Version: $version"
+    return
   fi
-  
-  rm -rf "$name.$file_extension"
-  local new_version=$(get_version "$name")
-  log_success "$action $name to $new_version"
+
+  # Загрузка
+  log_info "$(date '+%Y-%m-%dT%H:%M:%S')" "Downloading $name from $url..."
+  curl -L -o "$name.$filetype" "$url"
+
+  # Установка
+  log_info "$(date '+%Y-%m-%dT%H:%M:%S')" "Installing $name..."
+  $install_fn "$name.$filetype"
+
+  # Проверка успешной установки
+  new_version=$($name --version 2>/dev/null)
+  if [ "$new_version" == "$version" ]; then
+    log_success "$(date '+%Y-%m-%dT%H:%M:%S')" "$name installed successfully. Version: $version"
+  else
+    log_error "$(date '+%Y-%m-%dT%H:%M:%S')" "Failed to install $name."
+  fi
 }
 
-# Installation functions for each component
+# Функции установки для каждого компонента
 install_namada_fn() {
-  tar -xvf "namada.tar.gz" && sudo mv "namada-${NAMADA_TAG}-Linux-x86_64/"* /usr/local/bin/
-}
-install_protobuf_fn() {
-  unzip -o "protoc.zip" -d /usr/local/
-}
-install_cometbft_fn() {
-  tar -xvf "cometbft.tar.gz" && sudo mv "cometbft" /usr/local/bin/
+  tar -xvf $1 && sudo mv namada-${NAMADA_TAG}-Linux-x86_64/* /usr/local/bin/ && rm -rf namada-${NAMADA_TAG}-Linux-x86_64 $1
 }
 
-# Validate environment variables and proceed with installation or update
+install_protobuf_fn() {
+  unzip -o $1 -d /usr/local/ && rm $1
+}
+
+install_cometbft_fn() {
+  tar -xvf $1 && sudo mv cometbft /usr/local/bin/ && rm $1
+}
+
+# Установка компонентов
 [ -n "$NAMADA_TAG" ] && \
   install_or_update "namada" "$NAMADA_TAG" "https://github.com/anoma/namada/releases/download/$NAMADA_TAG/namada-${NAMADA_TAG}-Linux-x86_64.tar.gz" "tar.gz" install_namada_fn
 
@@ -94,5 +74,4 @@ install_cometbft_fn() {
 [ -n "$COMETBFT_TAG" ] && \
   install_or_update "cometbft" "$COMETBFT_TAG" "https://github.com/cometbft/cometbft/releases/download/$COMETBFT_TAG/cometbft_${COMETBFT_TAG#v}_linux_amd64.tar.gz" "tar.gz" install_cometbft_fn
 
-echo -e "${GREEN}🎉 Installation completed! For more details, check the log file.${NC}"
-
+log_info "$(date '+%Y-%m-%dT%H:%M:%S')" "🎉 Installation or update completed! Check the log file for more details."
