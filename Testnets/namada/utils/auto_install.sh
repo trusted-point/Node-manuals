@@ -4,29 +4,28 @@
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
-BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Log file
 LOG_FILE="./install.log"
 
 # Initialize log file
-echo -e "[INFO] [$(date +'%Y-%m-%dT%H:%M:%S')] Starting installation..." > $LOG_FILE
+echo "[INFO] [$(date +'%Y-%m-%dT%H:%M:%S')] Starting installation..." > $LOG_FILE
 
-# Function to print error messages
+# Function to log error messages and exit
 error() {
-  echo -e "${RED}[ERROR] [$(date +'%Y-%m-%dT%H:%M:%S')] $@${NC}" | tee -a $LOG_FILE
+  echo -e "${RED}✖ $@${NC}" | tee -a $LOG_FILE
   exit 1
 }
 
-# Function to print info messages
+# Function to log info messages
 info() {
-  echo -e "[INFO] [$(date +'%Y-%m-%dT%H:%M:%S')] $@" >> $LOG_FILE
+  echo "[INFO] [$(date +'%Y-%m-%dT%H:%M:%S')] $@" >> $LOG_FILE
 }
 
-# Function to print success messages
+# Function to log success messages
 success() {
-  echo -e "[SUCCESS] [$(date +'%Y-%m-%dT%H:%M:%S')] $@" >> $LOG_FILE
+  echo -e "${GREEN}✔ $@${NC}" | tee -a $LOG_FILE
 }
 
 # Check if required utilities are installed
@@ -39,7 +38,7 @@ done
 [ -z "$PROTOBUF_TAG" ] && error "PROTOBUF_TAG is not set."
 [ -z "$COMETBFT_TAG" ] && error "COMETBFT_TAG is not set."
 
-# ASCII Art
+# ASCII Art for beautiful output
 echo -e "${YELLOW}"
 cat << "EOF"
   _____           _        _ _           
@@ -54,8 +53,8 @@ echo -e "${NC}"
 # Function to install Namada
 install_namada() {
   info "Installing Namada version $NAMADA_TAG ..."
-  curl -L -o namada.tar.gz "https://github.com/anoma/namada/releases/download/$NAMADA_TAG/namada-${NAMADA_TAG}-Linux-x86_64.tar.gz" || error "Failed to download Namada."
-  tar -xvf namada.tar.gz || error "Failed to extract Namada archive."
+  curl -L -o namada.tar.gz "https://github.com/anoma/namada/releases/download/$NAMADA_TAG/namada-${NAMADA_TAG}-Linux-x86_64.tar.gz" &>> $LOG_FILE || error "Failed to download Namada."
+  tar -xvf namada.tar.gz &>> $LOG_FILE || error "Failed to extract Namada archive."
   sudo mv namada-${NAMADA_TAG}-Linux-x86_64/* /usr/local/bin/ || error "Failed to move Namada binaries."
   rm -rf namada-${NAMADA_TAG}-Linux-x86_64 namada.tar.gz
   namada_version=$(namada --version 2>&1) || error "Failed to get Namada version."
@@ -65,8 +64,8 @@ install_namada() {
 # Function to install Protocol Buffers
 install_protobuf() {
   info "Installing Protocol Buffers version $PROTOBUF_TAG ..."
-  curl -L -o protobuf.zip "https://github.com/protocolbuffers/protobuf/releases/download/$PROTOBUF_TAG/protoc-${PROTOBUF_TAG#v}-linux-x86_64.zip" || error "Failed to download Protocol Buffers."
-  unzip -o protobuf.zip -d /usr/local/ || error "Failed to extract Protocol Buffers archive."
+  curl -L -o protobuf.zip "https://github.com/protocolbuffers/protobuf/releases/download/$PROTOBUF_TAG/protoc-${PROTOBUF_TAG#v}-linux-x86_64.zip" &>> $LOG_FILE || error "Failed to download Protocol Buffers."
+  unzip -o protobuf.zip -d /usr/local/ &>> $LOG_FILE || error "Failed to extract Protocol Buffers archive."
   rm protobuf.zip
   protoc_version=$(protoc --version 2>&1) || error "Failed to get Protocol Buffers version."
   success "Protocol Buffers installed successfully. Version: $protoc_version"
@@ -75,8 +74,8 @@ install_protobuf() {
 # Function to install CometBFT
 install_cometbft() {
   info "Installing CometBFT version $COMETBFT_TAG ..."
-  curl -L -o cometbft.tar.gz "https://github.com/cometbft/cometbft/releases/download/$COMETBFT_TAG/cometbft_${COMETBFT_TAG#v}_linux_amd64.tar.gz" || error "Failed to download CometBFT."
-  tar -xvf cometbft.tar.gz || error "Failed to extract CometBFT archive."
+  curl -L -o cometbft.tar.gz "https://github.com/cometbft/cometbft/releases/download/$COMETBFT_TAG/cometbft_${COMETBFT_TAG#v}_linux_amd64.tar.gz" &>> $LOG_FILE || error "Failed to download CometBFT."
+  tar -xvf cometbft.tar.gz &>> $LOG_FILE || error "Failed to extract CometBFT archive."
   sudo mv cometbft /usr/local/bin/ || error "Failed to move CometBFT binaries."
   rm cometbft.tar.gz
   cometbft_version=$(cometbft version 2>&1) || error "Failed to get CometBFT version."
@@ -88,5 +87,5 @@ install_namada
 install_protobuf
 install_cometbft
 
-echo -e "${YELLOW}[INFO] [$(date +'%Y-%m-%dT%H:%M:%S')] 🎉 All packages were successfully installed!${NC}" | tee -a $LOG_FILE
+echo -e "${YELLOW}🎉 All packages were successfully installed!${NC}" | tee -a $LOG_FILE
 
