@@ -12,10 +12,9 @@ LOG_FILE="./install.log"
 # Initialize log file
 echo "[INFO] [$(date +'%Y-%m-%dT%H:%M:%S')] Starting installation..." > $LOG_FILE
 
-# Function to log error messages and exit
-error() {
+# Function to log error messages
+warn() {
   echo -e "${RED}✖ $@${NC}" | tee -a $LOG_FILE
-  exit 1
 }
 
 # Function to log info messages
@@ -28,58 +27,67 @@ success() {
   echo -e "${GREEN}✔ $@${NC}" | tee -a $LOG_FILE
 }
 
-# Check if required utilities are installed
+# Check if required utilities are installed and install if not
 for util in curl tar unzip sudo; do
-  command -v $util >/dev/null 2>&1 || error "$util is not installed."
+  if ! command -v $util >/dev/null 2>&1; then
+    warn "$util is not installed. Attempting to install..."
+    sudo apt-get update && sudo apt-get install -y $util || warn "Failed to install $util."
+  fi
 done
 
 # Validate environment variables
-[ -z "$NAMADA_TAG" ] && error "NAMADA_TAG is not set."
-[ -z "$PROTOBUF_TAG" ] && error "PROTOBUF_TAG is not set."
-[ -z "$COMETBFT_TAG" ] && error "COMETBFT_TAG is not set."
+[ -z "$NAMADA_TAG" ] && warn "NAMADA_TAG is not set."
+[ -z "$PROTOBUF_TAG" ] && warn "PROTOBUF_TAG is not set."
+[ -z "$COMETBFT_TAG" ] && warn "COMETBFT_TAG is not set."
 
 # ASCII Art for beautiful output
 echo -e "${YELLOW}"
 cat << "EOF"
-  _____           _        _ _           
- |_   _|         | |      | | |          
-   | |  _ __  ___| |_ __ _| | | ___ _ __ 
-   | | | '_ \/ __| __/ _` | | |/ _ \ '__|
-  _| |_| | | \__ \ || (_| | | |  __/ |   
- |_____|_| |_|___/\__\__,_|_|_|\___|_|   
+  _____ _           _    _____ _____ _____  
+ |_   _| |         | |  |_   _|  __ \_   _| 
+   | | | |_ __   __| |    | | | |__) || |   
+   | | | | '_ \ / _` |    | | |  ___/ | |   
+  _| |_| | | | | (_| |   _| |_| |    _| |_  
+ |_____|_|_| |_|\__,_|  |_____|_|   |_____| 
 EOF
 echo -e "${NC}"
 
 # Function to install Namada
 install_namada() {
-  info "Installing Namada version $NAMADA_TAG ..."
-  curl -L -o namada.tar.gz "https://github.com/anoma/namada/releases/download/$NAMADA_TAG/namada-${NAMADA_TAG}-Linux-x86_64.tar.gz" &>> $LOG_FILE || error "Failed to download Namada."
-  tar -xvf namada.tar.gz &>> $LOG_FILE || error "Failed to extract Namada archive."
-  sudo mv namada-${NAMADA_TAG}-Linux-x86_64/* /usr/local/bin/ || error "Failed to move Namada binaries."
-  rm -rf namada-${NAMADA_TAG}-Linux-x86_64 namada.tar.gz
-  namada_version=$(namada --version 2>&1) || error "Failed to get Namada version."
-  success "Namada installed successfully. Version: $namada_version"
+  if [ -n "$NAMADA_TAG" ]; then
+    info "Installing Namada version $NAMADA_TAG ..."
+    curl -L -o namada.tar.gz "https://github.com/anoma/namada/releases/download/$NAMADA_TAG/namada-${NAMADA_TAG}-Linux-x86_64.tar.gz" &>> $LOG_FILE && \
+    tar -xvf namada.tar.gz &>> $LOG_FILE && \
+    sudo mv namada-${NAMADA_TAG}-Linux-x86_64/* /usr/local/bin/ && \
+    rm -rf namada-${NAMADA_TAG}-Linux-x86_64 namada.tar.gz && \
+    namada_version=$(namada --version 2>&1) && \
+    success "Namada installed successfully. Version: $namada_version" || warn "Failed to install Namada."
+  fi
 }
 
 # Function to install Protocol Buffers
 install_protobuf() {
-  info "Installing Protocol Buffers version $PROTOBUF_TAG ..."
-  curl -L -o protobuf.zip "https://github.com/protocolbuffers/protobuf/releases/download/$PROTOBUF_TAG/protoc-${PROTOBUF_TAG#v}-linux-x86_64.zip" &>> $LOG_FILE || error "Failed to download Protocol Buffers."
-  unzip -o protobuf.zip -d /usr/local/ &>> $LOG_FILE || error "Failed to extract Protocol Buffers archive."
-  rm protobuf.zip
-  protoc_version=$(protoc --version 2>&1) || error "Failed to get Protocol Buffers version."
-  success "Protocol Buffers installed successfully. Version: $protoc_version"
+  if [ -n "$PROTOBUF_TAG" ]; then
+    info "Installing Protocol Buffers version $PROTOBUF_TAG ..."
+    curl -L -o protobuf.zip "https://github.com/protocolbuffers/protobuf/releases/download/$PROTOBUF_TAG/protoc-${PROTOBUF_TAG#v}-linux-x86_64.zip" &>> $LOG_FILE && \
+    unzip -o protobuf.zip -d /usr/local/ &>> $LOG_FILE && \
+    rm protobuf.zip && \
+    protoc_version=$(protoc --version 2>&1) && \
+    success "Protocol Buffers installed successfully. Version: $protoc_version" || warn "Failed to install Protocol Buffers."
+  fi
 }
 
 # Function to install CometBFT
 install_cometbft() {
-  info "Installing CometBFT version $COMETBFT_TAG ..."
-  curl -L -o cometbft.tar.gz "https://github.com/cometbft/cometbft/releases/download/$COMETBFT_TAG/cometbft_${COMETBFT_TAG#v}_linux_amd64.tar.gz" &>> $LOG_FILE || error "Failed to download CometBFT."
-  tar -xvf cometbft.tar.gz &>> $LOG_FILE || error "Failed to extract CometBFT archive."
-  sudo mv cometbft /usr/local/bin/ || error "Failed to move CometBFT binaries."
-  rm cometbft.tar.gz
-  cometbft_version=$(cometbft version 2>&1) || error "Failed to get CometBFT version."
-  success "CometBFT installed successfully. Version: $cometbft_version"
+  if [ -n "$COMETBFT_TAG" ]; then
+    info "Installing CometBFT version $COMETBFT_TAG ..."
+    curl -L -o cometbft.tar.gz "https://github.com/cometbft/cometbft/releases/download/$COMETBFT_TAG/cometbft_${COMETBFT_TAG#v}_linux_amd64.tar.gz" &>> $LOG_FILE && \
+    tar -xvf cometbft.tar.gz &>> $LOG_FILE && \
+    sudo mv cometbft /usr/local/bin/ && \
+    rm cometbft.tar.gz && \
+    cometbft_version=$(cometbft version 2>&1) && \
+    success "CometBFT installed successfully. Version: $cometbft_version" || warn "Failed to install CometBFT."
+  fi
 }
 
 # Installation steps
@@ -87,5 +95,4 @@ install_namada
 install_protobuf
 install_cometbft
 
-echo -e "${YELLOW}🎉 All packages were successfully installed!${NC}" | tee -a $LOG_FILE
-
+echo -e "${YELLOW}🎉 Installation completed! Check the log file for more details.${NC}" | tee -a $LOG_FILE
