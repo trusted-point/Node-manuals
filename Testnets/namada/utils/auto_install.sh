@@ -55,19 +55,26 @@ install_or_update() {
   fi
 
   log_info "Downloading $name from $url..."
-  if curl -L -o "$name.tar.gz" "$url" &>> $LOG_FILE; then
-    log_info "Unpacking $name..."
-    if tar -xvf "$name.tar.gz" &>> $LOG_FILE; then
-      log_info "Installing $name..."
-      if $install_fn; then
-        rm -rf "$name.tar.gz"
-        local new_version=$(get_version "$name")
-        log_success "$name installed or updated successfully. Version: $new_version"
-        return
-      fi
-    fi
+  if ! curl -L -o "$name.tar.gz" "$url"; then
+    log_error "Failed to download $name from $url."
+    return 1
   fi
-  log_error "Failed to install or update $name."
+  
+  log_info "Unpacking $name..."
+  if ! tar -xvf "$name.tar.gz"; then
+    log_error "Failed to unpack $name."
+    return 1
+  fi
+  
+  log_info "Installing $name..."
+  if ! $install_fn; then
+    log_error "Failed to install $name."
+    return 1
+  fi
+  
+  rm -rf "$name.tar.gz"
+  local new_version=$(get_version "$name")
+  log_success "$name installed or updated successfully. Version: $new_version"
 }
 
 # Installation functions for each component
@@ -92,3 +99,4 @@ install_cometbft_fn() {
   install_or_update "cometbft" "$COMETBFT_TAG" "https://github.com/cometbft/cometbft/releases/download/$COMETBFT_TAG/cometbft_${COMETBFT_TAG#v}_linux_amd64.tar.gz" install_cometbft_fn
 
 log_info "🎉 Installation or update completed! Check the log file for more details."
+
