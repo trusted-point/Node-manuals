@@ -27,92 +27,51 @@ success() {
   echo -e "${GREEN}✔ $@${NC}" | tee -a $LOG_FILE
 }
 
-# Function to install required utilities
-install_util() {
-  case "$OSTYPE" in
-    linux*)
-      sudo apt-get update && sudo apt-get install -y $1 || warn "Failed to install $1."
-      ;;
-    darwin*)
-      brew install $1 || warn "Failed to install $1."
-      ;;
-    *)
-      warn "Unsupported operating system."
-      ;;
-  esac
-}
+# Function to install or update a component
+install_or_update() {
+  local name=$1
+  local tag=$2
+  local url=$3
+  local install_fn=$4
 
-# Check if required utilities are installed and install if not
-for util in curl tar unzip sudo; do
-  if ! command -v $util >/dev/null 2>&1; then
-    warn "$util is not installed. Attempting to install..."
-    install_util $util
-  fi
-done
-
-# Validate environment variables
-[ -z "$NAMADA_TAG" ] && warn "NAMADA_TAG is not set."
-[ -z "$PROTOBUF_TAG" ] && warn "PROTOBUF_TAG is not set."
-[ -z "$COMETBFT_TAG" ] && warn "COMETBFT_TAG is not set."
-
-# Set installation directories (can be overridden by user)
-NAMADA_DIR=${NAMADA_DIR:-/usr/local/bin}
-PROTOBUF_DIR=${PROTOBUF_DIR:-/usr/local}
-COMETBFT_DIR=${COMETBFT_DIR:-/usr/local/bin}
-
-# Function to install Namada
-install_namada() {
-  if [ -n "$NAMADA_TAG" ]; then
-    if ! command -v namada >/dev/null 2>&1; then
-      info "Installing Namada version $NAMADA_TAG ..."
-      curl -L -o namada.tar.gz "https://github.com/anoma/namada/releases/download/$NAMADA_TAG/namada-${NAMADA_TAG}-Linux-x86_64.tar.gz" &>> $LOG_FILE && \
-      tar -xvf namada.tar.gz &>> $LOG_FILE && \
-      sudo mv namada-${NAMADA_TAG}-Linux-x86_64/* $NAMADA_DIR && \
-      rm -rf namada-${NAMADA_TAG}-Linux-x86_64 namada.tar.gz && \
-      namada_version=$(namada --version 2>&1) && \
-      success "Namada installed successfully. Version: $namada_version" || warn "Failed to install Namada."
+  if command -v "$name" >/dev/null 2>&1; then
+    local current_version=$("$name" --version 2>&1)
+    if [ "$current_version" == "$tag" ]; then
+      success "$name is already installed and up-to-date."
+      return
     else
-      success "Namada is already installed."
+      warn "$name is installed but out-of-date. Attempting to update..."
     fi
   fi
+
+  info "Installing or updating $name to version $tag ..."
+  curl -L -o "$name.tar.gz" "$url" &>> $LOG_FILE && \
+  tar -xvf "$name.tar.gz" &>> $LOG_FILE && \
+  $install_fn && \
+  rm -rf "$name.tar.gz" && \
+  local new_version=$("$name" --version 2>&1) && \
+  success "$name installed or updated successfully. Version: $new_version" || warn "Failed to install or update $name."
 }
 
-# Function to install Protocol Buffers
-install_protobuf() {
-  if [ -n "$PROTOBUF_TAG" ]; then
-    if ! command -v protoc >/dev/null 2>&1; then
-      info "Installing Protocol Buffers version $PROTOBUF_TAG ..."
-      curl -L -o protobuf.zip "https://github.com/protocolbuffers/protobuf/releases/download/$PROTOBUF_TAG/protoc-${PROTOBUF_TAG#v}-linux-x86_64.zip" &>> $LOG_FILE && \
-      unzip -o protobuf.zip -d $PROTOBUF_DIR &>> $LOG_FILE && \
-      rm protobuf.zip && \
-      protoc_version=$(protoc --version 2>&1) && \
-      success "Protocol Buffers installed successfully. Version: $protoc_version" || warn "Failed to install Protocol Buffers."
-    else
-      success "Protocol Buffers is already installed."
-    fi
-  fi
+# Installation functions for each component
+install_namada_fn() {
+  sudo mv "namada-${NAMADA_TAG}-Linux-x86_64/"* /usr/local/bin/
+}
+install_protobuf_fn() {
+  unzip -o "protobuf.zip" -d /usr/local/
+}
+install_cometbft_fn() {
+  sudo mv "cometbft" /usr/local/bin/
 }
 
-# Function to install CometBFT
-install_cometbft() {
-  if [ -n "$COMETBFT_TAG" ]; then
-    if ! command -v cometbft >/dev/null 2>&1; then
-      info "Installing CometBFT version $COMETBFT_TAG ..."
-      curl -L -o cometbft.tar.gz "https://github.com/cometbft/cometbft/releases/download/$COMETBFT_TAG/cometbft_${COMETBFT_TAG#v}_linux_amd64.tar.gz" &>> $LOG_FILE && \
-      tar -xvf cometbft.tar.gz &>> $LOG_FILE && \
-      sudo mv cometbft $COMETBFT_DIR && \
-      rm cometbft.tar.gz && \
-      cometbft_version=$(cometbft version 2>&1) && \
-      success "CometBFT installed successfully. Version: $cometbft_version" || warn "Failed to install CometBFT."
-    else
-      success "CometBFT is already installed."
-    fi
-  fi
-}
+# Validate environment variables and proceed with installation or update
+[ -n "$NAMADA_TAG" ] && \
+  install_or_update "namada" "$NAMADA_TAG" "https://github.com/anoma/namada/releases/download/$NAMADA_TAG/namada-${NAMADA_TAG}-Linux-x86_64.tar.gz" install_namada_fn
 
-# Installation steps
-install_namada
-install_protobuf
-install_cometbft
+[ -n "$PROTOBUF_TAG" ] && \
+  install_or_update "protoc" "$PROTOBUF_TAG" "https://github.com/protocolbuffers/protobuf/releases/download/$PROTOBUF_TAG/protoc-${PROTOBUF_TAG#v}-linux-x86_64.zip" install_protobuf_fn
 
-echo -e "${YELLOW}🎉 Installation completed! Check the log file for more details.${NC}" | tee -a $LOG_FILE
+[ -n "$COMETBFT_TAG" ] && \
+  install_or_update "cometbft" "$COMETBFT_TAG" "https://github.com/cometbft/cometbft/releases/download/$COMETBFT_TAG/cometbft_${COMETBFT_TAG#v}_linux_amd64.tar.gz" install_cometbft_fn
+
+echo -e "${YELLOW}🎉 Installation or update completed! Check the log file for more details.${NC}" | tee -a $LOG_FILE
