@@ -1,62 +1,70 @@
 #!/bin/bash
 
-# Color codes for pretty logging
-RED='[0;31m'
-GREEN='[0;32m'
-NC='[0m'  # No Color
+# ANSI color codes
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
 
 # Function to print error messages
-error_exit() {
-    echo -e "${RED}[ERROR] $1${NC}"
-    exit 1
+error() {
+  echo -e "${RED}[ERROR] [$(date +'%Y-%m-%dT%H:%M:%S')] $@${NC}" 1>&2
+  exit 1
+}
+
+# Function to print info messages
+info() {
+  echo -e "${BLUE}[INFO] [$(date +'%Y-%m-%dT%H:%M:%S')] $@${NC}"
 }
 
 # Function to print success messages
 success() {
-    echo -e "${GREEN}[SUCCESS] $1${NC}"
+  echo -e "${GREEN}[SUCCESS] [$(date +'%Y-%m-%dT%H:%M:%S')] $@${NC}"
 }
 
-# Function to install software packages
-install_package() {
-    local tag=$1
-    local download_url=$2
-    local archive_name=$3
-    local temp_folder=$4
-    local extract_cmd=$5
-    local move_cmd=$6
-    local cleanup_cmd=$7
-    local verify_cmd=$8
+# Check if required utilities are installed
+for util in curl tar unzip sudo; do
+  command -v $util >/dev/null 2>&1 || error "$util is not installed."
+done
 
-    # Download
-    echo "[INFO] Downloading $archive_name..."
-    curl -s -L -o $archive_name $download_url || error_exit "Failed to download $archive_name"
+# Validate environment variables
+[ -z "$NAMADA_TAG" ] && error "NAMADA_TAG is not set."
+[ -z "$PROTOBUF_TAG" ] && error "PROTOBUF_TAG is not set."
+[ -z "$COMETBFT_TAG" ] && error "COMETBFT_TAG is not set."
 
-    # Extract
-    echo "[INFO] Extracting $archive_name..."
-    $extract_cmd || error_exit "Failed to extract $archive_name"
-
-    # Move to installation path
-    echo "[INFO] Installing..."
-    $move_cmd || error_exit "Failed to install"
-
-    # Cleanup
-    echo "[INFO] Cleaning up..."
-    $cleanup_cmd || error_exit "Failed to clean up"
-
-    # Verify Installation
-    echo "[INFO] Verifying Installation..."
-    $verify_cmd &> /dev/null || error_exit "Verification failed"
-    success "$($verify_cmd) successfully installed."
+# Function to install Namada
+install_namada() {
+  info "Installing Namada version $NAMADA_TAG ..."
+  curl -L -o namada.tar.gz "https://github.com/anoma/namada/releases/download/$NAMADA_TAG/namada-${NAMADA_TAG}-Linux-x86_64.tar.gz" || error "Failed to download Namada."
+  tar -xvf namada.tar.gz || error "Failed to extract Namada archive."
+  sudo mv namada-${NAMADA_TAG}-Linux-x86_64/* /usr/local/bin/ || error "Failed to move Namada binaries."
+  rm -rf namada-${NAMADA_TAG}-Linux-x86_64 namada.tar.gz
+  success "Namada installed successfully."
 }
 
-# Validate input tags
-[[ -z "$NAMADA_TAG" || -z "$PROTOBUF_TAG" || -z "$COMETBFT_TAG" ]] && error_exit "Tags are not properly set. Please set NAMADA_TAG, PROTOBUF_TAG, and COMETBFT_TAG as environment variables before running this script."
+# Function to install Protocol Buffers
+install_protobuf() {
+  info "Installing Protocol Buffers version $PROTOBUF_TAG ..."
+  curl -L -o protobuf.zip "https://github.com/protocolbuffers/protobuf/releases/download/$PROTOBUF_TAG/protoc-${PROTOBUF_TAG#v}-linux-x86_64.zip" || error "Failed to download Protocol Buffers."
+  unzip -o protobuf.zip -d /usr/local/ || error "Failed to extract Protocol Buffers archive."
+  rm protobuf.zip
+  success "Protocol Buffers installed successfully."
+}
 
-# Install Namada
-install_package "$NAMADA_TAG" "https://github.com/anoma/namada/releases/download/$NAMADA_TAG/namada-${NAMADA_TAG}-Linux-x86_64.tar.gz" "namada.tar.gz" "namada-${NAMADA_TAG}-Linux-x86_64" "tar -xzf namada.tar.gz" "sudo mv namada-${NAMADA_TAG}-Linux-x86_64/* /usr/local/bin/ || sudo mv namada/* /usr/local/bin/" "rm -rf namada-${NAMADA_TAG}-Linux-x86_64 namada namada.tar.gz" "namada --version"
+# Function to install CometBFT
+install_cometbft() {
+  info "Installing CometBFT version $COMETBFT_TAG ..."
+  curl -L -o cometbft.tar.gz "https://github.com/cometbft/cometbft/releases/download/$COMETBFT_TAG/cometbft_${COMETBFT_TAG#v}_linux_amd64.tar.gz" || error "Failed to download CometBFT."
+  tar -xvf cometbft.tar.gz || error "Failed to extract CometBFT archive."
+  sudo mv cometbft /usr/local/bin/ || error "Failed to move CometBFT binaries."
+  rm cometbft.tar.gz
+  success "CometBFT installed successfully."
+}
 
-# Install Protocol Buffers
-install_package "$PROTOBUF_TAG" "https://github.com/protocolbuffers/protobuf/releases/download/$PROTOBUF_TAG/protoc-${PROTOBUF_TAG#v}-linux-x86_64.zip" "protobuf.zip" "protobuf_temp" "unzip -q protobuf.zip -d protobuf_temp/" "sudo cp protobuf_temp/bin/protoc /usr/local/bin/ && sudo cp -r protobuf_temp/include/* /usr/local/include/" "rm -rf protobuf_temp protobuf.zip" "protoc --version"
+# Installation steps
+install_namada
+install_protobuf
+install_cometbft
 
-# Install CometBFT
-install_package "$COMETBFT_TAG" "https://github.com/cometbft/cometbft/releases/download/$COMETBFT_TAG/cometbft_${COMETBFT_TAG#v}_linux_amd64.tar.gz" "cometbft.tar.gz" "cometbft_temp" "tar -xzf cometbft.tar.gz -C cometbft_temp/" "sudo mv cometbft_temp/cometbft /usr/local/bin/ || sudo mv cometbft /usr/local/bin/" "rm -rf cometbft_temp cometbft cometbft.tar.gz" "cometbft version"
+echo -e "${YELLOW}[INFO] [$(date +'%Y-%m-%dT%H:%M:%S')] 🎉 All packages were successfully installed!${NC}"
