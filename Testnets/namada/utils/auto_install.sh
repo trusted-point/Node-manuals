@@ -27,30 +27,43 @@ success() {
   echo -e "${GREEN}✔ $@${NC}" | tee -a $LOG_FILE
 }
 
+# Function to get version
+get_version() {
+  case "$1" in
+    "namada") namada --version ;;
+    "protoc") protoc --version ;;
+    "cometbft") cometbft version ;;
+    *) echo "Unknown" ;;
+  esac
+}
+
 # Function to install or update a component
 install_or_update() {
   local name=$1
   local tag=$2
   local url=$3
   local install_fn=$4
+  local current_version=$(get_version "$name")
 
-  if command -v "$name" >/dev/null 2>&1; then
-    local current_version=$("$name" --version 2>&1)
-    if [ "$current_version" == "$tag" ]; then
-      success "$name is already installed and up-to-date."
-      return
-    else
-      warn "$name is installed but out-of-date. Attempting to update..."
-    fi
+  if [ "$current_version" == "$tag" ]; then
+    success "$name is already installed and up-to-date."
+    return
+  elif [ "$current_version" != "Unknown" ]; then
+    warn "$name is installed but out-of-date. Attempting to update..."
   fi
 
   info "Installing or updating $name to version $tag ..."
-  curl -L -o "$name.tar.gz" "$url" &>> $LOG_FILE && \
-  tar -xvf "$name.tar.gz" &>> $LOG_FILE && \
-  $install_fn && \
-  rm -rf "$name.tar.gz" && \
-  local new_version=$("$name" --version 2>&1) && \
-  success "$name installed or updated successfully. Version: $new_version" || warn "Failed to install or update $name."
+  if curl -L -o "$name.tar.gz" "$url" &>> $LOG_FILE; then
+    if tar -xvf "$name.tar.gz" &>> $LOG_FILE; then
+      if $install_fn; then
+        rm -rf "$name.tar.gz"
+        local new_version=$(get_version "$name")
+        success "$name installed or updated successfully. Version: $new_version"
+        return
+      fi
+    fi
+  fi
+  warn "Failed to install or update $name."
 }
 
 # Installation functions for each component
