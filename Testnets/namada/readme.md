@@ -35,8 +35,9 @@ rm -rf namada-${NAMADA_TAG}-Linux-x86_64 namada.tar.gz
 ```bash
 PROTOBUF_TAG="v24.4"
 curl -L -o protobuf.zip "https://github.com/protocolbuffers/protobuf/releases/download/$PROTOBUF_TAG/protoc-${PROTOBUF_TAG#v}-linux-x86_64.zip"
-unzip protobuf.zip -d /usr/local/
+unzip -o protobuf.zip -d /usr/local/
 rm protobuf.zip
+
 ```
 
 ### 🌠 CometBFT
