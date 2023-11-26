@@ -79,7 +79,28 @@ namada client utils join-network --chain-id $CHAIN_ID
 ## 🔄 Service Creation for Node Startup
 
 ```bash
-# Paste the Systemd Service File content here
+sudo tee /etc/systemd/system/namadad.service > /dev/null <<EOF
+[Unit]
+Description=namada
+After=network-online.target
+
+[Service]
+User=$USER
+WorkingDirectory=$HOME/.local/share/namada
+Environment=CMT_LOG_LEVEL=p2p:none,pex:error
+Environment=NAMADA_CMT_STDOUT=true
+Environment=NAMADA_LOG=info
+ExecStart=$(which namada) node ledger run
+StandardOutput=syslog
+StandardError=syslog
+Restart=always
+RestartSec=10
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
 sudo systemctl daemon-reload
 sudo systemctl enable namadad
 sudo systemctl restart namadad
