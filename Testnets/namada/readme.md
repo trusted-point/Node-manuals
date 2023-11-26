@@ -114,7 +114,6 @@ sudo systemctl restart namadad
 ALIAS=<your-validator-alias-here>
 echo "export ALIAS=$ALIAS" >> ~/.bashrc
 namada wallet address gen --alias $ALIAS
-# Additional setup commands here
 ```
 
 ---
