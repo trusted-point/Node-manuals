@@ -26,29 +26,28 @@ This compilation gives a detailed perspective of the Quicksilver protocol, its e
 ___
 ## **Navigation**
 
-* [Validator installation guide](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare-a-server)
-  * [Install required packages and Go](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#prepare)
-  * [Variables](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#variables)
-  * [Build and configuration](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#build-and-configuration)
-  * [Change ports](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#change-port)
-  * [Memory optimization](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#memory-optimization)
-  * [State-sync synchronization](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#state-sync-synchronization)
-  * [Start a node](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#start-node)
-  * [Create a validator](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#create-a-validator)
-  * [Update a validator](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#update-node)
-* [Useful commands](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#useful-commands)
-  * [Node status](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#node-status)
-  * [Validator info](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#validator-info)
-  * [Wallet](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#wallet)
-  * [Voting](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#voting)
-  * [Actions](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#actions)
-  * [All validators info](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#all-validators-info)
-  * [Useful commands](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#useful-commands)
-* [Delete a node](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Archway/guide.md#delete-a-node)
+* [Validator installation guide](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#prepare-a-server)
+  * [Variables](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#variables)
+  * [Build and configuration](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#build-and-configuration)
+  * [Change ports](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#change-port)
+  * [Memory optimization](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#memory-optimization)
+  * [State-sync synchronization](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#state-sync-synchronization)
+  * [Start a node](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#start-node)
+  * [Create a validator](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#create-a-validator)
+  * [Update a validator](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#update-node)
+* [Useful commands](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#node-status)
+  * [Node status](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#node-status)
+  * [Validator info](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#validator-info)
+  * [Wallet](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#wallet)
+  * [Voting](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#voting)
+  * [Actions](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#actions)
+  * [All validators info](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#all-validators-info)
+  * [Useful commands](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#useful-commands-1)
+* [Delete a node](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#delete-a-node)
 ___
 ## Available Explorers
 
-[<img src='https://user-images.githubusercontent.com/80550154/227062135-32a189c0-47d7-4263-8034-9f7726808601.png' alt='mintscan'  width='33%'>](https://testnet.mintscan.io/archway-testnet) [<img src='https://user-images.githubusercontent.com/80550154/227062129-4094b345-9cf4-4493-981c-939cdb748777.png' alt='archway.tech'  width='33%'>](https://explorer.constantine-2.archway.tech) [<img src='https://user-images.githubusercontent.com/80550154/227062134-d4717597-59c8-47fb-96ed-416d4276a7bc.png' alt='exploreme'  width='33%'>](https://archway.exploreme.pro)
+[<img src='https://user-images.githubusercontent.com/80550154/227062135-32a189c0-47d7-4263-8034-9f7726808601.png' alt='mintscan'  width='33%'>](https://www.mintscan.io/quicksilver) [<img src='https://user-images.githubusercontent.com/80550154/229426224-288277c5-cfa9-4c38-95bb-5ff8c41680a3.png' alt='guru'  width='33%'>](https://quicksilver.explorers.guru/) [<img src='https://user-images.githubusercontent.com/80550154/227062134-d4717597-59c8-47fb-96ed-416d4276a7bc.png' alt='exploreme'  width='33%'>](https://quicksilver.exploreme.pro/)
 ___
 ## Prepare a server
 ```python
@@ -59,7 +58,7 @@ sudo apt update && sudo apt upgrade -y && \
 sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
 ```
 ```python
-INSTALLING GO v1.19.4
+INSTALLING GO v1.20
 ```
 ```bash
 cd $HOME && \
