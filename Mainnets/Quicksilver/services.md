@@ -1,7 +1,7 @@
 ## Open Endpoints
 ```http
-RPC:      http://rpc-quicksilver-main.trusted-point.com
-API:      http://api-quicksilver-main.trusted-point.com
+RPC:      https://rpc-quicksilver-main.trusted-point.com
+API:      https://api-quicksilver-main.trusted-point.com
 gRPC:     http://grpc-quicksilver-main.trusted-point:11190
 gRPC-web: http://grpc-web-quicksilver-main.trusted-point.com:11191
 peer:     f0e3f421a5e774a12f8ff3380a938659bad7038e@peer-quicksilver-main.trusted-point.com:28756
@@ -10,7 +10,7 @@ peer:     f0e3f421a5e774a12f8ff3380a938659bad7038e@peer-quicksilver-main.trusted
 ```http
 Genesis:  https://raw.githubusercontent.com/trusted-point/Node-manuals/main/Mainnets/Quicksilver/genesis.json
 Addrbook: https://raw.githubusercontent.com/trusted-point/Node-manuals/main/Mainnets/Quicksilver/addrbook.json
-Snapshot: http://snapshot-quicksilver-main.trusted-point.com/quicksilver-main.tar.lz4
+Snapshot: https://snapshot-quicksilver-main.trusted-point.com/quicksilver-main.tar.lz4
 ```
 
 ## State-sync synchronization
@@ -18,7 +18,7 @@ Snapshot: http://snapshot-quicksilver-main.trusted-point.com/quicksilver-main.ta
 CHANGE VARIABLES 
 ```
 ```bash
-RPC=http://rpc-quicksilver-main.trusted-point.com:443
+RPC=https://rpc-quicksilver-main.trusted-point.com:443
 ```
 ```python
 SET VARIABLES 
