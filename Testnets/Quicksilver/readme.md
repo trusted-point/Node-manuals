@@ -30,7 +30,7 @@ This compilation gives a detailed perspective of the Quicksilver protocol, its e
 ___
 ## **Navigation**
 
-* [Validator installation guide](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#prepare-a-server)
+* [Validator installation guide](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Quicksilver/readme.md#prepare-a-server)
   * [Variables](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#variables)
   * [Build and configuration](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#build-and-configuration)
   * [Change ports](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#change-port)
