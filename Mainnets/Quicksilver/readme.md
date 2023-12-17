@@ -239,7 +239,7 @@ ___
 CHANGE VARIABLES 
 ```
 ```bash
-RPC=http://rpc-quicksilver-main.trusted-point.com:443
+RPC=https://rpc-quicksilver-main.trusted-point.com:443
 ```
 ```python
 SET VARIABLES 
