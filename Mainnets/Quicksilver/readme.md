@@ -1,3 +1,5 @@
+![image](https://github.com/trusted-point/Node-manuals/assets/83868103/9b92413f-8be9-4d80-9bce-48bd31d1e8fe)
+
 ## [Quicksilver Protocol](https://quicksilver.zone/)
 *The Liquid Staking Solution for the Cosmos Ecosystem*
 
