@@ -53,4 +53,4 @@ curl -o - -L https://snapshot-quicksilver-test.trusted-point.com/quicksilver-tes
 mv $HOME/.quicksilverd/priv_validator_state.json.backup $HOME/.quicksilverd/data/priv_validator_state.json
 wget -O $HOME/.quicksilverd/config/addrbook.json "https://raw.githubusercontent.com/trusted-point/Node-manuals/main/Testnets/Quicksilver/addrbook.json"
 sudo systemctl restart quicksilverd && journalctl -u quicksilverd -f -o cat
-```bash
+```
