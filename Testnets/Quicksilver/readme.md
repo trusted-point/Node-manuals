@@ -31,27 +31,27 @@ ___
 ## **Navigation**
 
 * [Validator installation guide](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Quicksilver/readme.md#prepare-a-server)
-  * [Variables](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#variables)
-  * [Build and configuration](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#build-and-configuration)
-  * [Change ports](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#change-port)
-  * [Memory optimization](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#memory-optimization)
-  * [State-sync synchronization](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#state-sync-synchronization)
-  * [Start a node](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#start-node)
-  * [Create a validator](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#create-a-validator)
-  * [Update a validator](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#update-node)
-* [Useful commands](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#node-status)
-  * [Node status](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#node-status)
-  * [Validator info](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#validator-info)
-  * [Wallet](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#wallet)
-  * [Voting](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#voting)
-  * [Actions](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#actions)
-  * [All validators info](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#all-validators-info)
-  * [Useful commands](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#useful-commands-1)
-* [Delete a node](https://github.com/trusted-point/Node-manuals/blob/main/Mainnets/Quicksilver/readme.md#delete-a-node)
+  * [Variables](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Quicksilver/readme.md#variables)
+  * [Build and configuration](https://github.com/trusted-point/Node-manuals/blob/mainTestnets/Quicksilver/readme.md#build-and-configuration)
+  * [Change ports](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Quicksilver/readme.md#change-port)
+  * [Memory optimization](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Quicksilver/readme.md#memory-optimization)
+  * [State-sync synchronization](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Quicksilver/readme.md#state-sync-synchronization)
+  * [Start a node](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Quicksilver/readme.md#start-node)
+  * [Create a validator](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Quicksilver/readme.md#create-a-validator)
+  * [Update a validator](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Quicksilver/readme.md#update-node)
+* [Useful commands](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Quicksilver/readme.md#node-status)
+  * [Node status](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Quicksilver/readme.md#node-status)
+  * [Validator info](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Quicksilver/readme.md#validator-info)
+  * [Wallet](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Quicksilver/readme.md#wallet)
+  * [Voting](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Quicksilver/readme.md#voting)
+  * [Actions](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Quicksilver/readme.md#actions)
+  * [All validators info](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Quicksilver/readme.md#all-validators-info)
+  * [Useful commands](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Quicksilver/readme.md#useful-commands-1)
+* [Delete a node](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Quicksilver/readme.md#delete-a-node)
 ___
 ## Available Explorers
 
-[<img src='https://user-images.githubusercontent.com/80550154/227062135-32a189c0-47d7-4263-8034-9f7726808601.png' alt='mintscan'  width='33%'>](https://www.mintscan.io/quicksilver) [<img src='https://user-images.githubusercontent.com/80550154/229426224-288277c5-cfa9-4c38-95bb-5ff8c41680a3.png' alt='guru'  width='33%'>](https://quicksilver.explorers.guru/) [<img src='https://user-images.githubusercontent.com/80550154/227062134-d4717597-59c8-47fb-96ed-416d4276a7bc.png' alt='exploreme'  width='33%'>](https://quicksilver.exploreme.pro/)
+[<img src='https://user-images.githubusercontent.com/80550154/229426224-288277c5-cfa9-4c38-95bb-5ff8c41680a3.png' alt='guru'  width='33%'>](https://testnet.quicksilver.explorers.guru/)
 ___
 ## Prepare a server
 ```python
