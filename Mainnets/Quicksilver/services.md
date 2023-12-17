@@ -2,9 +2,9 @@
 ```http
 RPC:      http://rpc-quicksilver-main.trusted-point.com
 API:      http://api-quicksilver-main.trusted-point.com
-gRPC:     http://grpc-quicksilver-main.trusted-point:23090
-gRPC-web: http://grpc-web-quicksilver-main.trusted-point.com:23091
-peer:     c8171d5b90ea72992408f8cfcd3893256d22aabc@peer-quicksilver-main.trusted-point.com:40656
+gRPC:     http://grpc-quicksilver-main.trusted-point:11190
+gRPC-web: http://grpc-web-quicksilver-main.trusted-point.com:11191
+peer:     f0e3f421a5e774a12f8ff3380a938659bad7038e@peer-quicksilver-main.trusted-point.com:28756
 ```
 ## Files
 ```http
