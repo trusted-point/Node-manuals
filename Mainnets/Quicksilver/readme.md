@@ -1,4 +1,5 @@
-![Без имени-2](https://github.com/trusted-point/Node-manuals/assets/83868103/4b382903-c0ca-493c-bd5a-9221e9b4156e)
+![image](https://github.com/trusted-point/Node-manuals/assets/83868103/d543982d-dbb2-443f-9e3b-84f049c90a63)
+
 
 
 ## [Quicksilver Protocol](https://quicksilver.zone/)
