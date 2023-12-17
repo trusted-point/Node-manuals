@@ -37,8 +37,8 @@ sudo journalctl -u quicksilverd -f -o cat
 ## Snapshot synchronization
 
 ```bash
-cd $HOME
 apt install lz4
+
 sudo systemctl stop quicksilverd
 sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1false|" ~/.quicksilverd/config/config.toml
 cp $HOME/.quicksilverd/data/priv_validator_state.json $HOME/.quicksilverd/priv_validator_state.json.backup
