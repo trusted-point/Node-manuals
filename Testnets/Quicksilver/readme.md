@@ -108,19 +108,19 @@ BUILD BINARY
 ```bash
 git clone https://github.com/quicksilver-zone/quicksilver.git quicksilver && \
 cd quicksilver && \
-git checkout v1.2.17 && \
+git checkout v1.4.4-rc.3 && \
 make install
 quicksilverd version --long | grep -e version -e commit
-# version: 1.2.17
+# version: 1.4.4-rc.3
 ```
 #
 ```python
 CONFIGURATION
 ```
 ```bash 
-quicksilverd init $MONIKER --chain-id quicksilver-2 && \
-quicksilverd config chain-id quicksilver-2 && \
-quicksilverd config keyring-backend os
+quicksilverd init $MONIKER --chain-id rhye-1 && \
+quicksilverd config chain-id rhye-1 && \
+quicksilverd config keyring-backend test
 ```
 #
 ```python
@@ -152,7 +152,7 @@ source $HOME/.bash_profile
 ADD PEERS AND SEEDS
 ```
 ```bash
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"6053a39e67c6bae83430e354f53d99e160e4964b@65.109.28.177:28656\"/;
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"8e14e58b054248a04be96e4a40d6359e93b636ac@65.108.65.94:26656,5a3c424c19d9ab694190a7805a2b1a146460d752@65.108.2.27:26656,e6bf55bc9f08958b7518bea455423375db78d1ef@65.108.13.176:26657\"/;
 s/^seeds *=.*/seeds = \"$SEEDS\"/" $HOME/.quicksilverd/config/config.toml
 ```
 #
@@ -160,14 +160,14 @@ s/^seeds *=.*/seeds = \"$SEEDS\"/" $HOME/.quicksilverd/config/config.toml
 DOWNLOAD GENESIS 
 ```
 ```bash
-wget -O $HOME/.quicksilverd/config/genesis.json https://raw.githubusercontent.com/trusted-point/Node-manuals/main/Mainnets/Quicksilver/genesis.json
+wget -O $HOME/.quicksilverd/config/genesis.json https://raw.githubusercontent.com/trusted-point/Node-manuals/main/Testnets/Quicksilver/genesis.json
 ```
 
 ```python
 DOWNLOAD ADDRBOOK
 ```
 ```bash
-wget -qO $HOME/.quicksilverd/config/addrbook.json https://raw.githubusercontent.com/trusted-point/Node-manuals/main/Mainnets/Quicksilver/addrbook.json
+wget -qO $HOME/.quicksilverd/config/addrbook.json https://raw.githubusercontent.com/trusted-point/Node-manuals/main/Testnets/Quicksilver/addrbook.json
 ```
 ___
 ## Change PORT
@@ -239,7 +239,7 @@ ___
 CHANGE VARIABLES 
 ```
 ```bash
-RPC=http://rpc-quicksilver-main.trusted-point.com:443
+RPC=http://rpc-quicksilver-test.trusted-point.com:443
 ```
 ```python
 SET VARIABLES 
@@ -314,7 +314,7 @@ quicksilverd tx staking create-validator \
   --amount=1000000uqck \
   --pubkey=$(quicksilverd tendermint show-validator) \
   --moniker=$MONIKER \
-  --chain-id=quicksilver-2 \
+  --chain-id=rhye-1 \
   --commission-rate="0.10" \
   --commission-max-rate="0.20" \
   --commission-max-change-rate="0.01" \
