@@ -285,8 +285,8 @@ START SERVICE
 ```
 ```bash
 sudo systemctl daemon-reload && \
-sudo systemctl enable archwayd && \
-sudo systemctl restart archwayd && \
+sudo systemctl enable quicksilverd && \
+sudo systemctl restart quicksilverd && \
 sudo journalctl -u quicksilverd -f -o cat
 ```
 ___
