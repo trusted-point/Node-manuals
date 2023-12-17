@@ -14,16 +14,10 @@ Snapshot: https://snapshot-quicksilver-test.trusted-point.com/quicksilver-test.t
 ```
 
 ## State-sync synchronization
-```python
-CHANGE VARIABLES 
-```
+
 ```bash
 RPC=https://rpc-quicksilver-test.trusted-point.com:443
-```
-```python
-SET VARIABLES 
-```
-```bash
+
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
