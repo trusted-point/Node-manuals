@@ -1,15 +1,4 @@
 ## [Quicksilver Protocol](https://quicksilver.zone/)
-*Elevating the Cosmos Ecosystem through Liquid Staking*
-
-### Key Features:
-- **Liquid Staking**: Stake Cosmos assets with a validator to receive `qASSETs`.
-- **Utility of qASSETs**: Use for **trading**, **pooling**, **lending**, and more.
-- **Earning APY**: Continues on the original stake for network security.
-- **QCK Token**: Used for network governance, ensuring security, and transaction fees.
-
-For more insights, explore [Quicksilver's official site](https://quicksilver.zone/).
-
-## [Quicksilver Protocol](https://quicksilver.zone/)
 *The Liquid Staking Solution for the Cosmos Ecosystem*
 
 ### Features and Functionalities:
