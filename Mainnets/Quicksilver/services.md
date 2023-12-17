@@ -14,16 +14,9 @@ Snapshot: https://snapshot-quicksilver-main.trusted-point.com/quicksilver-main.t
 ```
 
 ## State-sync synchronization
-```python
-CHANGE VARIABLES 
-```
 ```bash
 RPC=https://rpc-quicksilver-main.trusted-point.com:443
-```
-```python
-SET VARIABLES 
-```
-```bash
+
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
@@ -38,4 +31,21 @@ s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.quicksilverd/config/confi
 
 sudo systemctl restart quicksilverd
 sudo journalctl -u quicksilverd -f -o cat
+```
+
+## Snapshot synchronization
+
+```bash
+apt install lz4
+
+sudo systemctl stop quicksilverd
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1false|" ~/.quicksilverd/config/config.toml
+cp $HOME/.quicksilverd/data/priv_validator_state.json $HOME/.quicksilverd/priv_validator_state.json.backup
+rm -rf $HOME/.quicksilverd/data
+curl -o - -L https://snapshot-quicksilver-test.trusted-point.com/quicksilver-main.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.quicksilverd --strip-components 2
+mv $HOME/.quicksilverd/priv_validator_state.json.backup $HOME/.quicksilverd/data/priv_validator_state.json
+wget -O $HOME/.quicksilverd/config/addrbook.json "https://raw.githubusercontent.com/trusted-point/Node-manuals/main/Mainnets/Quicksilver/addrbook.json"
+
+sudo systemctl restart quicksilverd
+journalctl -u quicksilverd -f -o cat
 ```
