@@ -1,10 +1,13 @@
-## About **Archway**
+## [Quicksilver Protocol](https://quicksilver.zone/)
+*Elevating the Cosmos Ecosystem through Liquid Staking*
 
-* **[Archway](https://archway.io/)** is an incentivized smart contract chain for Cosmos ecosystem which gives developers a simple way to build scalable cross-chain dapps. The developers automatically receive rewards for their contributions to the network. Simply deploy your contracts to an established Proof-of-Stake network. Fast and low cost.
+### Key Features:
+- **Liquid Staking**: Stake Cosmos assets with a validator to receive `qASSETs`.
+- **Utility of qASSETs**: Use for **trading**, **pooling**, **lending**, and more.
+- **Earning APY**: Continues on the original stake for network security.
+- **QCK Token**: Used for network governance, ensuring security, and transaction fees.
 
-* Easily build and deploy. The protocol is designed for flexible smart contract development and easy deployment to Cosmos.The contract libaries, Archway CLI and GO CosmWasm SDK are ready to go.
-
-* Archway gives developers a simple way to build scalable cross-chain dapps. The developers automatically receive rewards for their contributions to the network. Simply deploy your contracts to an established Proof-of-Stake network.
+For more insights, explore [Quicksilver's official site](https://quicksilver.zone/).
 
 <font size = 4>**[Website](https://archway.io/) | [GitHub](https://github.com/archway-network) | [Twitter](https://twitter.com/archwayhq) | [Discord](https://discord.gg/5FVvx3WGfa) | [Docs](https://docs.archway.io/) | [Lightpaper](https://archway.io/lightpaper) | [Blog](https://blog.archway.io/) | [Tech Sheet](https://archway.io/tech)**</font>
 ___
