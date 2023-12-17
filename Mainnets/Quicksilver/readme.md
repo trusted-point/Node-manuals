@@ -9,7 +9,31 @@
 
 For more insights, explore [Quicksilver's official site](https://quicksilver.zone/).
 
-<font size = 4>**[Website](https://archway.io/) | [GitHub](https://github.com/archway-network) | [Twitter](https://twitter.com/archwayhq) | [Discord](https://discord.gg/5FVvx3WGfa) | [Docs](https://docs.archway.io/) | [Lightpaper](https://archway.io/lightpaper) | [Blog](https://blog.archway.io/) | [Tech Sheet](https://archway.io/tech)**</font>
+## [Quicksilver Protocol](https://quicksilver.zone/)
+*The Liquid Staking Solution for the Cosmos Ecosystem*
+
+### Features and Functionalities:
+- **Liquid Staking**: Facilitates seamless asset transfers of staked positions. [Learn more](https://quicksilver.zone/)
+- **Interchain Accounts (ICA)**: Enables control over stake accounts across IBC. [Details](https://docs.quicksilver.zone/)
+- **Modules**: Including **[Interchain Staking](https://docs.quicksilver.zone/#/Interchain-Staking)**, **[Participation Rewards](https://docs.quicksilver.zone/#/Participation-Rewards)**, **[Claim Manager](https://docs.quicksilver.zone/#/Claim-Manager)**, and more.
+- **Validator Documentation & IBC Channels**: Comprehensive guides for validators. [Validator Docs](https://docs.quicksilver.zone/#/Validator-Documentation)
+- **Security**: Focus on security with audits and bug bounty programs. [Security Info](https://docs.quicksilver.zone/#/Audits)
+- **QCK Token**: Serves for governance, securing the network, and transaction fees. [Token Utility](https://docs.quicksilver.zone/#/Token-Utility)
+
+### Strategic Partnerships:
+- Collaborations with entities like **[01node](https://01node.com/)**, **[Cerulean VC](https://cerulean.vc/)**, and others. [Partners](https://quicksilver.zone/#/Strategic-Partners)
+
+### Application Interface:
+- **Governance**: Participate in on-chain governance. [Governance Portal](https://app.quicksilver.zone/governance)
+- **Staking Interface**: Delegate and manage staking. [Stake Here](https://app.quicksilver.zone/stake/delegate)
+- **Airdrop**: Information about ongoing airdrops. [Airdrop Details](https://app.quicksilver.zone/airdrop)
+
+### Additional Resources:
+- **Documentation**: Extensive resources for understanding Quicksilver. [Docs](https://docs.quicksilver.zone/)
+- **IBC Channels**: List of supported IBC clients, connections, and channels. [IBC Channels](https://docs.quicksilver.zone/#/IBC-Channels)
+
+This compilation gives a detailed perspective of the Quicksilver protocol, its ecosystem, and functionalities, with direct links for deeper exploration.
+
 ___
 ## **Navigation**
 
