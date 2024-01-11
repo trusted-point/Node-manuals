@@ -9,7 +9,7 @@ pruning-interval = "17"
 
 # State-Sync Snapshot Strategy
 snapshot-interval = 2000
-snapshot-keep-recent = 2
+snapshot-keep-recent = 5
 
 # Indexer Configuration
 indexer = "kv"
