@@ -10,7 +10,7 @@
 ___
 ## **Navigation**
 
-* [trustedPoint services (RPC, API)](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Zetachain/manual.md#testnetpride-services)
+* [TrustedPoint services (RPC, API)](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Zetachain/manual.md#testnetpride-services)
 * [State Sync](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Zetachain/manual.md#state-sync-synchronization)
   * [Install required packages and Go](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Zetachain/manual.md#prepare-the-server)
   * [Set variables](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Zetachain/manual.md#set-variables)
