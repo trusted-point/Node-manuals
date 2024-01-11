@@ -70,7 +70,7 @@ source $HOME/.bash_profile
 ```
 ## Download the binary
 ```bash
-wget -O $HOME/zetacored https://github.com/zeta-chain/node/releases/download/v6.0.0/zetacored-ubuntu-20-amd64 && \
+wget -O $HOME/zetacored https://github.com/zeta-chain/node/releases/download/v11.0.0/zetacored-linux-amd64?checksum=sha256:010888a0ce997494c18cea1e3fe282e271702adc713ba1e022cc4142a221a642 && \
 sudo chmod +x $HOME/zetacored && \
 sudo mv $HOME/zetacored /usr/local/bin/zetacored && \
 zetacored version
