@@ -10,29 +10,30 @@
 ___
 ## **Navigation**
 
-* [trustedPoint services (RPC, API)](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#testnetpride-services)
-* [State Sync](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#state-sync-synchronization)
-  * [Install required packages and Go](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#prepare-the-server)
-  * [Set variables](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#set-variables)
-  * [Download pre-built zeta binary](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#download-the-binary)
-  * [Download config](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#download-configs)
-  * [Disk space optimization](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#disk-space-optimization--following-variables-can-be-customised)
-  * [State sync](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#state-sync-synchronization)
-  * [Start the node](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#start-the-node)
-  * [Create a validator](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#create-a-validator)
-* [Useful commands](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#useful-commands)
-  * [Node status](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#node-status)
-  * [Voting](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#voting-for-the-proposal)
-  * [All validators info](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#all-validators-info)
-* [Useful commands](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#useful-commands)
-* [Delete the node](https://github.com/testnet-pride/Node-manuals/blob/main/Testnets/Zetachain/manual.md#delete-the-node)
+* [trustedPoint services (RPC, API)](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Zetachain/manual.md#testnetpride-services)
+* [State Sync](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Zetachain/manual.md#state-sync-synchronization)
+  * [Install required packages and Go](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Zetachain/manual.md#prepare-the-server)
+  * [Set variables](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Zetachain/manual.md#set-variables)
+  * [Download pre-built zeta binary](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Zetachain/manual.md#download-the-binary)
+  * [Download config](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Zetachain/manual.md#download-configs)
+  * [Disk space optimization](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Zetachain/manual.md#disk-space-optimization--following-variables-can-be-customised)
+  * [State sync](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Zetachain/manual.md#state-sync-synchronization)
+  * [Start the node](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Zetachain/manual.md#start-the-node)
+  * [Create a validator](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Zetachain/manual.md#create-a-validator)
+* [Useful commands](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Zetachain/manual.md#useful-commands)
+  * [Node status](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Zetachain/manual.md#node-status)
+  * [Voting](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Zetachain/manual.md#voting-for-the-proposal)
+  * [All validators info](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Zetachain/manual.md#all-validators-info)
+* [Useful commands](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Zetachain/manual.md#useful-commands)
+* [Delete the node](https://github.com/trusted-point/Node-manuals/blob/main/Testnets/Zetachain/manual.md#delete-the-node)
 ___
-## TestnetPride services 
+## trustedPoint services 
 ```http
-RPC:      https://zetachain-testnet.testnet-pride.com:443
-API:      https://zetachain-testnet-api.testnet-pride.com:443
-gRPC:     https://zetachain-testnet-grpc.testnet-pride.com:443
-peer:     8aaec5fd35e2c452a0507bad2db1e0ca79d73bb9@zetachain-testnet-peer.testnet-pride.com:26656
+RPC:      https://rpc-zetachain-test.trusted-point.com
+API:      https://api-zetachain-test.trusted-point.com
+gRPC:     http://grpc-zetachain-test.trusted-point.com:9990
+gRPC-web: http://grpc-web-zetachain-test.trusted-point.com:9991
+peer:     16ebaa2222c39f37883a075a958aedce8a834de9@peer-zetachain-test.trusted-point.com:27556
 ```
 ## Prepare the server
 ```python
