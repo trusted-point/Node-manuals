@@ -40,6 +40,7 @@ peer:     16ebaa2222c39f37883a075a958aedce8a834de9@peer-zetachain-test.trusted-p
 sudo apt update && sudo apt upgrade -y && \
 sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban -y
 ```
+## Download Go (optional since we will download pre-built binary)
 ```bash
 cd $HOME && \
 ver="1.20.6" && \
