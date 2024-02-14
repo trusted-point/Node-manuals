@@ -63,7 +63,8 @@ cargo build --release
 cd /home/snarkosadm
 mkdir /home/snarkosadm/bin
 cp -/home/snarkosadm/snarkOS/target/release/snarkos /usr/local/bin/
-echo "export PATH=/usr/local/bin:$PATH" >> ~/.profile
+echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
+source ~/.bash_profile
 ```
 ## 6. `Make sure the binary is working`
 ```bash
