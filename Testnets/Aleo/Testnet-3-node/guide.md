@@ -58,12 +58,11 @@ git clone https://github.com/AleoHQ/snarkOS.git
 ```
 ## 6. `Build snarkos bin`
 ```bash
-cd /home/snarkosadm/snarkOS
+cd $HOME/snarkOS
 cargo build --release
-cd /home/snarkosadm
-mkdir /home/snarkosadm/bin
-cp -/home/snarkosadm/snarkOS/target/release/snarkos /usr/local/bin/
-echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
+mkdir $HOME/bin
+cp -$HOME/snarkOS/target/release/snarkos $HOME/bin/
+echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bash_profile
 source ~/.bash_profile
 ```
 ## 6. `Make sure the binary is working`
@@ -74,7 +73,7 @@ snarkos --help
 ```bash
 sudo tee /etc/systemd/system/aleo-node.service > /dev/null <<EOF
 [Unit]
-Description=Archway Node
+Description=Aleo Node
 After=network.target
 Wants=network-online.target
 StartLimitIntervalSec=500
@@ -83,7 +82,7 @@ StartLimitBurst=5
 [Service]
 User=$USER
 Type=simple
-ExecStart=$(which snarkosadm) start --nodisplay --logfile /dev/null --verbosity 4 --client
+ExecStart=$(which snarkos) start --nodisplay --logfile /dev/null --verbosity 4 --client
 Restart=on-failure
 LimitNOFILE=65535
 WorkingDirectory=/home/snarkosadm
